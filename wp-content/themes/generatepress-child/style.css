@@ -1,0 +1,209 @@
+/*
+Theme Name: GeneratePress Child
+Theme URI: https://generatepress.com
+Template: generatepress
+Author: Tom Usborne
+Author URI: https://tomusborne.com
+Description: GeneratePress is a lightweight WordPress theme built with a focus on speed and usability. Performance is important to us, which is why a fresh GeneratePress install adds less than 15kb (gzipped) to your page size. We take full advantage of the new block editor (Gutenberg), which gives you more control over creating your content. If you use page builders, GeneratePress is the right theme for you. It is completely compatible with all major page builders, including Beaver Builder and Elementor. Thanks to our emphasis on WordPress coding standards, we can boast full compatibility with all well-coded plugins, including WooCommerce. GeneratePress is fully responsive, uses valid HTML/CSS and is translated into over 25 languages by our amazing community of users. A few of our many features include microdata integration, 9 widget areas, 5 navigation locations, 5 sidebar layouts, dropdown menus (click or hover) and navigation color presets. Learn more and check out our powerful premium version at https://generatepress.com
+Tags: two-columns,three-columns,one-column,right-sidebar,left-sidebar,footer-widgets,blog,e-commerce,flexible-header,full-width-template,buddypress,custom-header,custom-background,custom-menu,custom-colors,sticky-post,threaded-comments,translation-ready,rtl-language-support,featured-images,theme-options
+Version: 2.3.2.1583337628
+Updated: 2020-03-04 17:00:28
+
+*/
+.product > a {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: inherit;
+    text-align: left;
+}
+
+.product > a >div:first-child {
+    order: 1
+}
+
+.product > a > .woocommerce-loop-product_title {
+    order: 2;
+}
+
+.product > a > .price {
+    order: 4;
+    width:100%;
+}
+
+.product > a > .dcms-item-description {
+    order: 3;
+}
+
+.woocommerce-page .shop_table th.product-quantity, .woocommerce-page .shop_table th.product-subtotal, .woocommerce-page  tr.woocommerce-cart-form__cart-item td.product-quantity, .woocommerce-page tr.woocommerce-cart-form__cart-item  td.product-subtotal{
+    display: none;
+}
+
+td.quitar span {
+    position: relative;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    background: #ff5e15;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+	transition:0.3s ease-in-out;
+}
+td.quitar span:hover{
+	opacity:0.8;
+}
+td.product-remove {
+    display: none;
+}
+
+.cart_item .quitar:last-of-type, .cart_item .product-short-description:nth-of-type(odd), .shop_table thead tr th.short-description:nth-of-type(odd) {
+    display: none;
+}
+td.product-name p.shortDescription {
+    display: none;
+}
+
+/*Estilos para flechas de navegación en la imagen de producto*/
+ul.flex-direction-nav {
+    position: absolute;
+    top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+    z-index: 9;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0px;
+    list-style: none;}
+
+li.flex-nav-prev {float: left;}
+li.flex-nav-next {float: right;}
+a.flex-next {visibility:hidden;}
+a.flex-prev {visibility:hidden;}
+
+a.flex-next::after {
+	visibility:visible;content: '\f054';
+	font-family: 'FontAwesome';
+	margin-right: 10px;
+	font-size: 20px;   
+	font-weight: bold;
+}
+a.flex-prev::before {
+    visibility:visible;
+    content: '\f053';
+	font-family: 'FontAwesome';   
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+ul.flex-direction-nav li a {
+	color: #ccc;
+}
+ul.flex-direction-nav li a:hover {
+	text-decoration: none;
+}
+
+/*Atributos de producto*/
+.button.go-cart, .yith-wacp-mini-cart {display: none!important;}
+.woocommerce div.product.elementor form.cart table.variations td.value:before{
+	display:none !important;
+}
+.woocommerce div.product .woocommerce-product-rating{
+	margin:0px !important;
+}
+.price, .woocommerce div.product form.cart, .woocommerce-product-details__short-description p{
+	margin-bottom:0px;
+}
+.woocommerce a.add_to_wishlist.button.alt .fa{
+	font-family: FontAwesome;
+}
+#sticky-producto{
+	position:fixed;
+	top:-90px;
+	transition:0.2s ease all;
+}
+.sticky{
+	position:fixed !important;
+	top:0 !important;
+	z-index:99999;
+	transition:0.2s ease all;
+}
+
+.descripcion-producto .elementor-row{
+	display:block;
+}
+.descripcion-producto .elementor-column.elementor-col-50{
+	width:100%;
+	display:block;
+}
+.seccion-precio{
+	position:relative;
+}
+.seccion-precio .boton-deseos{
+	position: absolute;
+    bottom: 20px;
+    left: 273px;
+    width: auto !important;
+}
+.seccion-precio  .variations{
+	background-color: #f4f4f4;
+    padding: 25px;
+}
+.seccion-precio .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated{
+	padding:0px;
+}
+.boton-deseos .yith-wcwl-add-button>a i{
+	margin-right:0px;
+}
+.seccion-precio .woocommerce-variation-price .woocommerce-Price-amount{
+	font-weight: 600;
+    font-size: 35px;
+    margin-bottom: 14px;
+    display: block;
+    color: #000;
+}
+.price .desde{
+	font-size:14px;
+}
+.elementor-share-btn.elementor-share-btn_whatsapp:before {
+    content: 'Compartir';
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+h3.woocommerce-loop-product_title {
+    color: #000;
+    font-size: 18px !important;
+    font-weight: 600;
+}
+@media (max-width:767px){
+	#sticky-producto{
+		position:fixed;
+		bottom:-100px;
+		top:auto !important;
+		transition:0.2s ease all;
+	}
+	.sticky{
+		bottom:0 !important;
+		top:auto !important;
+		transition:0.2s ease all;
+	}
+	#sticky-producto .price{
+		position: initial;
+	}
+	#sticky-producto .elementor-element-69ac8bf{
+		margin-top: -10px;
+	}
+	.woocommerce div.product div.images .flex-control-thumbs{
+		display:none;
+	}
+	.descripcion-producto .elementor-row, .descripcion-producto .elementor-column.elementor-col-50{
+		display:flex;
+	}
+	.iconos-envios{
+		text-align:center;
+	}
+}

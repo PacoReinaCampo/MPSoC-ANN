@@ -1,0 +1,136 @@
+# Translation of Plugins - Premmerce Permalink Manager for WooCommerce - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Premmerce Permalink Manager for WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-04-22 17:07:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Premmerce Permalink Manager for WooCommerce - Stable (latest release)\n"
+
+#: views/admin/banner.php:32
+msgid "Get it now"
+msgstr "Obtenerlo ahora"
+
+#: views/admin/banner.php:21
+msgid "Get clean URLs and additional Pro SEO settings for your Filter pages with Premmerce WooCommerce Filter Premium for only $69!"
+msgstr "¡Puedes limpiar URLs y ajustes SEO pro adicionales para filtrar tus páginas con Premmerce WooCommerce Filter Premium por solo 69$!"
+
+#: views/admin/banner.php:15 views/admin/banner.php:18
+msgid "Premmerce WooCommerce Product Filter Premium"
+msgstr "Premmerce WooCommerce Product Filter Premium"
+
+#: views/admin/section/product.php:53
+msgid "Full product path"
+msgstr "Ruta completa al producto"
+
+#: views/admin/section/product.php:41
+msgid "Product slug with primary category"
+msgstr "Slug del producto con la categoría principal"
+
+#: views/admin/section/product.php:29
+msgid "Product slug"
+msgstr "Slug del producto"
+
+#: views/admin/section/category.php:37
+msgid "Full category path"
+msgstr "Ruta completa a la categoría"
+
+#: views/admin/section/category.php:25
+msgid "Category slug"
+msgstr "Slug de la categoría"
+
+#: views/admin/section/product.php:18 views/admin/section/category.php:16
+msgid "Use WooCommerce settings"
+msgstr "Usar ajustes de WooCommerce"
+
+#: views/admin/section/additional.php:94
+msgid "Create 301 redirect from duplicated pages"
+msgstr "Crear redirecciones 301 de páginas duplicadas"
+
+#: views/admin/section/additional.php:86
+msgid "Create redirects"
+msgstr "Crear redirecciones"
+
+#: views/admin/section/additional.php:70
+msgid "Add canonical meta tag to duplicated pages"
+msgstr "Añadir la etiqueta meta canonical a las páginas duplicadas"
+
+#: views/admin/section/additional.php:66
+msgid "Add canonicals"
+msgstr "Añadir canonicals"
+
+#: views/admin/section/additional.php:52
+msgid "Use 'Yoast SEO' primary category to build product path"
+msgstr "Usar la categoría principal de 'Yoast SEO' para crear la ruta del producto"
+
+#: views/admin/section/additional.php:48
+msgid "Use primary category"
+msgstr "Usar la categoría principal"
+
+#: views/admin/section/additional.php:33 views/admin/section/additional.php:91
+msgid "Available only in premium version"
+msgstr "Solo disponible en la versión premium"
+
+#: views/admin/section/additional.php:28
+msgid "Remove product tag base"
+msgstr "Quitar la base de la etiqueta del producto"
+
+#: views/admin/tabs/settings.php:10
+msgid "WooCommerce Permalink Manager offers you the ability to create a custom URL structure for your permalinks. Custom URL structures can improve the aesthetics, usability, and forward-compatibility of your links. A number of settings are available, and here are some examples to get you started."
+msgstr "WooCommerce Permalink Manager te ofrece la posibilidad de crear una estructura de URLs personalizada para tus enlaces permanentes. Las estructuras de URL personalizadas pueden mejorar la estética, usabilidad y compatibilidad futura de tus enlaces. Hay disponibles una buena cantidad de ajustes, y aquí tienes algunos ejemplos para empezar."
+
+#: views/admin/main.php:9
+msgid "WooCommerce Permalink Settings"
+msgstr "Ajustes de enlaces permanentes de WooCommerce"
+
+#: src/Admin/Settings.php:35
+msgid "Categories"
+msgstr "Categorías"
+
+#: src/Admin/Settings.php:43
+msgid "Additional"
+msgstr "Adicional"
+
+#: src/Admin/Admin.php:134 src/Admin/Admin.php:135
+msgid "Permalink Manager"
+msgstr "Gestor de enlaces permanentes"
+
+#: src/Admin/Admin.php:185
+msgid "Account"
+msgstr "Cuenta"
+
+#: src/Admin/Admin.php:187
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+#: src/Admin/Admin.php:180
+msgid "Settings"
+msgstr "Ajustes"
+
+#. Author URI of the plugin
+msgid "https://premmerce.com/"
+msgstr "https://premmerce.com/"
+
+#. Author of the plugin
+msgid "premmerce"
+msgstr "premmerce"
+
+#: src/Admin/Settings.php:39
+msgid "Products"
+msgstr "Productos"
+
+#. Plugin URI of the plugin
+msgid "https://premmerce.com/woocommerce-permalink-manager-remove-shop-product-product-category-url/"
+msgstr "https://premmerce.com/woocommerce-permalink-manager-remove-shop-product-product-category-url/"
+
+#: src/UrlManagerPlugin.php:118
+msgid "The %s plugin requires %s plugin to be active!"
+msgstr "¡El plugin %s necesita que esté activo el plugin %s!"
+
+#. Description of the plugin
+msgid "Premmerce Permalink Manager for WooCommerce allows you to change WooCommerce permalink and remove product and product_category slugs from the URL."
+msgstr "Premmerce Permalink Manager for WooCommerce te permite cambiar el enlace permanente de WooCommerce y eliminar los slugs product y product_category de la URL."

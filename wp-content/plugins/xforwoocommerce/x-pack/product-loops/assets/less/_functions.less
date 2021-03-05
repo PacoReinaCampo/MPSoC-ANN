@@ -1,0 +1,91 @@
+
+@webkit: true;
+@moz: true;
+@ms: true;
+@o: true;
+
+@fastDuration: .1s;
+@mediumDuration: .2s;
+@slowDuration: .5s;
+@shadowColor: rgba(0, 0, 0, .6);
+@tipWidth: 10px;
+@tipHeight: 10px;
+@spaceBetweenTextAndArrows: 2.2em;
+
+
+.prefixed(@property, @value) {
+	& when (@webkit = true) {
+		-webkit-@{property}: @value;
+	}
+
+	& when (@moz = true) {
+		-moz-@{property}: @value;
+	}
+
+	& when (@ms = true) {
+		-ms-@{property}: @value;
+	}
+
+	& when (@o = true) {
+		-o-@{property}: @value;
+	}
+
+	@{property}: @value;
+}
+
+
+.keyframes(@name; @content) {
+	& when (@webkit = true) {
+		@-webkit-keyframes @name {
+			@content();
+		}
+	}
+
+	& when (@moz = true) {
+		@-moz-keyframes @name {
+			@content();
+		}
+	}
+
+	& when (@ms = true) {
+		@-ms-keyframes @name {
+			@content();
+		}
+	}
+
+	& when (@o = true) {
+		@-o-keyframes @name {
+			@content();
+		}
+	}
+
+	@keyframes @name {
+		@content();
+	}
+}
+
+.hardwareAccel() {
+	.prefixed(transform, translateZ(0));
+}
+
+.improveAntiAlias() {
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.fontSmooth() {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.forceBlockLevel() {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.hacks() {
+	.forceBlockLevel();
+	.hardwareAccel();
+	.improveAntiAlias();
+	.fontSmooth();
+}

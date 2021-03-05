@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="256px" height="256px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2560 2560"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#98C73D}
+   ]]>
+  </style>
+ </defs>
+  <path class="fil1" d="M922.4 2511.6c-245.6,-322.1 -570.1,-630.5 -892,-821.5 -19.7,-11.7 -30.8,-31.5 -30.4,-54.4 0.4,-22.9 12.1,-42.4 32.2,-53.5l433.1 -238.6c28.1,-15.5 63,-7.2 81.2,19.2l331.7 482.9c13.3,19.3 34.6,29.1 57.9,26.6 23.4,-2.6 42.1,-16.7 50.9,-38.5 322.1,-797.1 963.4,-1471.6 1362.6,-1795.8 20,-16.2 46.2,-18.7 68.7,-6.5 22.6,12.2 34.9,35.5 32.4,61 -23.9,235.7 12.7,419.1 102.7,602.3 8,16.2 8.7,33.2 2.1,50.1 -6.6,16.8 -18.6,28.8 -35.5,35.3 -479.3,184.3 -1129.5,943.8 -1491.8,1720 -9.5,20.3 -27.4,33.1 -49.7,35.5 -22.2,2.4 -42.5,-6.3 -56.1,-24.1z"/>
+</svg>

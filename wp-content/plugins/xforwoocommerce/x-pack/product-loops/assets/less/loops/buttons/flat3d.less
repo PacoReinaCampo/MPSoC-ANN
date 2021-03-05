@@ -1,0 +1,104 @@
+@btn_accent: @accent_color;
+@btn_accent_spinned: darken( spin( @accent_color, 5 ), 10% );
+@btn_hover: @hover_color;
+@btn_hover_spinned: darken( spin( @hover_color, 5 ), 10% );
+
+.pl-button {
+	.hacks();
+	.create-size(@text_size, font-size, 1, 0.1);
+	line-height: 3em;
+	top: .25em;
+	z-index: 1;
+	position: relative;
+	display: inline-block;
+	background-size: 100%;
+	padding: 0 2em .75em;
+	border-radius: 2px;
+	cursor: pointer;
+	transition-timing-function: linear;
+	height: 3em;
+	box-shadow: 0 .25em 0 0 rgba(0,0,0,0.2);
+	white-space:nowrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	will-change: ~"line-height, background";
+	text-align: center;
+	border: none;
+	vertical-align: middle;
+	outline: 0;
+	-webkit-tap-highlight-color: transparent;
+	color:contrast(@btn_accent, #444444, #ffffff, 70%);
+	background: @btn_accent;
+	background: -moz-linear-gradient(0, @btn_accent_spinned 0%, @btn_accent 100%);
+	background: -webkit-linear-gradient(bottom, @btn_accent_spinned 0%, @btn_accent 100%);
+	background: linear-gradient(0, @btn_accent_spinned 0%, @btn_accent 100%);
+	.prefixed(transition-timing-function, ~"linear");
+	.prefixed(transition-duration, @fastDuration);
+	.prefixed(transition-property, ~"line-height, background");
+}
+
+&.pl-table .pl-button,
+&.pl-quickview-product .pl-button {
+	font-size: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.pl-button:hover {
+	line-height: 3.5em;
+	color:contrast(@btn_hover, #444444, #ffffff, 70%);
+	background: @btn_hover;
+	background: -moz-linear-gradient(0, @btn_hover_spinned 0%, @btn_hover 100%);
+	background: -webkit-linear-gradient(bottom, @btn_hover_spinned 0%, @btn_hover 100%);
+	background: linear-gradient(0, @btn_hover_spinned 0%, @btn_hover 100%);
+}
+
+.pl-button:before {
+	content: '';
+	position: absolute;
+	top: -.5em;
+	left: 0;
+	bottom: .5em;
+	right: 0;
+	border-radius: 2px;
+	z-index: -1;
+	will-change: ~"transform, background";
+	background: @btn_accent;
+	background: -moz-linear-gradient(-90, @btn_accent_spinned 0%, @btn_accent 100%);
+	background: -webkit-linear-gradient(right, @btn_accent_spinned 0%, @btn_accent 100%);
+	background: linear-gradient(-90, @btn_accent_spinned 0%, @btn_accent 100%);
+	.prefixed(transition-timing-function, ~"linear");
+	.prefixed(transition-duration, @fastDuration);
+	.prefixed(transition-property, ~"transform, background");
+}
+.pl-button:hover:before {
+	transform: translateY(.25em);
+	background: @btn_hover;
+	background: -moz-linear-gradient(-90, @btn_hover_spinned 0%, @btn_hover 100%);
+	background: -webkit-linear-gradient(right, @btn_hover_spinned 0%, @btn_hover 100%);
+	background: linear-gradient(-90, @btn_hover_spinned 0%, @btn_hover 100%);
+}
+
+.pl-cart:after,
+.pl-checkout:after {
+	transform: translateY(-0.25em);
+	.prefixed(transition-timing-function, ~"linear");
+	.prefixed(transition-duration, @fastDuration);
+	.prefixed(transition-property, ~"transform");
+}
+.pl-cart:hover:after,
+.pl-checkout:hover:after {
+	transform: translateY(0);
+}
+
+.pl-adding-to-cart:after {
+	margin-top: -.85em;
+	.prefixed(transition-timing-function, ~"linear");
+	.prefixed(transition-duration, @fastDuration);
+	.prefixed(transition-property, ~"margin-top");
+}
+.pl-adding-to-cart:hover:after {
+	margin-top: -.6em;
+}

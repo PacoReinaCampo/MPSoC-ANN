@@ -1,0 +1,257 @@
+/*------------------------------------------------------------------
+[Autopilot SEO for WooCommerce CSS]
+
+[Table of contents]
+
+1. SEO Dashboard
+2. SEO Admin
+3. Highlight Within Textarea
+-------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+[SEO Dashboard]
+-------------------------------------------------------------------*/
+
+.seo-alexa {
+	max-width: 70em;
+}
+
+.seo-alexa h1 {
+	font-weight: bold;
+}
+
+#seo-alexa-rating {
+	position: relative;
+	float: right;
+	padding: 1em 2em;
+	background-color: #f4f4f4;
+	margin-left: 1em;
+}
+
+	#seo-alexa-rating span.rating {
+		font-size: 4em;
+		line-height: 1.125em;
+		font-weight: 700;
+		color: #4772d9;
+		background: -webkit-linear-gradient(#4772d9,#4772d9 30%,#7870e8 70%,#7870e8);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	#seo-alexa-rating span.change {
+		display: inline-block;
+		background-color: #66cb49;
+		color: #fff;
+		vertical-align: top;
+		padding: .25em .5em;
+		border-radius: 3px;
+		margin-left: .5em;
+	}
+
+		#seo-alexa-rating span.change.negative {
+			background-color: #ce1c44;
+		}
+
+.seo-alexa-loading {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	border: 1px solid #ccc;
+	border-top-color: #0079ff;
+	border-radius: 100px;
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#svx-settings-main-dashboard #svx-settings-header,
+#svx-settings-main-dashboard #svx-settings-footer {
+	display:none;
+}
+
+.check-options {
+	margin-bottom: 3em;
+	font-weight: 600;
+}
+
+.check-options span {
+	display: inline-block;
+	padding: .25em .5em;
+	border-radius: 3px;
+	margin-left: .5em;
+	margin-right: 1em;
+	font-weight: 500;
+	color: #7b7b7b;
+}
+
+.option-set {
+	background-color: #ceffd6;
+}
+
+.option-notset {
+	background-color: #ffd4de;
+}
+
+
+/*------------------------------------------------------------------
+[SEO Admin]
+-------------------------------------------------------------------*/
+
+.wcmn-seo-terms {
+	max-width: 60em;
+}
+
+.wcmn-seo-terms span {
+	display: inline-block;
+	padding: .25em .5em;
+	background-color: #c8daff;
+	font-size: 13px;
+	font-weight: 500;
+	border-radius: 3px;
+	cursor: pointer;
+	margin: .5em .5em 0 0;
+}
+
+.wcmn-seo-terms span.woocommerce {
+	background-color: #f8bbfb;
+}
+
+.wcmn-seo-terms span.archive {
+	background-color: #fef49e;
+}
+
+.wcmn-seo-terms span.special {
+	background-color: #a3fac8;
+}
+
+.wcmn-seo-terms span.separator {
+	background-color: #e4dae1;
+}
+
+.seo-metabox-wrapper hr {
+	margin: 3em 0 2em;
+}
+
+.seo-metabox-wrapper input {
+	width: 100%;
+	max-width: 30em;
+}
+
+.seo-metabox-wrapper textarea {
+	font-size: 16px !important;
+	width: 100%;
+	max-width: 40em;
+	min-height: 10em;
+}
+
+
+/*------------------------------------------------------------------
+[Highlight Within Textarea]
+-------------------------------------------------------------------*/
+
+.hwt-container * {
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	line-height: 1.125em !important;
+}
+.hwt-container textarea {
+	padding: 5px !important;
+}
+.hwt-container {
+	display: inline-block !important;
+	width: 100% !important;
+	position: relative;
+	overflow: hidden !important;
+	-webkit-text-size-adjust: none !important;
+}
+
+.hwt-backdrop {
+	position: absolute !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	border: 1px solid transparent;
+	padding: 5px !important;
+}
+
+.hwt-highlights {
+	width: auto !important;
+	height: auto !important;
+	border-color: transparent !important;
+	white-space: pre-wrap !important;
+	word-wrap: break-word !important;
+	color: transparent !important;
+	overflow: hidden !important;
+}
+
+.hwt-input {
+	display: block !important;
+	position: relative !important;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+}
+
+.hwt-content {
+	background: none transparent !important;
+}
+
+.hwt-content mark {
+	display: inline-block;
+	padding: 0 !important;
+	color: inherit;
+	background-color: #c8daff;
+	border-radius: 3px;
+}
+
+.hwt-content mark.woocommerce {
+	background-color: #f8bbfb;
+}
+
+.hwt-content mark.archive {
+	background-color: #fef49e;
+}
+
+.hwt-content mark.special {
+	background-color: #a3fac8;
+}
+
+.hwt-content mark.separator {
+	background-color: #e4dae1;
+}

@@ -1,0 +1,775 @@
+# Translation of Plugins - Activity Log - Stable (latest release) in Portuguese (Portugal)
+# This file is distributed under the same license as the Plugins - Activity Log - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-09-21 08:51:40+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: pt\n"
+"Project-Id-Version: Plugins - Activity Log - Stable (latest release)\n"
+
+#. Author URI of the plugin
+msgid "https://activitylog.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
+msgstr "https://activitylog.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
+
+#. Author of the plugin
+msgid "Activity Log Team"
+msgstr "Activity Log Team"
+
+#. Plugin URI of the plugin
+msgid "https://activitylog.io/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
+msgstr "https://activitylog.io/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
+
+#: classes/class-aal-privacy.php:106
+msgid "If you are a registered user, we save your content activity like create/update/delete posts and comments."
+msgstr "Se estiver registado, são guardados os dados da sua actividade, como criar, actualizar ou eliminar artigos e comentários."
+
+#: classes/class-aal-privacy.php:72
+msgid "Object Subtype"
+msgstr "Subtipo de objecto"
+
+#: classes/class-aal-privacy.php:60
+msgid "Time"
+msgstr "Hora"
+
+#: classes/class-aal-privacy.php:19
+msgid "Activity Log Plugin"
+msgstr "Plugin Activity Log"
+
+#: classes/class-aal-activity-log-list-table.php:288
+msgid "Export as %s"
+msgstr "Exportar como %s"
+
+#: classes/class-aal-activity-log-list-table.php:269
+msgid "Export File Format"
+msgstr "Formato do ficheiro de exportação"
+
+#: classes/class-aal-activity-log-list-table.php:286
+msgid "Export filtered records as %s"
+msgstr "Exportar registos filtrados como %s"
+
+#: classes/class-aal-settings.php:489
+msgid "and"
+msgstr "e"
+
+#: classes/class-aal-admin-ui.php:16 classes/class-aal-admin-ui.php:26
+msgctxt "Page and Menu Title"
+msgid "Activity Log"
+msgstr "Registo de actividade"
+
+#: classes/class-aal-admin-ui.php:195
+msgid "Learn more about Elementor"
+msgstr "Saiba mais sobre o Elementor"
+
+#: classes/class-aal-admin-ui.php:199
+msgid "Install Now For Free!"
+msgstr "Instale agora gratuitamente!"
+
+#: classes/class-aal-admin-ui.php:193
+msgid "Do You Like Activity Log? You'll Love Elementor!"
+msgstr "Gosta do Activity Log? Vai adorar o Elementor!"
+
+#: classes/class-aal-admin-ui.php:194
+msgid "Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design. The most advanced frontend drag & drop page builder."
+msgstr "Crie sites com uma imagem perfeita em tempo recorde. Qualquer tema, qualquer página, qualquer design. O mais avançado construtor de páginas de frente de site através duma interface de arrastar e largar."
+
+#: i18n/strings.php:17
+msgid "restored"
+msgstr "Reposto"
+
+#: notifications/class-aal-notification-email.php:15
+msgid "Email"
+msgstr "Email"
+
+#: classes/class-aal-activity-log-list-table.php:182
+#: classes/class-aal-activity-log-list-table.php:371
+#: notifications/abstract-class-aal-notification-base.php:121
+msgid "N/A"
+msgstr "N/D"
+
+#: i18n/strings.php:142
+msgid "Export"
+msgstr "Exportar"
+
+#: notifications/abstract-class-aal-notification-base.php:102
+msgid "IP Address"
+msgstr "Endereço IP"
+
+#: notifications/class-aal-notification-email.php:69
+msgid "Message"
+msgstr "Mensagem"
+
+#: notifications/class-aal-notification-email.php:67
+msgid "From Email"
+msgstr "Email do remetente"
+
+#: notifications/class-aal-notification-email.php:68
+msgid "To Email"
+msgstr "Email do destinatário"
+
+#: notifications/class-aal-notification-email.php:67
+msgid "The source Email address"
+msgstr "O endereço de email do remetente"
+
+#: notifications/class-aal-notification-email.php:68
+msgid "The Email address notifications will be sent to"
+msgstr "O endereço de email para onde as notificações serão enviadas"
+
+#: classes/class-aal-privacy.php:68
+#: notifications/abstract-class-aal-notification-base.php:99
+msgid "Object Type"
+msgstr "Tipo de objecto"
+
+#: notifications/class-aal-notification-email.php:16
+msgid "Get notified by Email."
+msgstr "Obter notificações por email."
+
+#: notifications/class-aal-notification-email.php:49
+msgid "New notification from Activity Log"
+msgstr "Nova notificação do Activity Log."
+
+#: notifications/class-aal-notification-email.php:69
+msgid "Customize the message using the following placeholders: %s"
+msgstr "Personalize a mensagem com os seguintes <em>placeholders</em>: %s"
+
+#: i18n/strings.php:16
+msgid "trashed"
+msgstr "No lixo"
+
+#: i18n/strings.php:61
+msgid "unapproved"
+msgstr "Reprovado"
+
+#: i18n/strings.php:63
+msgid "spammed"
+msgstr "Marcado como spam"
+
+#: i18n/strings.php:64
+msgid "unspammed"
+msgstr "Desamarcado como spam"
+
+#: i18n/strings.php:69
+msgid "blogname"
+msgstr "Nome do site"
+
+#: i18n/strings.php:70
+msgid "blogdescription"
+msgstr "Descrição do site"
+
+#: i18n/strings.php:71
+msgid "siteurl"
+msgstr "URL do site"
+
+#: i18n/strings.php:72
+msgid "home"
+msgstr "Página inicial"
+
+#: i18n/strings.php:73
+msgid "admin_email"
+msgstr "Email do administrador"
+
+#: i18n/strings.php:75
+msgid "default_role"
+msgstr "Papel por omissão"
+
+#: i18n/strings.php:76
+msgid "timezone_string"
+msgstr "Fuso horário"
+
+#: i18n/strings.php:77
+msgid "date_format"
+msgstr "Formato de data"
+
+#: i18n/strings.php:78
+msgid "time_format"
+msgstr "Formato de hora"
+
+#: i18n/strings.php:79
+msgid "start_of_week"
+msgstr "Início da semana"
+
+#: i18n/strings.php:84
+msgid "default_category"
+msgstr "Categoria por omissão"
+
+#: i18n/strings.php:85
+msgid "default_post_format"
+msgstr "Formato de artigo por omissão"
+
+#: i18n/strings.php:86
+msgid "mailserver_url"
+msgstr "Servidor de email"
+
+#: i18n/strings.php:87
+msgid "mailserver_login"
+msgstr "Nome de utilizador do servidor de email"
+
+#: i18n/strings.php:88
+msgid "mailserver_pass"
+msgstr "Senha do servidor de email"
+
+#: i18n/strings.php:89
+msgid "default_email_category"
+msgstr "Categoria da mensagem por omissão"
+
+#: i18n/strings.php:96
+msgid "posts_per_page"
+msgstr "Artigos por página"
+
+#: i18n/strings.php:97
+msgid "posts_per_rss"
+msgstr "Artigos por RSS"
+
+#: i18n/strings.php:98
+msgid "rss_use_excerpt"
+msgstr "Excerto em RSS"
+
+#: i18n/strings.php:112
+msgid "comments_per_page"
+msgstr "Comentários por página"
+
+#: i18n/strings.php:114
+msgid "comment_order"
+msgstr "Ordem dos comentários"
+
+#: i18n/strings.php:117
+msgid "comment_moderation"
+msgstr "Moderação de comentários"
+
+#: i18n/strings.php:122
+msgid "show_avatars"
+msgstr "Mostrar avatars"
+
+#: i18n/strings.php:123
+msgid "avatar_rating"
+msgstr "Classificação máxima"
+
+#: i18n/strings.php:124
+msgid "avatar_default"
+msgstr "Avatar por omissão"
+
+#: i18n/strings.php:127
+msgid "thumbnail_size_w"
+msgstr "Largura imagens miniatura"
+
+#: i18n/strings.php:128
+msgid "thumbnail_size_h"
+msgstr "Altura imagens miniatura"
+
+#: i18n/strings.php:129
+msgid "thumbnail_crop"
+msgstr "Cortar imagens miniatura"
+
+#: i18n/strings.php:130
+msgid "medium_size_w"
+msgstr "Largura imagens médias"
+
+#: i18n/strings.php:131
+msgid "medium_size_h"
+msgstr "Altura imagens médias"
+
+#: i18n/strings.php:132
+msgid "large_size_w"
+msgstr "Largura imagens grandes"
+
+#: i18n/strings.php:133
+msgid "large_size_h"
+msgstr "Altura imagens grandes"
+
+#: i18n/strings.php:134
+msgid "uploads_use_yearmonth_folders"
+msgstr "Carregamentos em pastas de ano e mês"
+
+#: i18n/strings.php:137
+msgid "permalink_structure"
+msgstr "Ligações permanentes"
+
+#: i18n/strings.php:138
+msgid "category_base"
+msgstr "Base das categorias"
+
+#: i18n/strings.php:139
+msgid "tag_base"
+msgstr "Base das etiquetas"
+
+#: i18n/strings.php:143
+msgid "downloaded"
+msgstr "Descarregado"
+
+#: notifications/class-aal-notification-email.php:65
+msgid ""
+"Hi there!\n"
+"\n"
+"A notification condition on [sitename] was matched. Here are the details:\n"
+"\n"
+"[action-details]\n"
+"\n"
+"Sent by ARYO Activity Log"
+msgstr ""
+"Olá!\n"
+"\n"
+"Foi correspondida uma condição de notificação em [sitename]. Aqui estão os detalhes:\n"
+"\n"
+"[action-details]\n"
+"\n"
+"Enviado por ARYO Activity Log"
+
+#: notifications/abstract-class-aal-notification-base.php:100
+msgid "Object Name"
+msgstr "Nome do objecto"
+
+#: i18n/strings.php:62
+msgid "untrashed"
+msgstr "Removido do lixo"
+
+#: i18n/strings.php:74
+msgid "users_can_register"
+msgstr "Permissão de registo para qualquer pessoa"
+
+#: i18n/strings.php:82
+msgid "use_smilies"
+msgstr "Conversão de ícones expressivos"
+
+#: i18n/strings.php:83
+msgid "use_balanceTags"
+msgstr "Correcção automática de XHTML incorrecto"
+
+#: i18n/strings.php:90
+msgid "ping_sites"
+msgstr "Sites dos serviços de actualização"
+
+#: i18n/strings.php:93
+msgid "show_on_front"
+msgstr "Página inicial apresentada"
+
+#: i18n/strings.php:94
+msgid "page_on_front"
+msgstr "Página inicial"
+
+#: i18n/strings.php:95
+msgid "page_for_posts"
+msgstr "Página de artigos"
+
+#: i18n/strings.php:99
+msgid "blog_public"
+msgstr "Visibilidade nos motores de pesquisa"
+
+#: i18n/strings.php:102
+msgid "default_pingback_flag"
+msgstr "Notificações de outros sites (pingbacks e trackbacks) em novos artigos"
+
+#: i18n/strings.php:103
+msgid "default_ping_status"
+msgstr "Notificações dos sites ligados aos artigos"
+
+#: i18n/strings.php:104
+msgid "default_comment_status"
+msgstr "Comentários em novos artigos"
+
+#: i18n/strings.php:105
+msgid "require_name_email"
+msgstr "Nome e email obrigatórios para comentar"
+
+#: i18n/strings.php:106
+msgid "comment_registration"
+msgstr "Registo obrigatório para comentar"
+
+#: i18n/strings.php:107
+msgid "close_comments_for_old_posts"
+msgstr "Fechar comentários em artigos antigos"
+
+#: i18n/strings.php:108
+msgid "close_comments_days_old"
+msgstr "Número de dias até fechar comentários"
+
+#: i18n/strings.php:109
+msgid "thread_comments"
+msgstr "Comentários em conversa"
+
+#: i18n/strings.php:110
+msgid "thread_comments_depth"
+msgstr "Níveis de comentários em conversa"
+
+#: i18n/strings.php:111
+msgid "page_comments"
+msgstr "Dividir comentários por páginas"
+
+#: i18n/strings.php:113
+msgid "default_comments_page"
+msgstr "Ordem das páginas dos comentários"
+
+#: i18n/strings.php:115
+msgid "comments_notify"
+msgstr "Notificação de comentário"
+
+#: i18n/strings.php:116
+msgid "moderation_notify"
+msgstr "Notificação de moderação"
+
+#: i18n/strings.php:118
+msgid "comment_whitelist"
+msgstr "Aprovação prévia de autor de comentários"
+
+#: i18n/strings.php:119
+msgid "comment_max_links"
+msgstr "Quantidade de ligações por comentário"
+
+#: i18n/strings.php:120
+msgid "moderation_keys"
+msgstr "Palavras-chave para moderação"
+
+#: i18n/strings.php:121
+msgid "blacklist_keys"
+msgstr "Palavras-chave da lista negra"
+
+#: classes/class-aal-settings.php:29 classes/class-aal-settings.php:44
+msgid "Settings"
+msgstr "Definições"
+
+#: i18n/strings.php:8
+msgid "Administrator"
+msgstr "Administrador"
+
+#: classes/class-aal-activity-log-list-table.php:176
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: classes/class-aal-settings.php:196
+msgid "General"
+msgstr "Geral"
+
+#: classes/class-aal-activity-log-list-table.php:123
+msgid "Type"
+msgstr "Tipo"
+
+#: i18n/strings.php:37
+msgid "Theme"
+msgstr "Tema"
+
+#: classes/class-aal-activity-log-list-table.php:120
+msgid "Date"
+msgstr "Data"
+
+#: classes/class-aal-activity-log-list-table.php:245
+msgid "Search"
+msgstr "Pesquisar"
+
+#: classes/class-aal-activity-log-list-table.php:344
+msgid "Filter"
+msgstr "Filtrar"
+
+#: i18n/strings.php:24 classes/class-aal-settings.php:447
+#: notifications/abstract-class-aal-notification-base.php:98
+msgid "User"
+msgstr "Utilizador"
+
+#: i18n/strings.php:58
+msgid "Comments"
+msgstr "Comentários"
+
+#: classes/class-aal-privacy.php:64
+#: classes/class-aal-activity-log-list-table.php:125
+msgid "Action"
+msgstr "Acção"
+
+#: classes/class-aal-activity-log-list-table.php:225
+msgid "All"
+msgstr "Tudo"
+
+#: classes/class-aal-help.php:21
+msgid "Overview"
+msgstr "Visão geral"
+
+#: classes/class-aal-activity-log-list-table.php:147
+msgid "%s ago"
+msgstr "Há %s"
+
+#: classes/class-aal-privacy.php:76
+#: classes/class-aal-activity-log-list-table.php:126
+msgid "Description"
+msgstr "Descrição"
+
+#: classes/class-aal-activity-log-list-table.php:121
+msgid "Author"
+msgstr "Autor"
+
+#: classes/class-aal-settings.php:430
+msgid "No"
+msgstr "Não"
+
+#: classes/class-aal-activity-log-list-table.php:335
+msgid "Yesterday"
+msgstr "Ontem"
+
+#: classes/class-aal-settings.php:429
+msgid "Yes"
+msgstr "Sim"
+
+#: classes/class-aal-activity-log-list-table.php:334
+msgid "Today"
+msgstr "Hoje"
+
+#: classes/class-aal-activity-log-list-table.php:336
+msgid "Week"
+msgstr "Semana"
+
+#: classes/class-aal-activity-log-list-table.php:337
+msgid "Month"
+msgstr "Mês"
+
+#: classes/class-aal-help.php:24 classes/class-aal-settings.php:125
+#: classes/class-aal-settings.php:197
+msgid "Notifications"
+msgstr "Notificações"
+
+#: classes/class-aal-settings.php:26
+msgid "GitHub"
+msgstr "GitHub"
+
+#. Plugin Name of the plugin
+#: i18n/strings.php:5 classes/class-aal-privacy.php:53
+#: classes/class-aal-privacy.php:109
+msgid "Activity Log"
+msgstr "Activity Log"
+
+#: classes/class-aal-settings.php:89
+msgid "Keep logs for"
+msgstr "Manter registos durante"
+
+#: classes/class-aal-settings.php:98
+msgid "days."
+msgstr "dias."
+
+#: classes/class-aal-settings.php:160
+msgid "Enable?"
+msgstr "Activar?"
+
+#: classes/class-aal-settings.php:449
+msgid "Action Performed"
+msgstr "Acção executada"
+
+#: classes/class-aal-settings.php:448
+#: notifications/abstract-class-aal-notification-base.php:101
+msgid "Action Type"
+msgstr "Tipo de acção"
+
+#: classes/class-aal-activity-log-list-table.php:382
+msgid "All Users"
+msgstr "Todos os utilizadores"
+
+#: classes/class-aal-activity-log-list-table.php:399
+msgid "All Types"
+msgstr "Todos os tipos"
+
+#: classes/class-aal-activity-log-list-table.php:423
+msgid "All Actions"
+msgstr "Todas as acções"
+
+#: classes/class-aal-privacy.php:80
+#: classes/class-aal-activity-log-list-table.php:122
+msgid "IP"
+msgstr "IP"
+
+#: classes/class-aal-activity-log-list-table.php:109
+msgid "Activities"
+msgstr "Actividades"
+
+#: i18n/strings.php:38
+msgid "Theme Customizer"
+msgstr "Personalizador do tema"
+
+#: i18n/strings.php:41
+msgid "Widget"
+msgstr "Widget"
+
+#: i18n/strings.php:44
+msgid "Options"
+msgstr "Opções"
+
+#: i18n/strings.php:47
+msgid "Menu"
+msgstr "Menu"
+
+#: i18n/strings.php:50
+msgid "Taxonomy"
+msgstr "Taxonomia"
+
+#: i18n/strings.php:53
+msgid "Core"
+msgstr "Core"
+
+#: i18n/strings.php:54
+msgid "WordPress Updated"
+msgstr "WordPress actualizado"
+
+#: i18n/strings.php:55
+msgid "WordPress Auto Updated"
+msgstr "WordPress actualizado automaticamente"
+
+#: i18n/strings.php:34
+msgid "File Updated"
+msgstr "Ficheiro actualizado"
+
+#: i18n/strings.php:9
+msgid "Editor"
+msgstr "Editor"
+
+#: i18n/strings.php:30
+msgid "Plugin"
+msgstr "Plugin"
+
+#: classes/class-aal-activity-log-list-table.php:124
+msgid "Label"
+msgstr "Legenda"
+
+#: classes/class-aal-settings.php:115
+msgid "Warning: Clicking this will delete all activities from the database."
+msgstr "Aviso: ao clicar aqui todas as actividades serão eliminadas da base de dados."
+
+#: classes/class-aal-settings.php:111
+msgid "<a href=\"%s\" id=\"%s\">Reset Database</a>"
+msgstr "<a href=\"%s\" id=\"%s\">Repor base de dados</a>"
+
+#: classes/class-aal-settings.php:106
+msgid "Delete Log Activities"
+msgstr "Eliminar registo de actividades"
+
+#: classes/class-aal-settings.php:82
+msgid "Display Options"
+msgstr "Opções de visualização"
+
+#: classes/class-aal-settings.php:99 classes/class-aal-settings.php:139
+msgid "Maximum number of days to keep activity log. Leave blank to keep activity log forever (not recommended)."
+msgstr "Número máximo de dias a manter o registo de actividades. Deixe em branco para manter o registo de actividades permanentemente (não recomendado)."
+
+#: classes/class-aal-settings.php:245
+msgid "All activities have been successfully deleted."
+msgstr "Todas as actividades foram eliminadas com sucesso."
+
+#: classes/class-aal-settings.php:256
+msgid "Are you sure you want to do this action?"
+msgstr "Tem a certeza que quer executar esta acção?"
+
+#: i18n/strings.php:12
+msgid "Post"
+msgstr "Conteúdo"
+
+#: i18n/strings.php:20
+msgid "Attachment"
+msgstr "Anexo"
+
+#: hooks/class-aal-hook-posts.php:10
+msgid "(no title)"
+msgstr "(sem título)"
+
+#: classes/class-aal-settings.php:324
+msgid "These are some basic settings for Activity Log."
+msgstr "Estas são algumas definições básicas do Activity Log."
+
+#: classes/class-aal-settings.php:330
+msgid "Serve yourself with custom-tailored notifications. First, define your conditions. Then, choose how the notifications will be sent."
+msgstr "Crie as suas notificações personalizadas. Primeiro defina as suas condições. Depois escolha como as notificações serão enviadas."
+
+#: classes/class-aal-help.php:25
+msgid ""
+"This screen lets you control what will happen once a user on your site does something you define. For instance, let us assume that you have created a user on your site\n"
+"                    for your content editor. Now, let's say that every time that user updates a post, you want to know about it. You can easily do it from this page."
+msgstr ""
+"Esta ecrã permite-lhe controlar o que acontece quando um utilizador do seu site executa uma acção previamente definida. Por exemplo, assumindo que criou um utilizador no seu site\n"
+"                    para editar conteúdos. Digamos que gostaria de saber cada vez que o utilizador  actualiza um conteúdo. Pode facilmente fazê-lo a partir desta página."
+
+#: classes/class-aal-activity-log-list-table.php:333
+msgid "All Time"
+msgstr "Sempre"
+
+#: classes/class-aal-notifications.php:290
+msgid "The AAL notification handler you are trying to register does not exist."
+msgstr "O <handler> de notificação do AAL que tentou registar não existe."
+
+#: classes/class-aal-settings.php:132
+msgid "Notification Events"
+msgstr "Eventos a notificar"
+
+#: classes/class-aal-settings.php:453
+msgid "equals to"
+msgstr "é igual a"
+
+#: classes/class-aal-settings.php:454
+msgid "not equals to"
+msgstr "não é igual a"
+
+#: classes/class-aal-settings.php:464
+msgid "A notification will be sent upon a successful match with the following conditions:"
+msgstr "Será enviada uma notificação quando forem correspondidas com sucesso as seguintes condições:"
+
+#. Description of the plugin
+#: i18n/strings.php:6
+msgid "Get aware of any activities that are taking place on your dashboard! Imagine it like a black-box for your WordPress site. e.g. post was deleted, plugin was activated, user logged in or logged out - it's all these for you to see."
+msgstr "Tome conhecimento de quaisquer actividades que ocorram no seu painel! Funciona como uma caixa-negra para o seu WordPress. Por exemplo, quando um conteúdo é eliminado, um plugin é activado, um utilizador inicia ou termina a sessão, todo este tipo de eventos disponíveis para visualizar."
+
+#: i18n/strings.php:13
+msgid "created"
+msgstr "Criado"
+
+#: i18n/strings.php:14
+msgid "updated"
+msgstr "Actualizado"
+
+#: i18n/strings.php:15
+msgid "deleted"
+msgstr "Eliminado"
+
+#: i18n/strings.php:21
+msgid "added"
+msgstr "Adicionado"
+
+#: i18n/strings.php:25
+msgid "logged_out"
+msgstr "Terminou sessão"
+
+#: i18n/strings.php:26
+msgid "logged_in"
+msgstr "Iniciou sessão"
+
+#: i18n/strings.php:27
+msgid "wrong_password"
+msgstr "Senha errada"
+
+#: i18n/strings.php:31
+msgid "activated"
+msgstr "Activado"
+
+#: i18n/strings.php:32
+msgid "deactivated"
+msgstr "Desactivado"
+
+#: i18n/strings.php:33
+msgid "installed"
+msgstr "Instalado"
+
+#: i18n/strings.php:59
+msgid "pending"
+msgstr "Pendente"
+
+#: i18n/strings.php:60
+msgid "approved"
+msgstr "Aprovado"
+
+#: classes/class-aal-settings.php:43 classes/class-aal-settings.php:226
+msgid "Activity Log Settings"
+msgstr "Definições do registo de actividade"
+
+#: classes/class-aal-activity-log-list-table.php:358
+msgid "All Roles"
+msgstr "Todos os papéis"
+
+#: classes/class-aal-settings.php:267
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Não tem permissões suficientes para aceder a esta página."
+
+#: aryo-activity-log.php:126 aryo-activity-log.php:137
+msgid "Cheatin&#8217; huh?"
+msgstr "Enganou-se?"

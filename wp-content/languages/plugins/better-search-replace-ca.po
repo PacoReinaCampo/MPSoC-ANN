@@ -1,0 +1,242 @@
+# Translation of Plugins - Better Search Replace - Development (trunk) in Catalan
+# This file is distributed under the same license as the Plugins - Better Search Replace - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-08-03 06:41:55+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - Better Search Replace - Development (trunk)\n"
+
+#: templates/bsr-dashboard.php:115
+msgid "You'll also receive our awesome weekly posts from the Delicious Brains blog. Unsubscribe anytime."
+msgstr "També rebreu les nostres increïbles entrades setmanals des del blog Delicious Brains. Podeu cancel·lar la subscripció en qualsevol moment."
+
+#: templates/bsr-dashboard.php:126
+msgid "via WordPress.org"
+msgstr "via WordPress.org"
+
+#: templates/bsr-dashboard.php:111
+msgid "Send me the coupon"
+msgstr "Envia'm el cupo"
+
+#: templates/bsr-dashboard.php:104
+msgid "Last Name"
+msgstr "Cognoms"
+
+#: templates/bsr-dashboard.php:100
+msgid "First Name"
+msgstr "Nom"
+
+#: templates/bsr-dashboard.php:96
+msgid "Your Email"
+msgstr "La vostra adreça electrònica"
+
+#: templates/bsr-dashboard.php:92
+msgid "Submit your name and email and we'll send you a coupon for 20% off your upgrade to the pro version."
+msgstr "Trameteu el nom i correu electrònic i us enviarem un cupó de descompte del 20% en l'actualització a la versió professional."
+
+#: templates/bsr-dashboard.php:87
+msgid "20% Off!"
+msgstr "20% de descompte!"
+
+#: templates/bsr-dashboard.php:79
+msgid "Detailed report of exactly what was replaced"
+msgstr "Informe detallat del que s'ha substituït"
+
+#: templates/bsr-dashboard.php:78
+msgid "Import an SQL file and run a find/replace on it"
+msgstr "Importa un fitxer SQL i executa-hi una cerca/substitució"
+
+#: templates/bsr-dashboard.php:77
+msgid "Backup to an SQL file"
+msgstr "Còpia de seguretat en un fitxer SQL"
+
+#. Author of the plugin
+msgid "Delicious Brains"
+msgstr "Delicious Brains"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://bettersearchreplace.com"
+msgstr "https://bettersearchreplace.com"
+
+#: includes/class-bsr-admin.php:232
+msgid "seconds"
+msgstr "segons"
+
+#: includes/class-bsr-ajax.php:153
+msgid "Processing table %d of %d: %s"
+msgstr "S'està processant la taula %d de %d: %s"
+
+#: includes/class-bsr-admin.php:73
+msgid "Processing..."
+msgstr "Processant..."
+
+#. Description of the plugin
+msgid "A small plugin for running a search/replace on your WordPress database."
+msgstr "Una petita extensió per executar una cerca/substitució a la base de dades del WordPress."
+
+#: templates/bsr-settings.php:33
+msgid "If you're noticing timeouts or getting a white screen while running a search replace, try decreasing this value."
+msgstr "Si esteu notant el temps d’espera o obteniu una pantalla blanca durant l’execució d’una cerca, proveu a disminuir aquest valor."
+
+#: templates/bsr-settings.php:31
+msgid "Current Setting: "
+msgstr "Configuració actual:"
+
+#: templates/bsr-settings.php:27
+msgid "Max Page Size"
+msgstr "Mida màxima de la pàgina"
+
+#: templates/bsr-search-replace.php:76
+msgid "Run Search/Replace"
+msgstr "Executa una cerca/substitució"
+
+#: templates/bsr-search-replace.php:65
+msgid "If checked, no changes will be made to the database, allowing you to check the results beforehand."
+msgstr "Si està marcada, no es farà cap canvi a la base de dades, cosa que us permetrà comprovar els resultats per endavant."
+
+#: templates/bsr-search-replace.php:62
+msgid "Run as dry run?"
+msgstr "Executem de manera segura?"
+
+#: templates/bsr-search-replace.php:57
+msgid "If left unchecked, all database columns titled 'guid' will be skipped."
+msgstr "Si es deixa desmarcada, s'ometran totes les columnes de la base de dades anomenades 'guid'."
+
+#: templates/bsr-search-replace.php:54
+msgid "Replace GUIDs<a href=\"http://codex.wordpress.org/Changing_The_Site_URL#Important_GUID_Note\" target=\"_blank\">?</a>"
+msgstr "Substituïm els GUIDs<a href=\"http://codex.wordpress.org/Changing_The_Site_URL#Important_GUID_Note\" target=\"_blank\">?</a>"
+
+#: templates/bsr-search-replace.php:49
+msgid "Searches are case-sensitive by default."
+msgstr "Les cerques distingeixen, per defecte, entre majúscules i minúscules."
+
+#: templates/bsr-search-replace.php:46
+msgid "Case-Insensitive?"
+msgstr "No distingim entre majúscules i minúscules?"
+
+#: templates/bsr-search-replace.php:41
+msgid "Select multiple tables with Ctrl-Click for Windows or Cmd-Click for Mac."
+msgstr "Seleccioneu diverses taules amb Ctrl-Click per al Windows o Cmd-Click per al Mac."
+
+#: templates/bsr-search-replace.php:38
+msgid "Select tables"
+msgstr "Selecciona les taules"
+
+#: templates/bsr-search-replace.php:33
+msgid "Replace with"
+msgstr "Reemplaça amb"
+
+#: templates/bsr-search-replace.php:28
+msgid "Search for"
+msgstr "Cerca"
+
+#: templates/bsr-search-replace.php:23
+msgid "<strong>WARNING:</strong> Make sure you backup your database before using this plugin!"
+msgstr "<strong>AVÍS:</strong> assegureu-vos que feu còpies de seguretat de la base de dades abans d’utilitzar aquesta extensió!"
+
+#: templates/bsr-search-replace.php:22
+msgid "To get started, use the form below to enter the text to be replaced and select the tables to update."
+msgstr "Per començar, utilitzeu el formulari següent per introduir el text que cal substituir i seleccioneu les taules a actualitzar."
+
+#: templates/bsr-search-replace.php:21
+msgid "This tool allows you to search and replace text in your database (supports serialized arrays and objects)."
+msgstr "Aquesta eina us permet cercar i substituir text a la base de dades (suporta vectors i objectes en sèrie)."
+
+#: templates/bsr-help.php:30
+msgid "Download System Info"
+msgstr "Baixa la informació del sistema"
+
+#: templates/bsr-help.php:23
+msgid "Found a bug or have a feature request? Please submit an issue on <a href=\"%s\">GitHub</a>!"
+msgstr "Heu trobat un error o heu sol·licitat una funcionalitat? Trameteu un problema a <a href=\"%s\">GitHub</a>!"
+
+#: templates/bsr-help.php:21
+msgid "For premium features and priority email support, <a href=\"%s\" style=\"font-weight:bold;\">upgrade to pro</a>."
+msgstr "Per a funcionalitats prèmium i suport de correu electrònic prioritari, <a href=\"%s\" style=\"font-weight:bold;\">actualitzeu a la versió professional</a>."
+
+#: templates/bsr-help.php:19
+msgid "Free support is available on the <a href=\"%s\">plugin support forums</a>."
+msgstr "El suport gratuït està disponible als <a href=\"%s\">fòrums de suport d'extensions</a>."
+
+#: templates/bsr-help.php:17
+msgid "Help & Troubleshooting"
+msgstr "Ajuda i resolució de problemes"
+
+#: templates/bsr-dashboard.php:48
+msgid "Help"
+msgstr "Ajuda"
+
+#: templates/bsr-dashboard.php:47
+msgid "Settings"
+msgstr "Opcions"
+
+#: templates/bsr-dashboard.php:46
+msgid "Search/Replace"
+msgstr "Cerca/substitució"
+
+#: includes/class-bsr-db.php:285
+msgid "Error updating row: %d."
+msgstr "S'ha produït un error en actualitzar la fila: %d."
+
+#: includes/class-bsr-db.php:85
+msgid "(%s MB)"
+msgstr "(%s MB)"
+
+#: templates/bsr-dashboard.php:74 includes/class-bsr-admin.php:288
+msgid "Upgrade to Pro"
+msgstr "Actualitza a professional"
+
+#: includes/class-bsr-admin.php:241
+msgid "Learn more about the pro version"
+msgstr "Més informació sobre la versió professional"
+
+#: includes/class-bsr-admin.php:240
+msgid "Want even more details, easy database migrations, and saved search/replace profiles?"
+msgstr "Voleu més detalls, migracions fàcils de bases de dades i perfils de cerca/substitució desats?"
+
+#: includes/class-bsr-admin.php:211
+msgid "Time"
+msgstr "Temps"
+
+#: includes/class-bsr-admin.php:211
+msgid "Rows Updated"
+msgstr "S'han actualitzat les files"
+
+#: includes/class-bsr-admin.php:211
+msgid "Changes Found"
+msgstr "S'han trobat canvis"
+
+#: includes/class-bsr-admin.php:211
+msgid "Table"
+msgstr "Taula"
+
+#: includes/class-bsr-admin.php:112
+msgid "<p>During the search/replace, <strong>%d</strong> tables were searched, with <strong>%d</strong> cells changed in <strong>%d</strong> updates.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Search/Replace Details\">Click here</a> for more details.</p>"
+msgstr "<p>Durant la cerca/substitució, s’han cercat <strong>%d</strong> taules, amb <strong>%d</strong> cel·les canviades en les <strong>%d</strong> actualitzacions.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Detalls de la cerca/substitució\">feu clic aquí</a> per obtenir més informació.</p>"
+
+#: includes/class-bsr-admin.php:105
+msgid "<p><strong>DRY RUN:</strong> <strong>%d</strong> tables were searched, <strong>%d</strong> cells were found that need to be updated, and <strong>%d</strong> changes were made.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Dry Run Details\">Click here</a> for more details, or use the form below to run the search/replace.</p>"
+msgstr "<p><strong>EXECUCIÓ CONTROLADA:</strong> s'ha cercat en <strong>%d</strong> taules, s'han trobat <strong>%d</strong> cel·les que necessiten actualitzar-se i s'han fet <strong>%d</strong> canvis.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Detalls d'execució controlada\">Feu clic aquí</a> per a obtenir més detalls, o useu el formulari següent per a executar la cerca/substitució.</p>"
+
+#. Plugin Name of the plugin
+#: templates/bsr-dashboard.php:34 includes/class-bsr-admin.php:85
+msgid "Better Search Replace"
+msgstr "Better Search Replace"
+
+#: includes/class-bsr-admin.php:72
+msgid "An error occurred processing your request. Try decreasing the \"Max Page Size\", or contact support."
+msgstr "S'ha produït un error en processar la sol·licitud. Intenteu disminuir el paràmetre \"Mida de pàgina màxima\" o contacteu amb el suport."
+
+#: includes/class-bsr-admin.php:71
+msgid "Please select the tables that you want to update."
+msgstr "Seleccioneu les taules que voleu actualitzar."
+
+#: includes/class-bsr-admin.php:70
+msgid "No search string was defined, please enter a URL or string to search for."
+msgstr "No s’ha definit cap cadena de cerca. Introdueix un URL o cadena per cercar."

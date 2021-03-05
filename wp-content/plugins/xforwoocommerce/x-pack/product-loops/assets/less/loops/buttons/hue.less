@@ -1,0 +1,67 @@
+@btn_accent: @accent_color;
+@btn_accent_spinned: spin( @accent_color, -40 );
+@btn_hover: @hover_color;
+@btn_hover_spinned: spin( @hover_color, -40 );
+
+/*------------------------------------------------------------------
+[Button]
+-------------------------------------------------------------------*/
+
+.pl-button {
+	.hacks();
+	.create-size(@text_size, font-size, 1.25, 0.1);
+	line-height: 3em;
+	margin-bottom: 1em;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0,0,0,0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 1;
+	will-change: color, background-color, box-shadow;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	border-radius: 100px;
+	display: inline-block;
+	outline: 0;
+	.create-size(@text_size, padding-left, 2, 0.1);
+	.create-size(@text_size, padding-right, 2, 0.1);
+	vertical-align: middle;
+	-webkit-tap-highlight-color: transparent;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+	color: contrast( @accent_color, #444, #fff, 70% );
+	background: @btn_accent;
+	background: -moz-linear-gradient(-45deg, @btn_accent_spinned 0%, @btn_accent 100%);
+	background: -webkit-linear-gradient(-45deg, @btn_accent_spinned 0%, @btn_accent 100%);
+	background: linear-gradient(135deg, @btn_accent_spinned 0%, @btn_accent 100%);
+	.prefixed(transition-timing-function, ~"linear");
+	.prefixed(transition-duration, @fastDuration);
+}
+
+&.pl-table .pl-button,
+&.pl-quickview-product .pl-button {
+	font-size: 1.25em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.pl-button:hover {
+	color: contrast( @hover_color, #444, #fff, 70% );
+	background: @btn_hover;
+	background: -moz-linear-gradient(-45deg, @btn_hover_spinned 0%, @btn_hover 100%);
+	background: -webkit-linear-gradient(-45deg, @btn_hover_spinned 0%, @btn_hover 100%);
+	background: linear-gradient(135deg, @btn_hover_spinned 0%, @btn_hover 100%);
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.16), 0 4px 20px 0 rgba(0,0,0,0.12);
+}

@@ -1,0 +1,794 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Added to Cart Popup\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
+"POT-Creation-Date: 2019-09-30 09:44+0100\n"
+"PO-Revision-Date: 2019-09-30 10:21+0100\n"
+"Last-Translator: Fernando Tellado <fernando@tellado.es>\n"
+"Language-Team: YIThemes <plugins@yithemes.com>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"X-Poedit-KeywordsList: _e;_n:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;__\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../plugin-fw\n"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:77
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:164
+#: includes/admin-tables/class.yith-wacp-exclusions-prod-table.php:152
+msgid "Delete"
+msgstr "Borrar"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:177
+#: includes/admin-tables/class.yith-wacp-exclusions-prod-table.php:165
+msgid "Image"
+msgstr "Imagen"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:178
+msgid "Name"
+msgstr "Nombre"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:179
+msgid "Description"
+msgstr "Descripción"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:180
+msgid "Slug"
+msgstr "Slug"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:181
+msgid "Count"
+msgstr "Contador"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-cat-table.php:182
+#: includes/admin-tables/class.yith-wacp-exclusions-prod-table.php:169
+msgid "Actions"
+msgstr "Acciones"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-prod-table.php:130
+msgid "In Stock"
+msgstr "Hay existencias"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-prod-table.php:166
+msgid "Product"
+msgstr "Producto"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-prod-table.php:167
+msgid "Price"
+msgstr "Precio"
+
+#: includes/admin-tables/class.yith-wacp-exclusions-prod-table.php:168
+msgid "Stock Status"
+msgstr "Estado del inventario"
+
+#: includes/class.yith-wacp-admin-premium.php:178
+msgid "Style"
+msgstr "Estilo"
+
+#: includes/class.yith-wacp-admin-premium.php:179
+msgid "Mini Cart"
+msgstr "Mini carrito"
+
+#: includes/class.yith-wacp-admin-premium.php:180
+msgid "Product Exclusion List"
+msgstr "Lista de exclusión de productos"
+
+#: includes/class.yith-wacp-admin-premium.php:181
+msgid "Category Exclusion List"
+msgstr "Lista de exclusión de categorías"
+
+#: includes/class.yith-wacp-admin-premium.php:266
+msgid "Do you want to hard crop the image?"
+msgstr "¿Quieres recortar la imagen?"
+
+#: includes/class.yith-wacp-admin-premium.php:423
+#: templates/admin/exclusions-prod-table.php:39
+msgid "Search product..."
+msgstr "Buscar producto..."
+
+#: includes/class.yith-wacp-admin.php:142
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/class.yith-wacp-admin.php:146
+msgid "Premium Version"
+msgstr "Versión Premium"
+
+#: includes/class.yith-wacp-admin.php:152
+#: includes/class.yith-wacp-admin.php:153
+msgctxt "Plugin name"
+msgid "Added to Cart Popup"
+msgstr "Added to Cart Popup"
+
+#: includes/class.yith-wacp-frontend-premium.php:403
+msgid ""
+"There was a problem with your submission. Please check required fields below."
+msgstr ""
+"Ha ocurrido un error. Por favor, comprueba los campos obligatorios a "
+"continuación."
+
+#: includes/class.yith-wacp-frontend.php:144
+msgid "was added to your cart"
+msgstr "se ha añadido a tu carrito"
+
+#: includes/class.yith-wacp-frontend.php:149
+msgid "Added to your cart"
+msgstr "Añadido a tu carrito"
+
+#: includes/class.yith-wacp-frontend.php:155
+msgid "View cart"
+msgstr "Ver carrito"
+
+#: includes/class.yith-wacp-frontend.php:158
+msgid "Continue shopping"
+msgstr "Seguir comprando"
+
+#: includes/integrations/class.yith-wacp-ywcm-integration.php:71
+msgid "Show on \"Added to Cart\" popup"
+msgstr "Mostrar en la ventana emergente de “Añadido al carrito“"
+
+#: includes/integrations/class.yith-wacp-ywcm-integration.php:72
+msgid "Show this message also on YITH WooCommerce Added to Cart Popup"
+msgstr "Muestra este mensaje también en YITH WooCommerce Added to Cart Popup"
+
+#: init.php:43
+msgid ""
+"YITH WooCommerce Added to Cart Popup Premium is enabled but not effective. "
+"It requires WooCommerce in order to work."
+msgstr ""
+"YITH WooCommerce Added to Cart Popup Premium está activo pero no es "
+"efectivo. Requiere WooCommerce para funcionar."
+
+#: plugin-options/general-options.php:11
+msgid "General Options"
+msgstr "Opciones generales"
+
+#: plugin-options/general-options.php:18
+msgid "Popup Size"
+msgstr "Tamaño de la ventana emergente"
+
+#: plugin-options/general-options.php:19
+msgid "Set popup size."
+msgstr "Establecer tamaño de la ventana emergente."
+
+#: plugin-options/general-options.php:29
+msgid "Popup Animation"
+msgstr "Animación de la ventana emergente"
+
+#: plugin-options/general-options.php:30
+msgid "Select popup animation"
+msgstr "Seleccionar animación de la ventana emergente"
+
+#: plugin-options/general-options.php:33
+msgid "Fade In"
+msgstr "Desvanecer"
+
+#: plugin-options/general-options.php:34
+msgid "Slide In (Right)"
+msgstr "Deslizar (derecha)"
+
+#: plugin-options/general-options.php:35
+msgid "Slide In (Left)"
+msgstr "Deslizar (izquierda)"
+
+#: plugin-options/general-options.php:36
+msgid "Slide In (Bottom)"
+msgstr "Deslizar (abajo)"
+
+#: plugin-options/general-options.php:37
+msgid "Slide In (Top)"
+msgstr "Deslizar (arriba)"
+
+#: plugin-options/general-options.php:38
+msgid "3D Flip (Horizontal)"
+msgstr "Rotación 3D (horizontal)"
+
+#: plugin-options/general-options.php:39
+msgid "3D Flip (Vertical)"
+msgstr "Rotación 3D (vertical)"
+
+#: plugin-options/general-options.php:40
+msgid "Scale Up"
+msgstr "Ampliar"
+
+#: plugin-options/general-options.php:47
+#: plugin-options/mini-cart-options.php:18
+msgid "Enable Popup"
+msgstr "Activar ventana emergente"
+
+#: plugin-options/general-options.php:48
+msgid "On Archive Page"
+msgstr "En la página de archivo"
+
+#: plugin-options/general-options.php:57
+msgid "On Single Product Page"
+msgstr "En la página de producto"
+
+#: plugin-options/general-options.php:65
+msgid "Popup message"
+msgstr "Mensaje de la ventana emergente"
+
+#: plugin-options/general-options.php:68
+msgid "Product successfully added to your cart!"
+msgstr "¡Producto añadido con éxito al carrito!"
+
+#: plugin-options/general-options.php:73
+msgid "Select content"
+msgstr "Seleccionar contenido"
+
+#: plugin-options/general-options.php:74
+msgid "Choose whether to show the added product or the cart"
+msgstr "Elige si mostrar el producto añadido o el carrito"
+
+#: plugin-options/general-options.php:77
+msgid "Added product"
+msgstr "Producto añadido"
+
+#: plugin-options/general-options.php:78
+msgid "Cart"
+msgstr "Carrito"
+
+#: plugin-options/general-options.php:85
+msgid "Show product info"
+msgstr "Mostrar información del producto"
+
+#: plugin-options/general-options.php:86
+msgid "Choose to show the product info in the popup"
+msgstr ""
+"Selecciona para mostrar la información del producto en la ventana emergente"
+
+#: plugin-options/general-options.php:93
+msgid "Show product thumbnail"
+msgstr "Mostrar miniatura de producto"
+
+#: plugin-options/general-options.php:94
+msgid "Choose to show the product thumbnail in the popup"
+msgstr "Selecciona esto para mostrar la miniatura del producto en el carrito"
+
+#: plugin-options/general-options.php:102
+msgid "Thumbnail Size"
+msgstr "Tamaño de miniatura"
+
+#: plugin-options/general-options.php:103
+msgid ""
+"Set image size (in px). After changing these settings, you may need to %s."
+msgstr ""
+"Establecer tamaño de imagen (en px). Después de cambiar estos ajustes "
+"podrías tener que %s."
+
+#: plugin-options/general-options.php:103
+msgid "regenerate your thumbnails"
+msgstr "regenerar tus miniaturas"
+
+#: plugin-options/general-options.php:116
+msgid "Show product variations"
+msgstr "Mostrar variaciones de producto"
+
+#: plugin-options/general-options.php:117
+msgid ""
+"Choose to show product variations details ( only available of variable "
+"product )."
+msgstr ""
+"Elige si mostrar los detalles de variaciones de productos (sólo disponible "
+"para productos variables)."
+
+#: plugin-options/general-options.php:124
+msgid "Show cart total"
+msgstr "Mostrar total del carrito"
+
+#: plugin-options/general-options.php:125
+msgid "Choose to show cart total in the popup"
+msgstr "Elige si mostrar el total del carrito en la ventana emergente"
+
+#: plugin-options/general-options.php:132
+msgid "Show shipping fees"
+msgstr "Mostrar gastos de envío"
+
+#: plugin-options/general-options.php:133
+msgid "Choose to show shipping fees in the popup"
+msgstr "Elige si mostrar los gastos de envío en la ventana emergente"
+
+#: plugin-options/general-options.php:140
+msgid "Show tax amount"
+msgstr "Mostrar importe de los impuestos"
+
+#: plugin-options/general-options.php:141
+msgid "Choose to show tax cart amount in the popup"
+msgstr ""
+"Elige si mostrar el importe de los impuestos del carrito en la ventana "
+"emergente"
+
+#: plugin-options/general-options.php:148
+msgid "Show \"View Cart\" Button"
+msgstr "Mostrar botón \"Ver carrito\""
+
+#: plugin-options/general-options.php:149
+msgid "Choose to show \"View Cart\" button in the popup"
+msgstr "Elige si mostrar el botón \"Ver carrito\" en la ventana emergente"
+
+#: plugin-options/general-options.php:156
+msgid "\"View Cart\" Button Text"
+msgstr "Texto del botón \"Ver carrito\""
+
+#: plugin-options/general-options.php:157
+msgid "Text for \"View Cart\" button"
+msgstr "Texto para el botón \"Ver carrito\""
+
+#: plugin-options/general-options.php:159
+msgid "View Cart"
+msgstr "Ver carrito"
+
+#: plugin-options/general-options.php:167
+msgid "Show \"Continue Shopping\" Button"
+msgstr "Mostrar el botón “Seguir comprando\""
+
+#: plugin-options/general-options.php:168
+msgid "Choose to show \"Continue Shopping\" button in the popup"
+msgstr "Elige si mostrar el botón “Seguir comprando\" en la ventana emergente"
+
+#: plugin-options/general-options.php:175
+msgid "\"Continue Shopping\" Button Text"
+msgstr "Texto del botón “Seguir comprando\""
+
+#: plugin-options/general-options.php:176
+msgid "Text for \"Continue Shopping\" button"
+msgstr "Texto para el botón “Seguir comprando\""
+
+#: plugin-options/general-options.php:178
+msgid "Continue Shopping"
+msgstr "Seguir comprando"
+
+#: plugin-options/general-options.php:186
+msgid "Show \"Go to Checkout\" Button"
+msgstr "Mostrar botón de \"Ir a la página de pago\""
+
+#: plugin-options/general-options.php:187
+msgid "Choose to show \"Go to Checkout\" button in the popup"
+msgstr ""
+"Elige si mostrar el botón \"Ir a la página de pago\" en la ventana emergente"
+
+#: plugin-options/general-options.php:194
+msgid "\"Go to Checkout\" Button Text"
+msgstr "Texto del botón \"Ir a la página de pago\""
+
+#: plugin-options/general-options.php:195
+msgid "Text for \"Go to Checkout\" button"
+msgstr "Texto para el botón \"Ir a la página de pago\""
+
+#: plugin-options/general-options.php:197
+msgid "Checkout"
+msgstr "Pagar"
+
+#: plugin-options/general-options.php:205
+msgid "Enable on mobile"
+msgstr "Habilitar en móviles"
+
+#: plugin-options/general-options.php:206
+msgid "Enable the plugin features on mobile devices"
+msgstr "Habilitar las características del plugin en dispositivos móviles"
+
+#: plugin-options/general-options.php:213
+msgid "Enable for \"Request A Quote\" button"
+msgstr "Activa el botón para ‘’Solicitar un presupuesto’’"
+
+#: plugin-options/general-options.php:214
+msgid "Enable the plugin features also for YITH WooCommerce Request A Quote"
+msgstr ""
+"Activa las características del plugin también para YITH WooCommerce Request "
+"A Quote"
+
+#: plugin-options/general-options.php:221
+msgid "Enable for \"Frequently Bought Together\" button"
+msgstr "Activa para el botón de ‘’Comprados frecuentemente juntos’’"
+
+#: plugin-options/general-options.php:222
+msgid ""
+"Enable the plugin features also for YITH WooCommerce Frequently Bought "
+"Together Premium"
+msgstr ""
+"Activa las características del plugin también para YITH Frequently Bought "
+"Together Premium"
+
+#: plugin-options/general-options.php:234
+#: plugin-options/general-options.php:252
+msgid "Suggested Products"
+msgstr "Productos sugeridos"
+
+#: plugin-options/general-options.php:241
+msgid "Show suggested products"
+msgstr "Mostrar productos sugeridos"
+
+#: plugin-options/general-options.php:242
+msgid "Choose to show suggested products in popup."
+msgstr "Elige si mostrar productos sugeridos en la ventana emergente."
+
+#: plugin-options/general-options.php:249
+msgid "\"Suggested Products\" title"
+msgstr "Título de \"Productos sugeridos\""
+
+#: plugin-options/general-options.php:250
+msgid "The title for \"Suggested Products\" section."
+msgstr "Título para la sección de \"Productos sugeridos\"."
+
+#: plugin-options/general-options.php:260
+msgid "Number of suggested products"
+msgstr "Número de productos sugeridos."
+
+#: plugin-options/general-options.php:261
+msgid "Choose how many suggested products to show"
+msgstr "Elige cuántos productos sugeridos mostrar"
+
+#: plugin-options/general-options.php:272
+msgid "Columns of suggested products"
+msgstr "Columnas de productos sugeridos"
+
+#: plugin-options/general-options.php:273
+msgid "Choose how many columns to show in suggested products"
+msgstr "Elige cuántas columnas mostrar en los productos sugeridos"
+
+#: plugin-options/general-options.php:287
+msgid "Suggested products type"
+msgstr "Tipo de productos sugeridos"
+
+#: plugin-options/general-options.php:288
+msgid "Select suggested products type."
+msgstr "Seleccionar tipo de productos sugeridos."
+
+#: plugin-options/general-options.php:291
+msgid "Related Products"
+msgstr "Productos relacionados"
+
+#: plugin-options/general-options.php:292
+msgid "Cross-sell Products"
+msgstr "Productos de venta cruzada"
+
+#: plugin-options/general-options.php:293
+msgid "Up-sell Products"
+msgstr "Productos de venta dirigida"
+
+#: plugin-options/general-options.php:303
+msgid "Select products"
+msgstr "Seleccionar productos"
+
+#: plugin-options/general-options.php:304
+msgid ""
+"Select suggested products. If filled, these settings will override what set "
+"in the above option."
+msgstr ""
+"Seleccionar productos sugeridos. Si se marca, estos ajustes anularán los "
+"establecidos en la opción anterior."
+
+#: plugin-options/general-options.php:314
+msgid "Show \"Add to cart\" button"
+msgstr "Mostrar el botón \"Añadir al carrito\""
+
+#: plugin-options/general-options.php:315
+msgid "Show the \"add to cart\" button for suggested products."
+msgstr "Mostrar el botón de “Añadir al carrito\" para los productos sugeridos."
+
+#: plugin-options/mini-cart-options.php:11
+msgid "Mini Cart Options"
+msgstr "Opciones del mini carrito"
+
+#: plugin-options/mini-cart-options.php:19
+msgctxt "Option to enable mini cart on desktop"
+msgid "On Desktop"
+msgstr "En el escritorio"
+
+#: plugin-options/mini-cart-options.php:28
+msgctxt "Option to enable mini cart on mobile devices"
+msgid "On Mobile"
+msgstr "En el teléfono móvil"
+
+#: plugin-options/mini-cart-options.php:36
+msgid "Mini Cart Icon"
+msgstr "Icono del mini carrito"
+
+#: plugin-options/mini-cart-options.php:37
+msgid "Upload a mini cart icon (suggested size 32x32 px)"
+msgstr "Subir un icono de mini carrito (tamaño sugerido 32x32 px)"
+
+#: plugin-options/mini-cart-options.php:44
+msgid "Show counter"
+msgstr "Mostrar contador"
+
+#: plugin-options/mini-cart-options.php:45
+msgid "Choose to show a counter with the number of items in cart."
+msgstr "Elige mostrar un contador con el número de artículos en el carrito."
+
+#: plugin-options/mini-cart-options.php:52
+msgid "Mini Cart position"
+msgstr "Posición del mini carrito"
+
+#: plugin-options/mini-cart-options.php:53
+msgid "Drag the mini cart at desired position."
+msgstr "Arrastrar el mini carrito a la posición deseada."
+
+#: plugin-options/style-options.php:11
+msgid "Style Options"
+msgstr "Opciones de estilo"
+
+#: plugin-options/style-options.php:18
+msgid "Overlay color"
+msgstr "Color de superposición"
+
+#: plugin-options/style-options.php:19
+msgid "Choose popup overlay color"
+msgstr "Elige el color de la transparencia de la ventana emergente"
+
+#: plugin-options/style-options.php:26
+msgid "Overlay opacity"
+msgstr "Opacidad de la superposición"
+
+#: plugin-options/style-options.php:27
+msgid "Choose popup overlay opacity (from 0 to 1)"
+msgstr ""
+"Elige la opacidad de la superposición de la ventana emergente (de 0 a 1)"
+
+#: plugin-options/style-options.php:37
+msgid "Popup background"
+msgstr "Fondo de la ventana emergente"
+
+#: plugin-options/style-options.php:38
+msgid "Choose popup background color"
+msgstr "Elige el color de fondo de la ventana emergente"
+
+#: plugin-options/style-options.php:45
+msgid "Closing link color"
+msgstr "Color del botón de cerrar"
+
+#: plugin-options/style-options.php:46
+msgid "Choose closing link color"
+msgstr "Elige un color para el botón de cerrar"
+
+#: plugin-options/style-options.php:53
+msgid "Closing link hover color"
+msgstr "Color del texto al pasar el cursor por el botón de cerrar"
+
+#: plugin-options/style-options.php:54
+msgid "Choose closing link hover color"
+msgstr "Elige un color para el texto al pasar el cursor por el botón de cerrar"
+
+#: plugin-options/style-options.php:61
+msgid "Message Text Color"
+msgstr "Color de texto del mensaje"
+
+#: plugin-options/style-options.php:62
+msgid "Choose popup message text color"
+msgstr "Elige un color de texto para el mensaje de la ventana emergente"
+
+#: plugin-options/style-options.php:69
+msgid "Message Background Color"
+msgstr "Color de fondo del mensaje"
+
+#: plugin-options/style-options.php:70
+msgid "Choose popup message background color"
+msgstr "Elige un color de fondo para el mensaje de la ventana emergente"
+
+#: plugin-options/style-options.php:77
+msgid "Message Icon"
+msgstr "Icono del mensaje"
+
+#: plugin-options/style-options.php:78
+msgid "Upload a popup message icon (suggested size 25x25 px)"
+msgstr ""
+"Carga un icono del mensaje de la ventana emergente (tamaño sugerido (25x25 "
+"px)"
+
+#: plugin-options/style-options.php:85
+msgid "Product Name"
+msgstr "Nombre del producto"
+
+#: plugin-options/style-options.php:86
+msgid "Choose color for product name"
+msgstr "Elige el color para el nombre del producto"
+
+#: plugin-options/style-options.php:93
+msgid "Product Name Hover"
+msgstr "Nombre del producto al pasar el cursor"
+
+#: plugin-options/style-options.php:94
+msgid "Choose hover color for product name"
+msgstr "Elige un color al pasar el cursor para el nombre del producto"
+
+#: plugin-options/style-options.php:101
+msgid "Product Price"
+msgstr "Precio del producto"
+
+#: plugin-options/style-options.php:102
+msgid "Choose color for product price"
+msgstr "Elige el color para el precio del producto"
+
+#: plugin-options/style-options.php:109
+msgid "Total and Shipping label"
+msgstr "Etiqueta de total y envío"
+
+#: plugin-options/style-options.php:110
+msgid "Choose color for total and shipping label"
+msgstr "Elige el color para la etiqueta de total y envío"
+
+#: plugin-options/style-options.php:117
+msgid "Total and Shipping amount"
+msgstr "Cantidad total y envío"
+
+#: plugin-options/style-options.php:118
+msgid "Choose color for total and shipping amount"
+msgstr "Elige el color para la cantidad total y envío"
+
+#: plugin-options/style-options.php:125
+msgid "Button Background"
+msgstr "Fondo del botón"
+
+#: plugin-options/style-options.php:126
+msgid "Select the button background color"
+msgstr "Selecciona el color de fondo del botón"
+
+#: plugin-options/style-options.php:133
+msgid "Button Background on Hover"
+msgstr "Fondo del botón al pasar el cursor"
+
+#: plugin-options/style-options.php:134
+msgid "Select the button background color on mouseover"
+msgstr "Selecciona el color de fondo del botón en al pasar el ratón"
+
+#: plugin-options/style-options.php:141
+msgid "Button Text"
+msgstr "Texto del botón"
+
+#: plugin-options/style-options.php:142
+msgid "Select the color of the text of the button"
+msgstr "Selecciona color del texto para el botón"
+
+#: plugin-options/style-options.php:149
+msgid "Button Text on Hover"
+msgstr "Texto del botón al pasar el cursor"
+
+#: plugin-options/style-options.php:150
+msgid "Select the color of the text of the button on mouseover"
+msgstr "Selecciona el color del texto del botón al pasar el ratón"
+
+#: plugin-options/style-options.php:157
+msgid "Related Title"
+msgstr "Título relacionado"
+
+#: plugin-options/style-options.php:158
+msgid "Select the color of the related product section title"
+msgstr "Selecciona el color del título de la sección de productos relacionados"
+
+#: templates/admin/exclusions-cat-table.php:20
+msgid "Category exclusion list"
+msgstr "Categoría de productos excluidos"
+
+#: templates/admin/exclusions-cat-table.php:33
+msgid "Select categories to exclude"
+msgstr "Elige las categorías a excluir..."
+
+#: templates/admin/exclusions-cat-table.php:39
+msgid "Search category..."
+msgstr "Buscar categoría..."
+
+#: templates/admin/exclusions-cat-table.php:45
+#: templates/admin/exclusions-prod-table.php:44
+msgid "Exclude"
+msgstr "Excluir"
+
+#: templates/admin/exclusions-prod-table.php:20
+msgid "Product exclusion list"
+msgstr "Lista de exclusión de productos"
+
+#: templates/admin/exclusions-prod-table.php:33
+msgid "Select products to exclude"
+msgstr "Selecciona productos para excluir"
+
+#: templates/yith-wacp-popup-cart-info.php:25
+msgid "Shipping Cost"
+msgstr "Costes de envío"
+
+#: templates/yith-wacp-popup-cart-info.php:34
+msgid "Tax Amount"
+msgstr "Importe de los impuestos"
+
+#: templates/yith-wacp-popup-cart-info.php:44
+msgid "Discount"
+msgstr "Descuento"
+
+#: templates/yith-wacp-popup-cart-info.php:51
+msgid "Cart Total"
+msgstr "Total del carrito"
+
+#: templates/yith-wacp-popup-cart.php:22
+msgid "Your Cart"
+msgstr "Tu carrito"
+
+#: templates/yith-wacp-popup-cart.php:39
+msgid "Remove item"
+msgstr "Borrar elemento"
+
+#: templates/yith-wacp-popup-raq.php:23
+msgid "Your Quote"
+msgstr "Tu presupuesto"
+
+#: templates/yith-wacp-popup.php:25
+msgid "Close"
+msgstr "Cerrar"
+
+#. Plugin Name of the plugin/theme
+msgid "YITH WooCommerce Added to Cart Popup Premium"
+msgstr "YITH WooCommerce Added to Cart Popup Premium"
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://yithemes.com/themes/plugins/yith-woocommerce-added-to-cart-popup/"
+msgstr ""
+"https://yithemes.com/themes/plugins/yith-woocommerce-added-to-cart-popup/"
+
+#. Description of the plugin/theme
+msgid ""
+"The <code><strong>YITH WooCommerce Added to Cart Popup</strong></code> "
+"plugin allow you to display a popup cart with suggested products and cart "
+"actions after an \"add to cart\" action. <a href=\"https://yithemes.com/\" "
+"target=\"_blank\">Get more plugins for your e-commerce shop on <strong>YITH</"
+"strong></a>."
+msgstr ""
+"El plugin <code><strong>YITH WooCommerce Added to Cart Popup</strong></code> "
+"te permite mostrar un carrito de ventana emergente con los productos "
+"sugeridos y las acciones del carrito tras la acción ‘’añadir al carrito’’. "
+"<a href=\"https://yithemes.com/\" target=\"_blank\">Obtén más plugins para "
+"tu comercio electrónico en <strong>YITH</strong></a>."
+
+#. Author of the plugin/theme
+msgid "YITH"
+msgstr "YITH"
+
+#. Author URI of the plugin/theme
+msgid "https://yithemes.com/"
+msgstr "https://yithemes.com/"
+
+#~ msgid "Plugin Documentation"
+#~ msgstr "Documentación del plugin"
+
+#~ msgid "Search products&hellip;"
+#~ msgstr "Buscar productos&hellip;"
+
+#~ msgid "Added to Cart Popup"
+#~ msgstr "Added to Cart Popup"
+
+#~ msgid "Show related products"
+#~ msgstr "Mostrar \"Productos Relacionados\""
+
+#~ msgid "Choose to show related products in popup"
+#~ msgstr "Elige si mostrar productos relacionados en popup"
+
+#~ msgid "\"Related Products\" title"
+#~ msgstr "Título de \"Productos Relacionados\""
+
+#~ msgid "The title for \"Related Products\" section"
+#~ msgstr "El título para la sección de \"Productos Relacionados\""
+
+#~ msgid "Number of related products"
+#~ msgstr "Número de productos relacionados"
+
+#~ msgid "Choose how many related products to show"
+#~ msgstr "Elige cuántos productos relacionados mostrar"
+
+#~ msgid "Columns of related products"
+#~ msgstr "Columnas de productos relacionados"
+
+#~ msgid "Choose how many columns to show in related products"
+#~ msgstr "Elige cuántas columnas mostrar en productos relacionados"
+
+#~ msgid ""
+#~ "Select related products. Leave blank to get standard WooCommerce related "
+#~ "products."
+#~ msgstr ""
+#~ "Selecciona productos relacionados. Déjalo en blanco para obtener "
+#~ "productos WooCommerce relacionados estándar."

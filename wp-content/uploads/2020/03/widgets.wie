@@ -1,0 +1,42 @@
+{
+  "sidebar-1": {
+    "search-2": {
+      "title": ""
+    },
+    "recent-posts-2": {
+      "title": "",
+      "number": 5
+    },
+    "recent-comments-2": {
+      "title": "",
+      "number": 5
+    },
+    "archives-2": {
+      "title": "",
+      "count": 0,
+      "dropdown": 0
+    },
+    "categories-2": {
+      "title": "",
+      "count": 0,
+      "hierarchical": 0,
+      "dropdown": 0
+    },
+    "meta-2": {
+      "title": ""
+    }
+  },
+  "footer-1": {
+    "text-2": {
+      "title": "ABOUT GRILL",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis viverra nibh cras pulvinar mattis nunc sed blandit. Elementum facilisis leo vel fringilla. Eleifend donec pretium vulputate sapien nec. Velit scelerisque in dictum non consectetur a erat nam at. Morbi tristique senectus et netus et malesuada. Pretium aenean pharetra magna ac placerat.",
+      "filter": true,
+      "visual": true
+    }
+  },
+  "footer-bar": {
+    "nav_menu-2": {
+      "nav_menu": 3
+    }
+  }
+}
