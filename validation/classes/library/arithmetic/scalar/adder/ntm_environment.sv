@@ -41,7 +41,8 @@ class ntm_environment;
   ntm_agent      agent;
   ntm_scoreboard scoreboard;
 
-  mailbox               monitor_to_scoreboard;
+  mailbox monitor_to_scoreboard;
+
   function new(virtual add_if vif);
     monitor_to_scoreboard = new();
     agent                 = new(vif, monitor_to_scoreboard);
@@ -53,6 +54,7 @@ class ntm_environment;
       agent.run();
       scoreboard.run();
     join_any
+
     wait (agent.generator.count == scoreboard.compare_cnt);
     $finish;
   endtask

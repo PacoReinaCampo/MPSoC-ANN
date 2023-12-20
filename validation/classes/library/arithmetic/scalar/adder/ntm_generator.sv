@@ -38,8 +38,10 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class ntm_generator;
-  int                    count;
-  mailbox                generator_to_driver;
+  int count;
+
+  mailbox generator_to_driver;
+
   ntm_transaction transaction;
 
   function new(mailbox generator_to_driver);

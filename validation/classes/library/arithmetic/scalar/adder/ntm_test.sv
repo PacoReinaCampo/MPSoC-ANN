@@ -42,11 +42,14 @@
 program ntm_test (
   add_if vif
 );
+
   ntm_environment environment;
 
   initial begin
-    environment                       = new(vif);
+    environment = new(vif);
+
     environment.agent.generator.count = 5;
+
     environment.run();
   end
 endprogram

@@ -50,13 +50,16 @@ class ntm_driver;
   task run;
     forever begin
       // Driver to the DUT
-      @(posedge vif.clk);
+      @(posedge vif.CLK);
       generator_to_driver.get(transaction);
-      //$display("ip1 = %0d, ip2 = %0d", transaction.ip1, transaction.ip2);
-      vif.ip1 <= transaction.ip1;
-      vif.ip2 <= transaction.ip2;
-      @(posedge vif.clk);
-      transaction.out <= vif.out;
+
+      wait (vif.START);
+      vif.DATA_A_IN <= transaction.DATA_A_IN;
+      vif.DATA_B_IN <= transaction.DATA_B_IN;
+
+      wait (vif.READY);
+      transaction.DATA_OUT     <= vif.DATA_OUT;
+      transaction.OVERFLOW_OUT <= vif.OVERFLOW_OUT;
     end
   endtask
 endclass

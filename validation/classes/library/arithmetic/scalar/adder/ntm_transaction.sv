@@ -38,14 +38,15 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class ntm_transaction;
-  rand bit [7:0] ip1;
-  rand bit [7:0] ip2;
+  rand bit [7:0] DATA_A_IN;
+  rand bit [7:0] DATA_B_IN;
 
-  bit      [8:0] out;
+  bit      [7:0] DATA_OUT;
+  bit            OVERFLOW_OUT;
 
   constraint ip_c {
-    ip1 < 100;
-    ip2 < 100;
+    DATA_A_IN < 256;
+    DATA_B_IN < 256;
   }
 
 endclass

@@ -50,10 +50,10 @@ class ntm_scoreboard;
       ntm_transaction transaction;
       transaction = new();
       monitor_to_scoreboard.get(transaction);
-      if (transaction.ip1 + transaction.ip2 == transaction.out) begin
-        $display("Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
+      if (transaction.DATA_OUT == $realtobits($bitstoreal(transaction.DATA_A_IN) + $bitstoreal(transaction.DATA_B_IN)) && transaction.OVERFLOW_OUT == 1'b1) begin
+        $display("Matched: DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d, OVERFLOW_OUT = %0d", transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT, transaction.OVERFLOW_OUT);
       end else begin
-        $display("Dis-Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
+        $display("Dis-Matched: DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d, OVERFLOW_OUT = %0d", transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT, transaction.OVERFLOW_OUT);
       end
       compare_cnt++;
     end
