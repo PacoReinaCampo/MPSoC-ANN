@@ -42,14 +42,17 @@ class ntm_scoreboard;
 
   mailbox monitor_to_scoreboard;
 
+  // Constructor
   function new(mailbox monitor_to_scoreboard);
     this.monitor_to_scoreboard = monitor_to_scoreboard;
   endfunction
 
   task run;
     forever begin
+      // Transaction method instantiation
       ntm_transaction transaction;
 
+      // Create transaction method
       transaction = new();
 
       monitor_to_scoreboard.get(transaction);

@@ -38,19 +38,31 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class ntm_agent;
+  // Driver method instantiation
   ntm_driver    driver;
+
+  // Monitor method instantiation
   ntm_monitor   monitor;
+
+  // Generator method instantiation
   ntm_generator generator;
 
   mailbox generator_to_driver;
 
+  // Virtual Interface
   virtual add_if vif;
 
+  // Constructor
   function new(virtual add_if vif, mailbox monitor_to_scoreboard);
     generator_to_driver = new();
 
+    // Create driver method
     driver    = new(generator_to_driver, vif);
+
+    // Create monitor method
     monitor   = new(monitor_to_scoreboard, vif);
+
+    // Create generator method
     generator = new(generator_to_driver);
   endfunction
 

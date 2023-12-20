@@ -42,8 +42,10 @@ class ntm_generator;
 
   mailbox generator_to_driver;
 
+  // Transaction method instantiation
   ntm_transaction transaction;
 
+  // Constructor
   function new(mailbox generator_to_driver);
     this.generator_to_driver = generator_to_driver;
   endfunction

@@ -38,10 +38,12 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class ntm_monitor;
+  // Interface instantiation
   virtual add_if vif;
 
   mailbox monitor_to_scoreboard;
 
+  // Constructor
   function new(mailbox monitor_to_scoreboard, virtual add_if vif);
     this.vif = vif;
 
@@ -50,7 +52,9 @@ class ntm_monitor;
 
   task run;
     forever begin
+      // Transaction method instantiation
       ntm_transaction monitor_transaction;
+
       wait (vif.RST);
 
       wait (vif.START);

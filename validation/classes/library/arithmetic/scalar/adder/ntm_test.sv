@@ -40,12 +40,15 @@
 `include "ntm_package.sv"
 
 program ntm_test (
+  // Interface instantiation
   add_if vif
 );
 
+  // Environment method instantiation
   ntm_environment environment;
 
   initial begin
+    // Create environment method
     environment = new(vif);
 
     environment.agent.generator.count = 5;

@@ -38,16 +38,22 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class ntm_environment;
+  // Agent method instantiation
   ntm_agent      agent;
+
+  // ScoreBoard method instantiation
   ntm_scoreboard scoreboard;
 
   mailbox monitor_to_scoreboard;
 
+  // Constructor
   function new(virtual add_if vif);
     monitor_to_scoreboard = new();
 
+    // Create agent method
     agent = new(vif, monitor_to_scoreboard);
 
+    // Create scoreboard method
     scoreboard = new(monitor_to_scoreboard);
   endfunction
 

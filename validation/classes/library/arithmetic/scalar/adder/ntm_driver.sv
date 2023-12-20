@@ -38,12 +38,15 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class ntm_driver;
+  // Interface instantiation
   virtual add_if vif;
 
   mailbox generator_to_driver;
 
+  // Transaction method instantiation
   ntm_transaction transaction;
 
+  // Constructor
   function new(mailbox generator_to_driver, virtual add_if vif);
     this.generator_to_driver = generator_to_driver;
 

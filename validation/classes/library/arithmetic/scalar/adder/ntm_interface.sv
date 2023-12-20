@@ -48,10 +48,10 @@ interface add_if (
 
   logic OPERATION;
 
+  // DATA
   logic [7:0] DATA_A_IN;
   logic [7:0] DATA_B_IN;
 
-  // DATA
   logic [7:0] DATA_OUT;
   logic       OVERFLOW_OUT;
 
