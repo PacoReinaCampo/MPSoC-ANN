@@ -57,9 +57,9 @@ module ntm_testbench;
 
   // Reset Generation
   initial begin
-    RST = 1;
-    #5;
     RST = 0;
+    #5;
+    RST = 1;
   end
 
   // Start Generation

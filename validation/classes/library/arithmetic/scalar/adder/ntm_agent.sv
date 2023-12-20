@@ -42,15 +42,16 @@ class ntm_agent;
   ntm_monitor   monitor;
   ntm_generator generator;
 
-  mailbox              generator_to_driver;
-  virtual add_if       vif;
+  mailbox generator_to_driver;
+
+  virtual add_if vif;
 
   function new(virtual add_if vif, mailbox monitor_to_scoreboard);
     generator_to_driver = new();
 
-    driver              = new(generator_to_driver, vif);
-    monitor             = new(monitor_to_scoreboard, vif);
-    generator           = new(generator_to_driver);
+    driver    = new(generator_to_driver, vif);
+    monitor   = new(monitor_to_scoreboard, vif);
+    generator = new(generator_to_driver);
   endfunction
 
   task run();

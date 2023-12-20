@@ -45,8 +45,10 @@ class ntm_environment;
 
   function new(virtual add_if vif);
     monitor_to_scoreboard = new();
-    agent                 = new(vif, monitor_to_scoreboard);
-    scoreboard            = new(monitor_to_scoreboard);
+
+    agent = new(vif, monitor_to_scoreboard);
+
+    scoreboard = new(monitor_to_scoreboard);
   endfunction
 
   task run();

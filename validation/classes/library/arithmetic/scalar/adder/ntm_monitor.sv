@@ -39,24 +39,26 @@
 
 class ntm_monitor;
   virtual add_if vif;
-  mailbox        monitor_to_scoreboard;
+
+  mailbox monitor_to_scoreboard;
 
   function new(mailbox monitor_to_scoreboard, virtual add_if vif);
-    this.vif                   = vif;
+    this.vif = vif;
+
     this.monitor_to_scoreboard = monitor_to_scoreboard;
   endfunction
 
   task run;
     forever begin
       ntm_transaction monitor_transaction;
-      wait (!vif.RST);
+      wait (vif.RST);
 
       wait (vif.START);
       monitor_transaction = new();
       monitor_transaction.DATA_A_IN = vif.DATA_A_IN;
       monitor_transaction.DATA_B_IN = vif.DATA_B_IN;
 
-      @(posedge vif.READY);
+      wait (vif.READY);
       monitor_transaction.DATA_OUT = vif.DATA_OUT;
       monitor_to_scoreboard.put(monitor_transaction);
     end

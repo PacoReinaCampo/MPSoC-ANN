@@ -38,7 +38,8 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class ntm_scoreboard;
-  int     compare_cnt;
+  int compare_cnt;
+
   mailbox monitor_to_scoreboard;
 
   function new(mailbox monitor_to_scoreboard);
@@ -48,8 +49,11 @@ class ntm_scoreboard;
   task run;
     forever begin
       ntm_transaction transaction;
+
       transaction = new();
+
       monitor_to_scoreboard.get(transaction);
+
       if (transaction.DATA_OUT == $realtobits($bitstoreal(transaction.DATA_A_IN) + $bitstoreal(transaction.DATA_B_IN)) && transaction.OVERFLOW_OUT == 1'b1) begin
         $display("Matched: DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d, OVERFLOW_OUT = %0d", transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT, transaction.OVERFLOW_OUT);
       end else begin
