@@ -1,0 +1,11 @@
+peripheral_uvm_agent.sv ------------ OK
+peripheral_uvm_driver.sv ----------- 
+peripheral_uvm_environment.sv ------ OK
+peripheral_uvm_interface.sv -------- DONE
+peripheral_uvm_monitor.sv ---------- DONE
+peripheral_uvm_scoreboard.sv ------- DONE
+peripheral_uvm_sequencer.sv -------- OK
+peripheral_uvm_sequence.sv --------- OK
+peripheral_uvm_testbench.sv -------- DONE
+peripheral_uvm_test.sv ------------- OK
+peripheral_uvm_transaction.sv ------ DONE

@@ -1,0 +1,11 @@
+design_if.sv -------------------- DONE
+peripheral_agent.sv ------------- OK
+peripheral_driver.sv ------------ DONE
+peripheral_environment.sv ------- OK
+peripheral_monitor.sv ----------- DONE
+peripheral_sample.sv
+peripheral_scoreboard.sv
+peripheral_sequence.sv
+peripheral_sequence_item.sv
+peripheral_test.sv
+peripheral_testbench.sv --------- DONE
