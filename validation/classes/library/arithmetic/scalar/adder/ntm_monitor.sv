@@ -58,7 +58,10 @@ class ntm_monitor;
       wait (vif.RST);
 
       wait (vif.START);
+
+      // Create transaction method
       monitor_transaction = new();
+
       monitor_transaction.DATA_A_IN = vif.DATA_A_IN;
       monitor_transaction.DATA_B_IN = vif.DATA_B_IN;
 

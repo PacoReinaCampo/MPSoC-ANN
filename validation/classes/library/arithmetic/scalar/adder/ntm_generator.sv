@@ -52,7 +52,9 @@ class ntm_generator;
 
   task run;
     repeat (count) begin
+      // Create transaction method
       transaction = new();
+
       void'(transaction.randomize());
       generator_to_driver.put(transaction);
     end

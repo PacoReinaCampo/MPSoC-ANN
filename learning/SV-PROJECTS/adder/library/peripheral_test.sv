@@ -46,13 +46,19 @@
 `include "peripheral_environment.sv"
 
 program peripheral_test (
+  // Interface instantiation
   add_if vif
 );
+
+  // Environment method instantiation
   peripheral_environment environment;
 
   initial begin
-    environment                       = new(vif);
+    // Create environment method
+    environment = new(vif);
+
     environment.agent.generator.count = 5;
+
     environment.run();
   end
 endprogram

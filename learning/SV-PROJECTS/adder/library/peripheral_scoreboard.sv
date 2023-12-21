@@ -38,18 +38,25 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class peripheral_scoreboard;
-  int     compare_cnt;
+  int compare_cnt;
+
   mailbox monitor_to_scoreboard;
 
+  // Constructor
   function new(mailbox monitor_to_scoreboard);
     this.monitor_to_scoreboard = monitor_to_scoreboard;
   endfunction
 
   task run;
     forever begin
+      // Transaction method instantiation
       peripheral_transaction transaction;
+
+      // Create transaction method
       transaction = new();
+
       monitor_to_scoreboard.get(transaction);
+
       if (transaction.ip1 + transaction.ip2 == transaction.out) begin
         $display("Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
       end else begin

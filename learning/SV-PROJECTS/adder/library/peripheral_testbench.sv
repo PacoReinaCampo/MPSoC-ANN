@@ -44,13 +44,27 @@ module peripheral_testbench;
   bit clk;
   bit rst;
 
+  // Clock declaration
   always #2 clk = ~clk;
 
+  initial begin
+    clk = 0;
+  end
+
+  // Reset Generation
+  initial begin
+    rst = 1;
+    #5;
+    rst = 0;
+  end
+
+  // Interface instantiation
   add_if vif (
     clk,
     rst
   );
 
+  // DUT instantiation
   peripheral_design dut (
     .clk(vif.clk),
     .rst(vif.rst),
@@ -61,18 +75,11 @@ module peripheral_testbench;
     .out(vif.out)
   );
 
+  // Calling TestCase
   peripheral_test t1 (vif);
 
   initial begin
-    clk = 0;
- 
-    rst = 1;
-    #5;
-    rst = 0;
-  end
-
-  initial begin
-    // Dump waves
+    // Enable wave dump
     $dumpfile("dump.vcd");
     $dumpvars(0);
   end

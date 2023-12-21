@@ -38,22 +38,33 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class peripheral_monitor;
+  // Interface instantiation
   virtual add_if vif;
-  mailbox        monitor_to_scoreboard;
 
+  mailbox monitor_to_scoreboard;
+
+  // Constructor
   function new(mailbox monitor_to_scoreboard, virtual add_if vif);
-    this.vif                   = vif;
+    this.vif = vif;
+
     this.monitor_to_scoreboard = monitor_to_scoreboard;
   endfunction
 
   task run;
     forever begin
+      // Transaction method instantiation
       peripheral_transaction monitor_transaction;
+
       wait (!vif.rst);
+
       @(posedge vif.clk);
-      monitor_transaction     = new();
+
+      // Create transaction method
+      monitor_transaction = new();
+
       monitor_transaction.ip1 = vif.ip1;
       monitor_transaction.ip2 = vif.ip2;
+
       @(posedge vif.clk);
       monitor_transaction.out = vif.out;
       monitor_to_scoreboard.put(monitor_transaction);
