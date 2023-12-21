@@ -37,48 +37,82 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
+import model_arithmetic_verilog_pkg::*;
+
 module ntm_testbench;
-  reg        clk;
-  reg        rst;
+  // Clock and Reset declaration
+  reg        CLK;
+  reg        RST;
 
-  reg  [7:0] ip1;
-  reg  [7:0] ip2;
+  // Control declaration
+  reg  START;
+  wire READY;
 
-  wire [8:0] out;
+  // Control declaration
+  reg  [DATA_SIZE-1:0] DATA_A_IN;
+  reg  [DATA_SIZE-1:0] DATA_B_IN;
 
-  ntm_design dut (
-    .clk(clk),
-    .rst(rst),
+  wire [DATA_SIZE-1:0] DATA_OUT;
+  wire                 OVERFLOW_OUT;
 
-    .in1(ip1),
-    .in2(ip2),
+  // DUT instantiation
+  model_scalar_float_multiplier #(
+    // SYSTEM-SIZE
+    .DATA_SIZE   (DATA_SIZE),
+    .CONTROL_SIZE(CONTROL_SIZE)
+  )
+  dut (
+    // GLOBAL
+   .CLK(CLK),
+   .RST(RST),
 
-    .out(out)
+   // CONTROL
+   .START(START),
+   .READY(READY),
+
+    // DATA
+   .DATA_A_IN(DATA_A_IN),
+   .DATA_B_IN(DATA_B_IN),
+
+   .DATA_OUT    (DATA_OUT),
+   .OVERFLOW_OUT(OVERFLOW_OUT)
   );
 
-  always #1 clk = ~clk;
+  // Clock declaration
+  always #2 CLK = ~CLK;
+
+  initial begin
+    CLK = 0;
+  end
+
+  // Reset Generation
+  initial begin
+    RST = 0;
+    #8;
+    RST = 1;
+  end
+
+  // Start Generation
+  initial begin
+    START = 0;
+    #10;
+    START = 1;
+    #4;
+    START = 0;
+  end
 
   initial begin
     // Dump waves
     $dumpfile("system.vcd");
     $dumpvars(0, ntm_testbench);
 
-    clk = 0;
-    rst = 0;
-
-    ip1 = 0;
-    ip2 = 0;
-    #2;
-
-    rst = 1;
-    #2;
-
-    rst = 0;
-    #4;
-
-    ip1 = 5;
-    ip2 = 2;
-    #5;
+    DATA_A_IN = 0;
+    DATA_B_IN = 0;
+    #10;
+    
+    DATA_A_IN = 5;
+    DATA_B_IN = 2;
+    #10;
 
     $display("End");
     $finish();

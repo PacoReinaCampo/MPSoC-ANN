@@ -57,7 +57,7 @@ class ntm_scoreboard;
 
       monitor_to_scoreboard.get(transaction);
 
-      if (transaction.DATA_OUT == $realtobits($bitstoreal(transaction.DATA_A_IN) + $bitstoreal(transaction.DATA_B_IN)) && transaction.OVERFLOW_OUT == 1'b1) begin
+      if (transaction.DATA_OUT == $realtobits($bitstoreal(transaction.DATA_A_IN) + $bitstoreal(transaction.DATA_B_IN)) && transaction.OVERFLOW_OUT == 1'b0) begin
         $display("Matched: DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d, OVERFLOW_OUT = %0d", transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT, transaction.OVERFLOW_OUT);
       end else begin
         $display("Dis-Matched: DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d, OVERFLOW_OUT = %0d", transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT, transaction.OVERFLOW_OUT);

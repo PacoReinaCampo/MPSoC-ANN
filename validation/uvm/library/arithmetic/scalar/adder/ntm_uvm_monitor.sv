@@ -68,12 +68,12 @@ class ntm_uvm_monitor extends uvm_monitor;
   // Run phase
   task run_phase(uvm_phase phase);
     forever begin
-      wait (!vif.rst);
-      @(posedge vif.clk);
+      wait (!vif.RST);
+      @(posedge vif.CLK);
       monitor_item.ip1 = vif.ip1;
       monitor_item.ip2 = vif.ip2;
       `uvm_info(get_type_name, $sformatf("ip1 = %0d, ip2 = %0d", monitor_item.ip1, monitor_item.ip2), UVM_HIGH);
-      @(posedge vif.clk);
+      @(posedge vif.CLK);
       monitor_item.out = vif.out;
       item_collect_port.write(monitor_item);
     end

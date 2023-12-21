@@ -72,10 +72,10 @@ class ntm_uvm_scoreboard extends uvm_scoreboard;
       if (item_q.size > 0) begin
         scoreboard_item = item_q.pop_front();
         $display("----------------------------------------------------------------------------------------------------------");
-        if (scoreboard_item.ip1 + scoreboard_item.ip2 == scoreboard_item.out) begin
-          `uvm_info(get_type_name, $sformatf("Matched: ip1 = %0d, ip2 = %0d, out = %0d", scoreboard_item.ip1, scoreboard_item.ip2, scoreboard_item.out), UVM_LOW);
+        if (scoreboard_item.DATA_OUT == $realtobits($bitstoreal(scoreboard_item.DATA_A_IN) + $bitstoreal(scoreboard_item.DATA_B_IN)) && scoreboard_item.OVERFLOW_OUT == 1'b0) begin
+          $display("Matched: DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d, OVERFLOW_OUT = %0d", scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT, scoreboard_item.OVERFLOW_OUT);
         end else begin
-          `uvm_error(get_name, $sformatf("Dis-Matched: ip1 = %0d, ip2 = %0d, out = %0d", scoreboard_item.ip1, scoreboard_item.ip2, scoreboard_item.out));
+          $display("Dis-Matched: DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d, OVERFLOW_OUT = %0d", scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT, scoreboard_item.OVERFLOW_OUT);
         end
         $display("----------------------------------------------------------------------------------------------------------");
       end

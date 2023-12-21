@@ -38,13 +38,17 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 interface ntm_design_if (
-  input logic clk,
-  input logic rst
+  input logic CLK,
+  input logic RST,
+
+  input logic START,
+  output logic READY,
 );
 
   // Declaration of signals
-  logic [7:0] ip1;
-  logic [7:0] ip2;
+  logic [7:0] DATA_A_IN;
+  logic [7:0] DATA_B_IN;
 
-  logic [8:0] out;
+  logic [7:0] DATA_OUT;
+  logic       OVERFLOW_OUT;
 endinterface

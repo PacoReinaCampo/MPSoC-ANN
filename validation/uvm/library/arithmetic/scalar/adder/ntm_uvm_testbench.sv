@@ -45,31 +45,61 @@ import uvm_pkg::*;
 
 module ntm_uvm_testbench;
   // Clock and Reset declaration
-  bit clk;
-  bit rst;
+  bit CLK;
+  bit RST;
+
+  // Start declaration
+  bit START;
 
   // Clock Generation
-  always #2 clk = ~clk;
+  always #2 CLK = ~CLK;
+
+  initial begin
+    CLK = 0;
+  end
 
   // Reset Generation
   initial begin
-    rst = 1;
-    #5;
-    rst = 0;
+    RST = 1;
+    #4;
+    RST = 0;
+  end
+
+  // Start Generation
+  initial begin
+    START = 0;
+    #6;
+    START = 1;
+    #8;
+    START = 0;
   end
 
   // Virtual interface
-  ntm_design_if vif (clk, rst);
+  ntm_design_if vif (CLK, RST);
 
   // DUT instantiation
-  ntm_design dut (
-    .clk(vif.clk),
-    .rst(vif.rst),
+  model_scalar_float_adder #(
+    // SYSTEM-SIZE
+    .DATA_SIZE   (8),
+    .CONTROL_SIZE(4)
+  )
+  dut (
+    // GLOBAL
+   .CLK(vif.CLK),
+   .RST(vif.RST),
 
-    .in1(vif.ip1),
-    .in2(vif.ip2),
+   // CONTROL
+   .START(vif.START),
+   .READY(vif.READY),
 
-    .out(vif.out)
+   .OPERATION(vif.OPERATION),
+
+    // DATA
+   .DATA_A_IN(vif.DATA_A_IN),
+   .DATA_B_IN(vif.DATA_B_IN),
+
+   .DATA_OUT    (vif.DATA_OUT),
+   .OVERFLOW_OUT(vif.OVERFLOW_OUT)
   );
 
   initial begin
