@@ -58,21 +58,21 @@ module ntm_testbench;
   // Reset Generation
   initial begin
     RST = 0;
-    #4;
+    #8;
     RST = 1;
   end
 
   // Start Generation
   initial begin
     START = 0;
-    #6;
+    #10;
     START = 1;
-    #8;
+    #4;
     START = 0;
   end
 
   // Interface instantiation
-  add_if vif (CLK, RST);
+  adder_if vif (CLK, RST);
 
   // DUT instantiation
   model_scalar_float_adder #(
@@ -89,7 +89,7 @@ module ntm_testbench;
    .START(vif.START),
    .READY(vif.READY),
 
-   .OPERATION(vif.OPERATION),
+   .OPERATION(1'b0),
 
     // DATA
    .DATA_A_IN(vif.DATA_A_IN),

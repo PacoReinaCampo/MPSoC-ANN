@@ -47,7 +47,7 @@ class ntm_environment;
   mailbox monitor_to_scoreboard;
 
   // Constructor
-  function new(virtual add_if vif);
+  function new(virtual adder_if vif);
     monitor_to_scoreboard = new();
 
     // Create agent method

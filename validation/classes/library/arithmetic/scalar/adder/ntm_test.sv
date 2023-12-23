@@ -41,7 +41,7 @@
 
 program ntm_test (
   // Interface instantiation
-  add_if vif
+  adder_if vif
 );
 
   // Environment method instantiation

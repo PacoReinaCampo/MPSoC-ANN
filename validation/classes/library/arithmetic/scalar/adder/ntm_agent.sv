@@ -50,10 +50,10 @@ class ntm_agent;
   mailbox generator_to_driver;
 
   // Virtual Interface
-  virtual add_if vif;
+  virtual adder_if vif;
 
   // Constructor
-  function new(virtual add_if vif, mailbox monitor_to_scoreboard);
+  function new(virtual adder_if vif, mailbox monitor_to_scoreboard);
     generator_to_driver = new();
 
     // Create driver method

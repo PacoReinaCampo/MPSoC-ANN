@@ -37,7 +37,7 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-interface add_if (
+interface adder_if (
   input logic CLK,
   input logic RST
 );
@@ -45,8 +45,6 @@ interface add_if (
   // CONTROL
   logic START;
   logic READY;
-
-  logic OPERATION;
 
   // DATA
   logic [7:0] DATA_A_IN;
