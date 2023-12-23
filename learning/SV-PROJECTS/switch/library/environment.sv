@@ -1,14 +1,27 @@
 class environment;
-  driver            d0;  // Driver handle
-  monitor           m0;  // Monitor handle
-  generator         g0;  // Generator Handle
-  scoreboard        s0;  // Scoreboard handle
+  // Driver handle
+  driver            d0;
 
-  mailbox           drv_mbx;  // Connect GEN -> DRV
-  mailbox           scb_mbx;  // Connect MON -> SCB
-  event             drv_done;  // Indicates when driver is done
+  // Monitor handle
+  monitor           m0;
 
-  virtual switch_if vif;  // Virtual interface handle
+  // Generator Handle
+  generator         g0;
+
+  // Scoreboard handle
+  scoreboard        s0;
+
+  // Connect GEN -> DRV
+  mailbox           drv_mbx;
+
+  // Connect MON -> SCB
+  mailbox           scb_mbx;
+
+  // Indicates when driver is done
+  event             drv_done;
+
+  // Virtual interface handle
+  virtual switch_if vif;
 
   function new();
     d0          = new;
