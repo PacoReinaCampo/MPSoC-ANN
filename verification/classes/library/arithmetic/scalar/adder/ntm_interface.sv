@@ -37,15 +37,21 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-interface add_if (
-  input logic clk,
-  input logic rst
+interface adder_if (
+  input logic CLK,
+  input logic RST
 );
 
-  logic [7:0] ip1;
-  logic [7:0] ip2;
+  // CONTROL
+  logic START;
+  logic READY;
 
-  logic [8:0] out;
+  // DATA
+  logic [7:0] DATA_A_IN;
+  logic [7:0] DATA_B_IN;
+
+  logic [7:0] DATA_OUT;
+  logic       OVERFLOW_OUT;
 
   // clocking driver_cb @(posedge clk);
   // default input #1 output #1;

@@ -2,7 +2,7 @@ class mem_scoreboard extends uvm_scoreboard;
   // Declaring pkt_qu to store the pkt's recived from monitor
   mem_seq_item pkt_qu [$];
 
-  // Sc_mem 
+  // SC Memory
   bit [7:0] sc_mem [4];
 
   // Port to recive packets from monitor

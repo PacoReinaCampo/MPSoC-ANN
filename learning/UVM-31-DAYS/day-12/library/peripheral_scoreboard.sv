@@ -7,12 +7,12 @@ class peripheral_scoreboard extends uvm_scoreboard;
     super.new(name, parent);
   endfunction
 
-  bit                                                                         [3:0] ref_pattern;
-  bit                                                                         [3:0] act_pattern;
+  bit [3:0] ref_pattern;
+  bit [3:0] act_pattern;
 
-  bit                                                                               exp_out;
+  bit exp_out;
 
-  uvm_analysis_imp #(peripheral_sequence_item, peripheral_scoreboard)               m_analysis_imp;
+  uvm_analysis_imp #(peripheral_sequence_item, peripheral_scoreboard) m_analysis_imp;
 
   // Build phase
   virtual function void build_phase(uvm_phase phase);
@@ -47,6 +47,5 @@ class peripheral_scoreboard extends uvm_scoreboard;
     end else begin
       exp_out = 0;
     end
-
   endfunction
 endclass

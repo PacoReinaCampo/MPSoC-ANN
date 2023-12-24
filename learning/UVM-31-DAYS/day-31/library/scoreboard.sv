@@ -5,8 +5,17 @@ class scoreboard extends uvm_scoreboard;
   // Utility declaration
   `uvm_component_utils(scoreboard)
 
-  sequence_item s_item_a  [$], s_item_b [$];  // Input monitor_a,output monitor_b
-  sequence_item s_item_c,      s_item_d;  // Input a,output b
+  // Input monitor_a
+  sequence_item s_item_a [$];
+
+  // Output monitor_b
+  sequence_item s_item_b [$];
+
+  // Input a
+  sequence_item s_item_c;
+
+  // Output b
+  sequence_item s_item_d;
 
   uvm_analysis_imp_a #(sequence_item, scoreboard) c1_export;
   uvm_analysis_imp_b #(sequence_item, scoreboard) c2_export;
