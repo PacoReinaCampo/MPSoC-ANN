@@ -40,39 +40,70 @@
 `include "ntm_interface.sv"
 `include "ntm_test.sv"
 
+import model_arithmetic_verilog_pkg::*;
+
 module ntm_testbench;
-  bit clk;
-  bit rst;
+  // Clock and Reset declaration
+  bit CLK;
+  bit RST;
 
-  always #2 clk = ~clk;
+  // Start declaration
+  bit START;
+  
+  // Clock declaration
+  always #2 CLK = ~CLK;
 
-  add_if vif (
-    clk,
-    rst
+  initial begin
+    CLK = 0;
+  end
+
+  // Reset Generation
+  initial begin
+    RST = 0;
+    #8;
+    RST = 1;
+  end
+
+  // Start Generation
+  initial begin
+    START = 0;
+    #10;
+    START = 1;
+    #4;
+    START = 0;
+  end
+
+  // Interface instantiation
+  divider_if vif (CLK, RST);
+
+  // DUT instantiation
+  model_scalar_float_divider #(
+    // SYSTEM-SIZE
+    .DATA_SIZE   (DATA_SIZE),
+    .CONTROL_SIZE(CONTROL_SIZE)
+  )
+  dut (
+    // GLOBAL
+   .CLK(vif.CLK),
+   .RST(vif.RST),
+
+   // CONTROL
+   .START(vif.START),
+   .READY(vif.READY),
+
+    // DATA
+   .DATA_A_IN(vif.DATA_A_IN),
+   .DATA_B_IN(vif.DATA_B_IN),
+
+   .DATA_OUT    (vif.DATA_OUT),
+   .OVERFLOW_OUT(vif.OVERFLOW_OUT)
   );
 
-  ntm_design DUT (
-    .clk(vif.clk),
-    .rst(vif.rst),
-
-    .in1(vif.ip1),
-    .in2(vif.ip2),
-
-    .out(vif.out)
-  );
-
+  // Calling TestCase
   ntm_test t1 (vif);
 
   initial begin
-    clk = 0;
-    rst = 1;
-    #5;
-
-    rst = 0;
-  end
-
-  initial begin
-    // Dump waves
+    // Enable wave dump
     $dumpfile("dump.vcd");
     $dumpvars(0);
   end

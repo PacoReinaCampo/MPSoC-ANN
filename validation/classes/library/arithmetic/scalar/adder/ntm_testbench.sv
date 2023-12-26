@@ -40,6 +40,8 @@
 `include "ntm_interface.sv"
 `include "ntm_test.sv"
 
+import model_arithmetic_verilog_pkg::*;
+
 module ntm_testbench;
   // Clock and Reset declaration
   bit CLK;
@@ -77,8 +79,8 @@ module ntm_testbench;
   // DUT instantiation
   model_scalar_float_adder #(
     // SYSTEM-SIZE
-    .DATA_SIZE   (8),
-    .CONTROL_SIZE(4)
+    .DATA_SIZE   (DATA_SIZE),
+    .CONTROL_SIZE(CONTROL_SIZE)
   )
   dut (
     // GLOBAL

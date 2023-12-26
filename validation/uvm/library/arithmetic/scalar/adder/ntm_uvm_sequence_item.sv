@@ -37,12 +37,14 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
+import model_arithmetic_verilog_pkg::*;
+
 class ntm_uvm_sequence_item extends uvm_sequence_item;
   // Data Signals
-  rand bit [7:0] DATA_A_IN;
-  rand bit [7:0] DATA_B_IN;
+  rand bit [DATA_SIZE-1:0] DATA_A_IN;
+  rand bit [DATA_SIZE-1:0] DATA_B_IN;
 
-  bit      [7:0] DATA_OUT;
+  bit      [DATA_SIZE-1:0] DATA_OUT;
   bit            OVERFLOW_OUT;
 
   // Constructor

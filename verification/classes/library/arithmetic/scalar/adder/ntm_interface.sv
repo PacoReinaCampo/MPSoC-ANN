@@ -35,7 +35,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 // Author(s):
-//   Paco Reina Campo <pacoreinacampo@queenfield.tech>
+//   Paco Reina Campo <pacoreinacampo@queenfield.tech>\
+
+import model_arithmetic_verilog_pkg::*;
 
 interface adder_if (
   input logic CLK,
@@ -47,10 +49,10 @@ interface adder_if (
   logic READY;
 
   // DATA
-  logic [7:0] DATA_A_IN;
-  logic [7:0] DATA_B_IN;
+  logic [DATA_SIZE-1:0] DATA_A_IN;
+  logic [DATA_SIZE-1:0] DATA_B_IN;
 
-  logic [7:0] DATA_OUT;
+  logic [DATA_SIZE-1:0] DATA_OUT;
   logic       OVERFLOW_OUT;
 
   // clocking driver_cb @(posedge clk);

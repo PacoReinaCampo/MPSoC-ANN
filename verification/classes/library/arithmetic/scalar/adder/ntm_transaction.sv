@@ -37,15 +37,17 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-class ntm_transaction;
-  rand bit [7:0] ip1;
-  rand bit [7:0] ip2;
+import model_arithmetic_verilog_pkg::*;
 
-  bit      [8:0] out;
+class ntm_transaction;
+  rand bit [DATA_SIZE-1:0] DATA_A_IN;
+  rand bit [DATA_SIZE-1:0] DATA_B_IN;
+
+  bit      [DATA_SIZE-1:0] DATA_OUT;
 
   constraint ip_c {
-    ip1 < 100;
-    ip2 < 100;
+    DATA_A_IN < 100;
+    DATA_B_IN < 100;
   }
 
 endclass

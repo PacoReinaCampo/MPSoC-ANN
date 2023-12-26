@@ -43,6 +43,8 @@ import uvm_pkg::*;
 `include "ntm_uvm_interface.sv"
 `include "ntm_uvm_test.sv"
 
+import model_arithmetic_verilog_pkg::*;
+
 module ntm_uvm_testbench;
   // Clock and Reset declaration
   bit CLK;
@@ -80,8 +82,8 @@ module ntm_uvm_testbench;
   // DUT instantiation
   model_scalar_float_adder #(
     // SYSTEM-SIZE
-    .DATA_SIZE   (8),
-    .CONTROL_SIZE(4)
+    .DATA_SIZE   (DATA_SIZE),
+    .CONTROL_SIZE(CONTROL_SIZE)
   )
   dut (
     // GLOBAL
@@ -92,7 +94,7 @@ module ntm_uvm_testbench;
    .START(vif.START),
    .READY(vif.READY),
 
-   .OPERATION(vif.OPERATION),
+   .OPERATION(1'b0),
 
     // DATA
    .DATA_A_IN(vif.DATA_A_IN),
