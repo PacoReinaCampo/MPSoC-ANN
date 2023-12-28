@@ -52,11 +52,11 @@ class ntm_driver;
       // Driver to the DUT
       @(posedge vif.clk);
       generator_to_driver.get(transaction);
-      //$display("ip1 = %0d, ip2 = %0d", transaction.ip1, transaction.ip2);
-      vif.ip1 <= transaction.ip1;
-      vif.ip2 <= transaction.ip2;
+      //$display("DATA_A_IN = %0d, DATA_B_IN = %0d", transaction.DATA_A_IN, transaction.DATA_B_IN);
+      vif.DATA_A_IN <= transaction.DATA_A_IN;
+      vif.DATA_B_IN <= transaction.DATA_B_IN;
       @(posedge vif.clk);
-      transaction.out <= vif.out;
+      transaction.DATA_OUT <= vif.DATA_OUT;
     end
   endtask
 endclass

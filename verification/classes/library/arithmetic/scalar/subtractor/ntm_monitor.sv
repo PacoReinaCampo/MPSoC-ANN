@@ -52,10 +52,10 @@ class ntm_monitor;
       wait (!vif.rst);
       @(posedge vif.clk);
       monitor_transaction     = new();
-      monitor_transaction.ip1 = vif.ip1;
-      monitor_transaction.ip2 = vif.ip2;
+      monitor_transaction.DATA_A_IN = vif.DATA_A_IN;
+      monitor_transaction.DATA_B_IN = vif.DATA_B_IN;
       @(posedge vif.clk);
-      monitor_transaction.out = vif.out;
+      monitor_transaction.DATA_OUT = vif.DATA_OUT;
       monitor_to_scoreboard.put(monitor_transaction);
     end
   endtask
