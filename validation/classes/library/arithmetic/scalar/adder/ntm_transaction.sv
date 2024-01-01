@@ -44,7 +44,7 @@ class ntm_transaction;
   rand bit [DATA_SIZE-1:0] DATA_B_IN;
 
   bit      [DATA_SIZE-1:0] DATA_OUT;
-  bit            OVERFLOW_OUT;
+  bit                      OVERFLOW_OUT;
 
   constraint ip_c {
     DATA_A_IN < 256;
