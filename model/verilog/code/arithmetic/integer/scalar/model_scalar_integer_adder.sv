@@ -37,8 +37,6 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import model_arithmetic_verilog_pkg::*;
-
 module model_scalar_integer_adder #(
   parameter DATA_SIZE    = 64,
   parameter CONTROL_SIZE = 4
@@ -72,16 +70,14 @@ module model_scalar_integer_adder #(
   // Constants
   //////////////////////////////////////////////////////////////////////////////
 
+  parameter ZERO_DATA = 0;
+
   //////////////////////////////////////////////////////////////////////////////
   // Signals
   //////////////////////////////////////////////////////////////////////////////
 
   // Finite State Machine
   reg  adder_ctrl_fsm_int;
-
-  // Data Internal
-  integer data_a_int;
-  integer data_b_int;
 
   //////////////////////////////////////////////////////////////////////////////
   // Body
@@ -98,10 +94,6 @@ module model_scalar_integer_adder #(
       // Control Outputs
       READY              <= 1'b0;
 
-      // Data Internal
-      data_a_int         <= 0;
-      data_b_int         <= 0;
-
       // FSM Control
       adder_ctrl_fsm_int <= STARTER_STATE;
 
@@ -112,10 +104,6 @@ module model_scalar_integer_adder #(
           READY <= 1'b0;
 
           if (START == 1'b1) begin
-            // Data Internal
-            data_a_int         <= DATA_A_IN;
-            data_b_int         <= DATA_B_IN;
-
             // FSM Control
             adder_ctrl_fsm_int <= ENDER_STATE;
           end
@@ -124,9 +112,9 @@ module model_scalar_integer_adder #(
 
           // Data Outputs
           if (OPERATION == 1'b1) begin
-            DATA_OUT         <= data_a_int - data_b_int;
+            DATA_OUT         <= DATA_A_IN - DATA_B_IN;
           end else begin
-            DATA_OUT         <= data_a_int + data_b_int;
+            DATA_OUT         <= DATA_A_IN + DATA_B_IN;
           end
 
           OVERFLOW_OUT       <= 1'b0;
