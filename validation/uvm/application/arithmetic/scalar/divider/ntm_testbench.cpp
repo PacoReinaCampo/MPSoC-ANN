@@ -57,8 +57,8 @@
 vluint64_t simulation_time = 0;
 vluint64_t posedge_cnt = 0;
 
-// Scalar Adder input interface transaction item class
-class ScalarAdderInTx {
+// Scalar Divider input interface transaction item class
+class ScalarDividerInTx {
   public:
     uint32_t a;
     uint32_t b;
@@ -70,61 +70,61 @@ class ScalarAdderInTx {
     } control_operation;
 };
 
-// Scalar Adder output interface transaction item class
-class ScalarAdderOutTx {
+// Scalar Divider output interface transaction item class
+class ScalarDividerOutTx {
   public:
     uint32_t out;
 };
 
-// Scalar Adder ScoreBoard
-class ScalarAdderScb {
+// Scalar Divider ScoreBoard
+class ScalarDividerScb {
   private:
-    std::deque<ScalarAdderInTx*> in_q;
+    std::deque<ScalarDividerInTx*> in_q;
     
   public:
     // Input interface monitor port
-    void writeIn(ScalarAdderInTx *tx){
+    void writeIn(ScalarDividerInTx *tx){
       // Push the received transaction item into a queue for later
       in_q.push_back(tx);
     }
 
     // Output interface monitor port
-    void writeOut(ScalarAdderOutTx* tx){
+    void writeOut(ScalarDividerOutTx* tx){
       // We should never get any data from the output interface
       // before an input gets driven to the input interface
       if(in_q.empty()){
-        std::cout <<"Fatal Error in ScalarAdderScb: empty ScalarAdderInTx queue" << std::endl;
+        std::cout <<"Fatal Error in ScalarDividerScb: empty ScalarDividerInTx queue" << std::endl;
         exit(1);
       }
 
       // Grab the transaction item from the front of the input item queue
-      ScalarAdderInTx* in;
+      ScalarDividerInTx* in;
       in = in_q.front();
       in_q.pop_front();
 
       switch(in->control_operation){
         // A valid signal should not be created at the output when there is no operation,
         // so we should never get a transaction item where the operation is NOP
-        case ScalarAdderInTx::nop :
-          std::cout << "Fatal error in ScalarAdderScb, received NOP on input" << std::endl;
+        case ScalarDividerInTx::nop :
+          std::cout << "Fatal error in ScalarDividerScb, received NOP on input" << std::endl;
           exit(1);
           break;
 
         // Received transaction is add
-        case ScalarAdderInTx::add :
+        case ScalarDividerInTx::add :
           if (in->a + in->b != tx->out) {
             std::cout << std::endl;
-            std::cout << "ScalarAdderScb: add mismatch" << std::endl;
+            std::cout << "ScalarDividerScb: add mismatch" << std::endl;
             std::cout << "  Expected: " << in->a + in->b << "  Actual: " << tx->out << std::endl;
             std::cout << "  Simtime: " << simulation_time << std::endl;
           }
           break;
 
         // Received transaction is sub
-        case ScalarAdderInTx::sub :
+        case ScalarDividerInTx::sub :
           if (in->a - in->b != tx->out) {
             std::cout << std::endl;
-            std::cout << "ScalarAdderScb: sub mismatch" << std::endl;
+            std::cout << "ScalarDividerScb: sub mismatch" << std::endl;
             std::cout << "  Expected: " << in->a - in->b << "  Actual: " << tx->out << std::endl;
             std::cout << "  Simtime: " << simulation_time << std::endl;
           }
@@ -138,22 +138,22 @@ class ScalarAdderScb {
 };
 
 // ALU input interface driver
-class ScalarAdderInDrv {
+class ScalarDividerInDrv {
   private:
     Vmodel_scalar_integer_adder *dut;
   public:
-    ScalarAdderInDrv(Vmodel_scalar_integer_adder *dut){
+    ScalarDividerInDrv(Vmodel_scalar_integer_adder *dut){
       this->dut = dut;
     }
 
-    void drive(ScalarAdderInTx *tx){
+    void drive(ScalarDividerInTx *tx){
       // we always start with START set to 0, and set it to
       // 1 later only if necessary
       dut->START = 0;
 
       // Don't drive anything if a transaction item doesn't exist
       if(tx != NULL){
-        if (tx->control_operation != ScalarAdderInTx::nop) {
+        if (tx->control_operation != ScalarDividerInTx::nop) {
           // If the operation is not a NOP, we drive it onto the
           // input interface pins
           dut->START = 1;
@@ -169,12 +169,12 @@ class ScalarAdderInDrv {
 };
 
 // ALU input interface monitor
-class ScalarAdderInMon {
+class ScalarDividerInMon {
   private:
     Vmodel_scalar_integer_adder *dut;
-    ScalarAdderScb *scb;
+    ScalarDividerScb *scb;
   public:
-    ScalarAdderInMon(Vmodel_scalar_integer_adder *dut, ScalarAdderScb *scb){
+    ScalarDividerInMon(Vmodel_scalar_integer_adder *dut, ScalarDividerScb *scb){
       this->dut = dut;
       this->scb = scb;
     }
@@ -182,10 +182,10 @@ class ScalarAdderInMon {
     void monitor(){
       if (dut->START == 1) {
         // If there is valid data at the input interface,
-        // create a new ScalarAdderInTx transaction item and populate
+        // create a new ScalarDividerInTx transaction item and populate
         // it with data observed at the interface pins
-        ScalarAdderInTx *tx = new ScalarAdderInTx();
-        tx->control_operation = ScalarAdderInTx::ControlOperation(dut->OPERATION);
+        ScalarDividerInTx *tx = new ScalarDividerInTx();
+        tx->control_operation = ScalarDividerInTx::ControlOperation(dut->OPERATION);
         tx->a = dut->DATA_A_IN;
         tx->b = dut->DATA_B_IN;
 
@@ -196,12 +196,12 @@ class ScalarAdderInMon {
 };
 
 // ALU output interface monitor
-class ScalarAdderOutMon {
+class ScalarDividerOutMon {
   private:
     Vmodel_scalar_integer_adder *dut;
-    ScalarAdderScb *scb;
+    ScalarDividerScb *scb;
   public:
-    ScalarAdderOutMon(Vmodel_scalar_integer_adder *dut, ScalarAdderScb *scb){
+    ScalarDividerOutMon(Vmodel_scalar_integer_adder *dut, ScalarDividerScb *scb){
       this->dut = dut;
       this->scb = scb;
     }
@@ -209,9 +209,9 @@ class ScalarAdderOutMon {
     void monitor(){
       if (dut->READY == 1) {
         // If there is valid data at the output interface,
-        // create a new ScalarAdderOutTx transaction item and populate
+        // create a new ScalarDividerOutTx transaction item and populate
         // it with result observed at the interface pins
-        ScalarAdderOutTx *tx = new ScalarAdderOutTx();
+        ScalarDividerOutTx *tx = new ScalarDividerOutTx();
         tx->out = dut->DATA_OUT;
 
         // then pass the transaction item to the scoreboard
@@ -221,14 +221,14 @@ class ScalarAdderOutMon {
 };
 
 // ALU random transaction generator
-// This will allocate memory for an ScalarAdderInTx
+// This will allocate memory for an ScalarDividerInTx
 // transaction item, randomise the data, and
 // return a pointer to the transaction item object
-ScalarAdderInTx* rndScalarAdderInTx(){
+ScalarDividerInTx* rndScalarDividerInTx(){
   //20% chance of generating a transaction
   if(rand()%5 == 0){
-    ScalarAdderInTx *tx = new ScalarAdderInTx();
-    tx->control_operation = ScalarAdderInTx::ControlOperation(rand() % 3);  // Our ENUM only has entries with values 0, 1, 2
+    ScalarDividerInTx *tx = new ScalarDividerInTx();
+    tx->control_operation = ScalarDividerInTx::ControlOperation(rand() % 3);  // Our ENUM only has entries with values 0, 1, 2
     tx->a = rand() % 11 + 10;  // generate a in range 10-20
     tx->b = rand() % 6;  // generate b in range 0-5
     return tx;
@@ -258,13 +258,13 @@ int main(int argc, char** argv, char** env) {
   dut->trace(m_trace, 5);
   m_trace->open("waveform.vcd");
 
-  ScalarAdderInTx *tx;
+  ScalarDividerInTx *tx;
 
   // Here we create the driver, scoreboard, input and output monitor blocks
-  ScalarAdderInDrv *drv = new ScalarAdderInDrv(dut);
-  ScalarAdderScb *scb = new ScalarAdderScb();
-  ScalarAdderInMon *inMon = new ScalarAdderInMon(dut, scb);
-  ScalarAdderOutMon *outMon = new ScalarAdderOutMon(dut, scb);
+  ScalarDividerInDrv *drv = new ScalarDividerInDrv(dut);
+  ScalarDividerScb *scb = new ScalarDividerScb();
+  ScalarDividerInMon *inMon = new ScalarDividerInMon(dut, scb);
+  ScalarDividerOutMon *outMon = new ScalarDividerOutMon(dut, scb);
 
   while (simulation_time < MAX_SIMULATION_TIME) {
     dut_reset(dut, simulation_time);
@@ -275,8 +275,8 @@ int main(int argc, char** argv, char** env) {
     if (dut->CLK == 1){
 
       if (simulation_time >= VERIFICATION_START_TIME) {
-        // Generate a randomised transaction item of type ScalarAdderInTx
-        tx = rndScalarAdderInTx();
+        // Generate a randomised transaction item of type ScalarDividerInTx
+        tx = rndScalarDividerInTx();
 
         // Pass the transaction item to the ALU input interface driver,
         // which drives the input interface based on the info in the

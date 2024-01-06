@@ -42,8 +42,8 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-../../../../../../../../model/verilog/code/arithmetic/integer/scalar/model_scalar_integer_subtractor.sv
+../../../../../../../../model/verilog/code/arithmetic/integer/scalar/model_scalar_integer_adder.sv
 
 --exe
 
-../../../../../../../../validation/uvm/application/arithmetic/scalar/subtractor/ntm_testbench.cpp
+../../../../../../../../validation/uvm/application/arithmetic/scalar/adder/ntm_testbench.cpp
