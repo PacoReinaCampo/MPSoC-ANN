@@ -44,7 +44,7 @@ interface ntm_design_if (
   input logic RST,
 
   input logic START,
-  output logic READY,
+  output logic READY
 );
 
   // Declaration of signals
@@ -52,5 +52,5 @@ interface ntm_design_if (
   logic [DATA_SIZE-1:0] DATA_B_IN;
 
   logic [DATA_SIZE-1:0] DATA_OUT;
-  logic       OVERFLOW_OUT;
+  logic                 OVERFLOW_OUT;
 endinterface

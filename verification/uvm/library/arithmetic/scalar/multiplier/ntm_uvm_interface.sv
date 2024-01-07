@@ -53,5 +53,5 @@ interface ntm_design_if (
   logic [DATA_SIZE-1:0] DATA_B_IN;
 
   logic [DATA_SIZE-1:0] DATA_OUT;
-  logic       OVERFLOW_OUT;
+  logic                 OVERFLOW_OUT;
 endinterface
