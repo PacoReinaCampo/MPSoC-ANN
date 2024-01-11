@@ -19,10 +19,31 @@ class intr extends uvm_reg;
     status = uvm_reg_field::type_id::create("status");
 
     // Configure
-    status.configure(.parent(this), .size(16), .lsb_pos(0), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+    status.configure(
+      .parent(this),
+      .size(16),
+      .lsb_pos(0),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
 
     mask = uvm_reg_field::type_id::create("mask");
-    mask.configure(.parent(this), .size(16), .lsb_pos(16), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+
+    mask.configure(
+      .parent(this),
+      .size(16),
+      .lsb_pos(16),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
   endfunction
 endclass
 
@@ -46,16 +67,60 @@ class ctrl extends uvm_reg;
   // 2. Configure the fields
   function void build;
     start_dma = uvm_reg_field::type_id::create("start_dma");
-    start_dma.configure(.parent(this), .size(1), .lsb_pos(0), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+
+    start_dma.configure(
+      .parent(this),
+      .size(1),
+      .lsb_pos(0),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
 
     w_count = uvm_reg_field::type_id::create("w_count");
-    w_count.configure(.parent(this), .size(8), .lsb_pos(1), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+
+    w_count.configure(
+      .parent(this),
+      .size(8),
+      .lsb_pos(1),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
 
     io_mem = uvm_reg_field::type_id::create("io_mem");
-    io_mem.configure(.parent(this), .size(1), .lsb_pos(9), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+
+    io_mem.configure(
+      .parent(this),
+      .size(1),
+      .lsb_pos(9),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
 
     reserved = uvm_reg_field::type_id::create("reserved");
-    reserved.configure(.parent(this), .size(22), .lsb_pos(10), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+
+    reserved.configure(
+      .parent(this),
+      .size(22),
+      .lsb_pos(10),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
   endfunction
 endclass
 
@@ -78,8 +143,19 @@ class io_addr extends uvm_reg;
 
     // Create bitfield
     addr = uvm_reg_field::type_id::create("addr");
+
     // Configure
-    addr.configure(.parent(this), .size(32), .lsb_pos(0), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+    addr.configure(
+      .parent(this),
+      .size(32),
+      .lsb_pos(0),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
   endfunction
 endclass
 
@@ -103,7 +179,17 @@ class mem_addr extends uvm_reg;
     addr = uvm_reg_field::type_id::create("addr");
 
     // Configure
-    addr.configure(.parent(this), .size(32), .lsb_pos(0), .access("RW"), .volatile(0), .reset(0), .has_reset(1), .is_rand(1), .individually_accessible(0));
+    addr.configure(
+      .parent(this),
+      .size(32),
+      .lsb_pos(0),
+      .access("RW"),
+      .volatile(0),
+      .reset(0),
+      .has_reset(1),
+      .is_rand(1),
+      .individually_accessible(0)
+    );
   endfunction
 endclass
 
