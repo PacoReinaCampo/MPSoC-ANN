@@ -9,14 +9,14 @@
 //                  |_|                                                          //
 //                                                                               //
 //                                                                               //
-//              Peripheral for MPSoC                                             //
-//              Multi-Processor System on Chip                                   //
+//              Peripheral-NTM for MPSoC                                         //
+//              Neural Turing Machine for MPSoC                                  //
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
 //                                                                               //
-// Copyright (c) 2015-2016 by the author(s)                                      //
+// Copyright (c) 2020-2021 by the author(s)                                      //
 //                                                                               //
 // Permission is hereby granted, free of charge, to any person obtaining a copy  //
 // of this software and associated documentation files (the "Software"), to deal //
@@ -42,6 +42,8 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../application/ntm_design.sv
+../../../application/ntm_design.sv
 
-sv work ../library/ntm_uvm_testbench.sv
+--exe
+
+../../../application/ntm_testbench.cpp
