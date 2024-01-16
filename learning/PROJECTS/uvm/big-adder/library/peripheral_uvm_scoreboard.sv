@@ -62,7 +62,7 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
       if (act_trans_fifo.size != 0) begin
         act_transaction = act_trans_fifo.pop_front();
         `uvm_info(get_full_name(), $sformatf("expected peripheral_adder SUM =%d , actual adder_8_bit SUM =%d ", exp_transaction.out, act_transaction.out), UVM_LOW);
-        if (exp_transaction.out == act_transaction.out) begin
+        if (exp_transaction.out == act_transaction.in1 + act_transaction.in2) begin
           `uvm_info(get_full_name(), $sformatf("SUM MATCHES"), UVM_LOW);
         end else begin
           `uvm_error(get_full_name(), $sformatf("SUM DIS-MATCHES"));

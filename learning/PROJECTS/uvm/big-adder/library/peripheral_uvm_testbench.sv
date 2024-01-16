@@ -52,6 +52,10 @@ module peripheral_uvm_testbench;
   // Set the Interface instance Using Configuration Database
   initial begin
     uvm_config_db#(virtual peripheral_uvm_interface)::set(uvm_root::get(), "*", "intf", peripheral_uvm_intf);
+
+    // Enable wave dump
+    $dumpfile("dump.vcd");
+    $dumpvars(0);
   end
 
 endmodule
