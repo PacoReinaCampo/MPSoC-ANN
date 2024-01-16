@@ -1,11 +1,13 @@
 interface peripheral_uvm_interface (
   input logic clk,
-  input logic rst
+  input logic rst,
+  input logic in_valid
 );
 
   // Declaration of Signals
   logic [7:0] in1;
   logic [7:0] in2;
+  logic       out_valid;
   logic [8:0] out;
 
   // Clocking block and modport declaration for driver
