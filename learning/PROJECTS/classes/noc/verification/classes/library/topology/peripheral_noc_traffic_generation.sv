@@ -11,17 +11,17 @@ class trafficgen #(
       mc_supported,
       mc_num_dest
 );
-  sysconfig                                                                                              conf;
-  integer                                                                                                valid_dests    [];
-  bit                                                                                  [mc_num_dest-1:0] valid_dests_mc     = {mc_num_dest{1'b1}};
-  integer                                                                                                valid_vchannels[];
-  integer                                                                                                id;
-  networkacc #(flit_data_width, flit_dest_width, vchannels, mc_supported, mc_num_dest)                   netacc;
-  integer                                                                                                netid;
-  real                                                                                                   genrate;
-  poisson                                                                                                delay;
+  sysconfig conf;
+  integer valid_dests [];
+  bit [mc_num_dest-1:0] valid_dests_mc = {mc_num_dest{1'b1}};
+  integer valid_vchannels[];
+  integer id;
+  networkacc #(flit_data_width, flit_dest_width, vchannels, mc_supported, mc_num_dest) netacc;
+  integer netid;
+  real genrate;
+  poisson delay;
 
-  string                                                                                                 traffic_type;
+  string traffic_type;
 
   function void init_uniform(string param[]);
     if (param.size() >= 1) begin
@@ -36,7 +36,7 @@ class trafficgen #(
       // Remove braces around definition
       string list = param[1].substr(1, param[1].len() - 2);
 
-      string valid_dests_s                                 [];
+      string valid_dests_s [];
 
       sysconfig::explode(list, "-", valid_dests_s);
       if (valid_dests_s.size() == 1 && valid_dests_s[0] == "*") begin
@@ -76,7 +76,7 @@ class trafficgen #(
       // Remove braces around definition
       string list = param[2].substr(1, param[2].len() - 2);
 
-      string valid_vc_list                                 [];
+      string valid_vc_list [];
 
       sysconfig::explode(list, "-", valid_vc_list);
       if (valid_vc_list.size() == 1 && valid_vc_list[0] == "*") begin
@@ -113,7 +113,7 @@ class trafficgen #(
       // Remove braces around definition
       string list = param[1].substr(1, param[1].len() - 2);
 
-      string valid_dests_s                                 [];
+      string valid_dests_s [];
 
       sysconfig::explode(list, "-", valid_dests_s);
       if (valid_dests_s.size() == 1 && valid_dests_s[0] == "*") begin
@@ -182,10 +182,13 @@ class trafficgen #(
 
   task run_uniform();
     packet #(flit_data_width, flit_dest_width, mc_supported, mc_num_dest) p;
-    flit #(mc_supported)                                                  f;
-    integer                                                               d;
-    integer                                                               N = 0;
-    integer                                                               D = 0;
+
+    flit #(mc_supported) f;
+
+    integer d;
+    integer N = 0;
+    integer D = 0;
+
     delay = new(1.0 / genrate);
 
     forever begin
@@ -214,10 +217,12 @@ class trafficgen #(
 
   task run_multicast();
     packet #(flit_data_width, flit_dest_width, mc_supported, mc_num_dest) p;
-    flit #(mc_supported)                                                  f;
-    integer                                                               d;
-    integer                                                               N = 0;
-    integer                                                               D = 0;
+    flit #(mc_supported) f;
+
+    integer d;
+    integer N = 0;
+    integer D = 0;
+
     delay = new(1.0 / genrate);
 
     forever begin
@@ -235,12 +240,16 @@ class trafficgen #(
       p.src             = id;
       p.is_mc           = 1;
 
-      if (p.randomize() == 0) $error("Randomization error");
+      if (p.randomize() == 0) begin
+        $error("Randomization error");
+      end
 
       if (p.id == -1) begin
         netacc.measure.stop();
         break;
-      end else netacc.send(p);
+      end else begin
+        netacc.send(p);
+      end
     end
   endtask  // run_multicast
 

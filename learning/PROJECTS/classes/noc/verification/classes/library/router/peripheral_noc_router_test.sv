@@ -28,7 +28,7 @@ program tb_noc_router_test (
   end
 
   task automatic packet_generate(int id);
-    packet                             p;
+    packet p;
 
     flit_header_t #(`DATA_WIDTH)       header;
     flit_t #(`DATA_WIDTH, `TYPE_WIDTH) flit;

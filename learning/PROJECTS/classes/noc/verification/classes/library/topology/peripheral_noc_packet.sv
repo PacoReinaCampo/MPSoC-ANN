@@ -351,8 +351,7 @@ class flit #(
 
   function bit [33+mc_supported:0] get();
     get = {ftype, content};
-  endfunction
-  ;  // get
+  endfunction  // get
 endclass  // flit
 
 `endif

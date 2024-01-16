@@ -10,13 +10,16 @@ class measurement #(
       mc_supported,
       mc_num_dests
 );
+
   packet #(flit_data_width, flit_dest_width, mc_supported, mc_num_dests) packets[integer];
-  integer                                                                n                 = 0;
-  integer                                                                acc_lat           = 0;
-  integer                                                                net_lat           = 0;
-  integer                                                                N;
-  integer                                                                nflits            = 0;
-  bit                                                                    stopnow           = 0;
+
+  integer n       = 0;
+  integer acc_lat = 0;
+  integer net_lat = 0;
+  integer N;
+  integer nflits  = 0;
+
+  bit stopnow = 0;
 
   function void stop();
     stopnow = 1;
@@ -27,7 +30,7 @@ class measurement #(
   endfunction  // new
 
   function void add(packet#(flit_data_width, flit_dest_width, mc_supported, mc_num_dests) p);
-    //      $display("add %0d",p.id);
+    // $display("add %0d",p.id);
 
     packets[p.id] = p;
   endfunction  // add

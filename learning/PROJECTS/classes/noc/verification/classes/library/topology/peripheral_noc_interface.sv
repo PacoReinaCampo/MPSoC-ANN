@@ -1,6 +1,7 @@
 interface lisnoclink_if (
   input clk
 );
+
   parameter flit_width = 34;
   parameter vchannels = 1;
 

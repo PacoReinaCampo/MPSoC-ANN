@@ -68,7 +68,7 @@ endclass  // randomdelay
 
 typedef struct {
   flit_t #(`DATA_WIDTH, `TYPE_WIDTH) flit;
-  time                               timestamp;
+  time timestamp;
 } sent_flit;
 
 module tb_noc_router ();

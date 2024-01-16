@@ -3,10 +3,10 @@
 
 class networkacc #(
   integer flit_data_width,
-          flit_dest_width,
-          vchannels,
-          mc_supported,
-          mc_num_dest
+  integer flit_dest_width,
+  integer vchannels,
+  integer mc_supported,
+  integer mc_num_dest
 );
 
   virtual lisnoclink_if #(.vchannels(vchannels), .flit_width(flit_data_width + 2 + mc_supported)) link;

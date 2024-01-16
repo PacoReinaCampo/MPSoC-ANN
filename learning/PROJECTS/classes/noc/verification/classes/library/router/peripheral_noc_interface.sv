@@ -1,15 +1,16 @@
 interface testbench_if (
-  input                clk,
-        lisnoc_link_if north_in,
-        lisnoc_link_if north_out,
-        lisnoc_link_if east_in,
-        lisnoc_link_if east_out,
-        lisnoc_link_if south_in,
-        lisnoc_link_if south_out,
-        lisnoc_link_if west_in,
-        lisnoc_link_if west_out,
-        lisnoc_link_if local_in,
-        lisnoc_link_if local_out
+  input clk,
+
+  lisnoc_link_if north_in,
+  lisnoc_link_if north_out,
+  lisnoc_link_if east_in,
+  lisnoc_link_if east_out,
+  lisnoc_link_if south_in,
+  lisnoc_link_if south_out,
+  lisnoc_link_if west_in,
+  lisnoc_link_if west_out,
+  lisnoc_link_if local_in,
+  lisnoc_link_if local_out
 );
 
   parameter vchannels = 1;

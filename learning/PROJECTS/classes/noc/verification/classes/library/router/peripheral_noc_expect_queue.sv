@@ -2,13 +2,13 @@ class expect_queue #(
   int vchannels = 1
 );
 
-  mailbox #(sent_flit) queue        [5][vchannels] [5];
+  mailbox #(sent_flit) queue [5][vchannels] [5];
 
-  semaphore            sem_recv;
-  integer              recv_success;
-  real                 avg_latency;
+  semaphore sem_recv;
+  integer recv_success;
+  real avg_latency;
 
-  integer              cur_src      [5][vchannels];
+  integer cur_src [5][vchannels];
 
   function new();
     for (int i = 0; i < 5; i++) begin

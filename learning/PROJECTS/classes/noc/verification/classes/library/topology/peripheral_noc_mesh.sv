@@ -12,6 +12,7 @@ module mesh (
   clk,
   rst
 );
+
   parameter select_router = 0;  //0 = unicast; 1 = prio unicast; 2 = path-based multicast; 3 = tree-based multicast
   parameter flit_type_width = 3;  // Must be 2 for (0) & (1) or 3 for (2) & (3)
   parameter flit_data_width = 32;
