@@ -14,17 +14,19 @@ interface peripheral_uvm_interface (
   clocking dr_cb @(posedge clk);
     output in1;
     output in2;
+    input out_valid;
     input out;
   endclocking
 
-  modport DRV(clocking dr_cb, input clk, rst);
+  modport DRV(clocking dr_cb, input clk, rst, in_valid);
 
   // Clocking block and modport declaration for monitor
   clocking rc_cb @(negedge clk);
     input in1;
     input in2;
+    input out_valid;
     input out;
   endclocking
 
-  modport RCV(clocking rc_cb, input clk, rst);
+  modport RCV(clocking rc_cb, input clk, rst, in_valid);
 endinterface

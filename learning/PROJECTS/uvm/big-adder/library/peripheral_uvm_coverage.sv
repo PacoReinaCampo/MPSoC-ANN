@@ -18,6 +18,11 @@ class peripheral_uvm_coverage #(type T = peripheral_uvm_transaction) extends uvm
       bins in2_values[] = {[0 : $]};
     }
 
+    peripheral_uvm_out_valid: coverpoint cov_transaction.out_valid {
+      bins low = {0};
+      bins high = {1};
+    }
+
     peripheral_uvm_out: coverpoint cov_transaction.out {
       bins out_values[] = {[0 : $]};
     }
