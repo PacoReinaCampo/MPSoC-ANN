@@ -44,10 +44,14 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
     super.run_phase(phase);
     forever begin
       monitor2scoreboard_export_fifo.get(act_transaction);
-      if (act_transaction == null) $stop;
+      if (act_transaction == null) begin
+        $stop;
+      end
       act_trans_fifo.push_back(act_transaction);
       rm2scoreboard_export_fifo.get(exp_transaction);
-      if (exp_transaction == null) $stop;
+      if (exp_transaction == null) begin
+        $stop;
+      end
       exp_trans_fifo.push_back(exp_transaction);
       compare_trans();
     end
