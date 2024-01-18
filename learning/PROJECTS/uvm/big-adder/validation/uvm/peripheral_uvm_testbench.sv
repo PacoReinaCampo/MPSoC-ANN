@@ -11,35 +11,35 @@ import uvm_pkg::*;
 
 module peripheral_uvm_testbench;
   // Declaration of Local Fields
-  parameter cycle = 10;
+  parameter CYCLE = 10;
 
   bit clk;
   bit rst;
   bit in_valid;
 
-  // Clock generation
+  // Clock Generation
   initial begin
     clk = 0;
-    forever #(cycle / 2) clk = ~clk;
+    forever #(CYCLE / 2) clk = ~clk;
   end
 
   // Reset Generation
   // Change may required while generating reset for synchronous/Asynchronous or Active low/Active high
   initial begin
     rst = 1;
-    #(cycle * 2.5) rst = 0;
+    #(CYCLE * 2.5) rst = 0;
   end
 
   // Start generation
   initial begin
     in_valid = 0;
-    #(cycle * 2.5);
+    #(CYCLE * 2.5);
     
     forever begin
       in_valid = 1;
-      #cycle;
+      #CYCLE;
       in_valid = 0;
-      #cycle;
+      #CYCLE;
     end
   end
 
@@ -54,9 +54,11 @@ module peripheral_uvm_testbench;
   peripheral_adder dut_instantiation (
     .clk(peripheral_uvm_intf.clk),
     .rst(peripheral_uvm_intf.rst),
+
     .in_valid(peripheral_uvm_intf.in_valid),
     .in1(peripheral_uvm_intf.in1),
     .in2(peripheral_uvm_intf.in2),
+
     .out_valid(peripheral_uvm_intf.out_valid),
     .out(peripheral_uvm_intf.out)
   );
