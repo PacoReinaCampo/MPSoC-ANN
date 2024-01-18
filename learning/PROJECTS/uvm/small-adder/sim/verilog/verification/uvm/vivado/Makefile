@@ -9,14 +9,14 @@
 ##                  |_|                                                          ##
 ##                                                                               ##
 ##                                                                               ##
-##              Peripheral-NTM for MPSoC                                         ##
-##              Neural Turing Machine for MPSoC                                  ##
+##              Peripheral for MPSoC                                             ##
+##              Multi-Processor System on Chip                                   ##
 ##                                                                               ##
 ###################################################################################
 
 ###################################################################################
 ##                                                                               ##
-## Copyright (c) 2020-2021 by the author(s)                                      ##
+## Copyright (c) 2015-2016 by the author(s)                                      ##
 ##                                                                               ##
 ## Permission is hereby granted, free of charge, to any person obtaining a copy  ##
 ## of this software and associated documentation files (the "Software"), to deal ##
@@ -42,6 +42,17 @@
 ##                                                                               ##
 ###################################################################################
 
-../../../application/ntm_design.sv
+all: build simulate
 
-../../../application/ntm_testbench.sv
+build:
+	xvlog -sv -prj system.prj -L uvm
+
+simulate:
+	xelab ntm_uvm_testbench -relax -s top -timescale 1ns/1ps
+	xsim top -testplusarg UVM_TESTNAME=ntm_uvm_test -testplusarg UVM_VERBOSITY=UVM_LOW -runall
+
+test:
+	gtkwave dump.vcd
+
+clean:
+	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb

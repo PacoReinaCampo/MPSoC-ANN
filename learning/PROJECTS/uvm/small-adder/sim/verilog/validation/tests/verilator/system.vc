@@ -42,8 +42,8 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-../../../application/ntm_design.sv
+../../../../../model/verilog/ntm_design.sv
 
 --exe
 
-../../../application/ntm_testbench.cpp
+../../../../../validation/application/ntm_testbench.cpp
