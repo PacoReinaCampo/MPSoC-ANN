@@ -39,6 +39,6 @@
 ##                                                                               ##
 ###################################################################################
 
-../../../../../model/verilog/ntm_design.sv
+../../../../../rtl/verilog/peripheral_adder.sv
 
 ../../../../../verification/tests/peripheral_testbench.sv

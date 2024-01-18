@@ -39,6 +39,6 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../../../model/verilog/peripheral_adder.sv
+sv work ../../../../../rtl/verilog/peripheral_adder.sv
 
 sv work ../../../../../validation/tests/peripheral_testbench.sv
