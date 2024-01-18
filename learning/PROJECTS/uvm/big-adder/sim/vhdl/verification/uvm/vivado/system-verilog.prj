@@ -39,6 +39,4 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../rtl/verilog/peripheral_adder.sv
-
-sv work ../../../verification/uvm/peripheral_uvm_testbench.sv
+sv work ../../../../../verification/uvm/peripheral_uvm_testbench.sv

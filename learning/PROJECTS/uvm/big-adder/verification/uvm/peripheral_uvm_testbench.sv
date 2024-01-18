@@ -39,7 +39,7 @@ module peripheral_uvm_testbench;
       in_valid = 1;
       #CYCLE;
       in_valid = 0;
-      #CYCLE;
+      #(CYCLE * 250);
     end
   end
 

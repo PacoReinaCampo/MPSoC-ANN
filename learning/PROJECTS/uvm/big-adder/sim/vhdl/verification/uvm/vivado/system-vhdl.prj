@@ -39,6 +39,4 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../model/verilog/peripheral_adder.sv
-
-sv work ../../../validation/uvm/peripheral_uvm_testbench.sv
+vhdl2008 work ../../../../../rtl/vhdl/peripheral_adder.vhd

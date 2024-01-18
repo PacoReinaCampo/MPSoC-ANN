@@ -39,6 +39,17 @@
 ##                                                                               ##
 ###################################################################################
 
-../../../../../model/verilog/ntm_design.sv
+all: build simulate
 
-../../../../../verification/tests/peripheral_testbench.sv
+build:
+	xvlog -prj system.prj
+
+simulate:
+	xelab peripheral_testbench
+	xsim -R peripheral_testbench
+
+test:
+	gtkwave system.vcd
+
+clean:
+	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb

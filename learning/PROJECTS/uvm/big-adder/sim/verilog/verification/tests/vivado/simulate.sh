@@ -39,6 +39,7 @@
 ##                                                                               ##
 ###################################################################################
 
-../../../../../model/verilog/ntm_design.sv
+export PATH=$PATH:/opt/Xilinx/Vivado/2022.2/bin/
 
-../../../../../verification/tests/peripheral_testbench.sv
+make clean
+make
