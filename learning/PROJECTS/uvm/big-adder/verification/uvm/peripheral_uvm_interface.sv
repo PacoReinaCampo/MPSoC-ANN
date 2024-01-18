@@ -8,7 +8,7 @@ interface peripheral_uvm_interface (
   logic [7:0] in1;
   logic [7:0] in2;
   logic       out_valid;
-  logic [8:0] data_out;
+  logic [15:0] data_out;
 
   // Clocking block and modport declaration for driver
   clocking dr_cb @(posedge clk);

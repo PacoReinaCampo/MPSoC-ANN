@@ -4,7 +4,7 @@ class peripheral_uvm_transaction extends uvm_sequence_item;
   rand bit [7:0] in2;
 
   bit            out_valid;
-  bit      [8:0] data_out;
+  bit     [15:0] data_out;
 
   // Declaration of Utility and Field macros
   `uvm_object_utils_begin(peripheral_uvm_transaction)
