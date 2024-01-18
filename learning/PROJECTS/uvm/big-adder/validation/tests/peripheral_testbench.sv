@@ -14,9 +14,7 @@ module peripheral_testbench;
   wire [8:0] data_out;
 
   // DUT instantiation
-  peripheral_adder  #(
-    .DATA_SIZE(8)
-  ) dut (
+  peripheral_adder dut (
     .clk(clk),
     .rst(rst),
 

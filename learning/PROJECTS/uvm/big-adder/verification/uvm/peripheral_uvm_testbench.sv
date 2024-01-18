@@ -60,7 +60,7 @@ module peripheral_uvm_testbench;
     .in2(peripheral_uvm_intf.in2),
 
     .out_valid(peripheral_uvm_intf.out_valid),
-    .out(peripheral_uvm_intf.out)
+    .data_out(peripheral_uvm_intf.data_out)
   );
 
   // Starting the execution uvm phases

@@ -48,7 +48,7 @@ class peripheral_uvm_monitor extends uvm_monitor;
     act_transaction.in2 = vif.rc_cb.in2;
     wait (vif.out_valid);
     act_transaction.out_valid = vif.rc_cb.out_valid;
-    act_transaction.out = vif.rc_cb.out;
+    act_transaction.data_out = vif.rc_cb.data_out;
     `uvm_info(get_full_name(), $sformatf("TRANSACTION FROM MONITOR"), UVM_LOW);
     act_transaction.print();
   endtask

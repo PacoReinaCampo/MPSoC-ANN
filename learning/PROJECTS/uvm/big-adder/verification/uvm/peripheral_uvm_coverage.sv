@@ -23,7 +23,7 @@ class peripheral_uvm_coverage #(type T = peripheral_uvm_transaction) extends uvm
       bins high = {1};
     }
 
-    peripheral_uvm_out: coverpoint cov_transaction.out {
+    peripheral_uvm_data_out: coverpoint cov_transaction.data_out {
       bins out_values[] = {[0 : $]};
     }
   endgroup

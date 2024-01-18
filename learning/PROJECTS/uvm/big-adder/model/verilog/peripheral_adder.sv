@@ -11,7 +11,7 @@ module peripheral_adder (
   input      [7:0] in1,
   input      [7:0] in2,
 
-  output reg [8:0] out
+  output reg [8:0] data_out
 );
 
   //////////////////////////////////////////////////////////////////////////////
@@ -42,7 +42,7 @@ module peripheral_adder (
   always @(posedge clk or posedge rst) begin
     if (rst == 1'b1) begin
       // Data Outputs
-      out                <= ZERO_DATA;
+      data_out           <= ZERO_DATA;
 
       // Control Outputs
       out_valid          <= 1'b0;
@@ -64,7 +64,7 @@ module peripheral_adder (
         ENDER_STATE: begin  // STEP 1
 
           // Data Outputs
-          out                <= in1 + in2;
+          data_out           <= in1 + in2;
 
           // Control Outputs
           out_valid          <= 1'b1;
