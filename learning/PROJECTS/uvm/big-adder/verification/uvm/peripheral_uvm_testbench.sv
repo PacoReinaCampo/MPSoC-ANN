@@ -20,14 +20,18 @@ module peripheral_uvm_testbench;
   // Clock Generation
   initial begin
     clk = 0;
-    forever #(CYCLE / 2) clk = ~clk;
+
+    forever #(CYCLE / 2) begin
+      clk = ~clk;
+    end
   end
 
   // Reset Generation
   // Change may required while generating reset for synchronous/Asynchronous or Active low/Active high
   initial begin
     rst = 1;
-    #(CYCLE * 2.5) rst = 0;
+    #(CYCLE * 2.5);
+    rst = 0;
   end
 
   // Start generation
@@ -68,8 +72,8 @@ module peripheral_uvm_testbench;
     run_test();
   end
 
-  // Set the Interface instance Using Configuration Database
   initial begin
+    // Set the Interface instance Using Configuration Database
     uvm_config_db#(virtual peripheral_uvm_interface)::set(uvm_root::get(), "*", "intf", peripheral_uvm_intf);
 
     // Enable wave dump

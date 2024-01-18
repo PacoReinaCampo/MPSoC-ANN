@@ -50,6 +50,7 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_transaction);
   // Description : Driving the dut inputs
   task drive();
     wait (!vif.rst);
+    wait (vif.in_valid);
     @(vif.dr_cb);
     vif.dr_cb.in1 <= req.in1;
     vif.dr_cb.in2 <= req.in2;
