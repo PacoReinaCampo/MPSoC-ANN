@@ -47,6 +47,6 @@ interface ntm_design_if (
   logic [7:0] ip1;
   logic [7:0] ip2;
 
-  logic       out_valid;
-  logic [8:0] data_out;
+  logic        out_valid;
+  logic [15:0] data_out;
 endinterface

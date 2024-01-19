@@ -62,14 +62,14 @@ module ntm_uvm_testbench;
   // Start Generation
   initial begin
     start = 0;
-    #6;
+    #20;
 
-    repeat (12) begin
+    repeat (10) begin
       start = 1;
       #2;
 
       start = 0;
-      #10;
+      #18;
     end
   end
 
