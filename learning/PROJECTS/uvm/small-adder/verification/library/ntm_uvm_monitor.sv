@@ -68,6 +68,7 @@ class ntm_uvm_monitor extends uvm_monitor;
   // Run phase
   task run_phase(uvm_phase phase);
     forever begin
+      wait (!vif.rst);
       wait (vif.in_valid);
       @(posedge vif.clk);
       monitor_item.ip1 = vif.ip1;

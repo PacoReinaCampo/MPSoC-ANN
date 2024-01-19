@@ -61,7 +61,6 @@ class ntm_uvm_driver extends uvm_driver #(ntm_uvm_sequence_item);
   task run_phase(uvm_phase phase);
     forever begin
       // Driver to the DUT
-      wait (vif.in_valid);
       seq_item_port.get_next_item(req);
       `uvm_info(get_type_name, $sformatf("ip1 = %0d, ip2 = %0d", req.ip1, req.ip2), UVM_LOW);
       vif.ip1 <= req.ip1;
