@@ -77,7 +77,7 @@ class ntm_uvm_test extends uvm_test;
     base_sequence = ntm_uvm_sequence::type_id::create("base_sequence");
 
     repeat (10) begin
-      #20;
+      #1000;
       base_sequence.start(environment.agent.sequencer);
     end
 

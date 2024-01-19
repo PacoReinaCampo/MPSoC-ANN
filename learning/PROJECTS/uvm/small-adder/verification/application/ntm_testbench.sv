@@ -88,13 +88,15 @@ module ntm_testbench;
     rst = 0;
     #4;
 
-    in_valid = 1;
-    ip1 = 5;
-    ip2 = 2;
-    #2;
+    repeat (4) begin
+      in_valid = 1;
+      ip1 = $urandom();
+      ip2 = $urandom();
+      #2;
 
-    in_valid = 0;
-    #10;
+      in_valid = 0;
+      #1000;
+    end
 
     $display("End");
     $finish();
