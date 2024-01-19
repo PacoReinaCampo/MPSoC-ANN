@@ -44,4 +44,4 @@
 
 ../../../../../rtl/verilog/ntm_design.sv
 
-../../../../../verification/application/ntm_testbench.sv
+../../../../../verification/uvm/application/ntm_testbench.sv

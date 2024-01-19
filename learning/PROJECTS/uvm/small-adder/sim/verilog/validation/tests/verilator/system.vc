@@ -46,4 +46,4 @@
 
 --exe
 
-../../../../../validation/application/ntm_testbench.cpp
+../../../../../validation/uvm/application/ntm_testbench.cpp

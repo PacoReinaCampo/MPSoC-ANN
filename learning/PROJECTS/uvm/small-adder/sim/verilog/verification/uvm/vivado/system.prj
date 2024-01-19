@@ -44,4 +44,4 @@
 
 sv work ../../../../../rtl/verilog/ntm_design.sv
 
-sv work ../../../../../verification/library/ntm_uvm_testbench.sv
+sv work ../../../../../verification/uvm/library/ntm_uvm_testbench.sv

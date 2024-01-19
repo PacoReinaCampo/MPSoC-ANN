@@ -1,7 +1,7 @@
 module ntm_design (
   // GLOBAL
-  input wire clk,
-  input wire rst,
+  input clk,
+  input rst,
 
   // CONTROL
   input      in_valid,
