@@ -10,6 +10,16 @@ class peripheral_uvm_coverage #(type T = peripheral_uvm_transaction) extends uvm
     option.per_instance = 1;
     option.goal = 100;
 
+    peripheral_uvm_rst: coverpoint cov_transaction.rst {
+      bins low = {0};
+      bins high = {1};
+    }
+
+    peripheral_uvm_in_valid: coverpoint cov_transaction.in_valid {
+      bins low = {0};
+      bins high = {1};
+    }
+
     peripheral_uvm_in1: coverpoint cov_transaction.in1 {
       bins in1_values[] = {[0 : $]};
     }

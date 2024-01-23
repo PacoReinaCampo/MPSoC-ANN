@@ -1,5 +1,7 @@
 class peripheral_uvm_transaction extends uvm_sequence_item;
   // Declaration of peripheral_adder transaction fields
+  bit            rst;
+  bit            in_valid;
   rand bit [7:0] in1;
   rand bit [7:0] in2;
 
@@ -8,6 +10,8 @@ class peripheral_uvm_transaction extends uvm_sequence_item;
 
   // Declaration of Utility and Field macros
   `uvm_object_utils_begin(peripheral_uvm_transaction)
+  `uvm_field_int(rst, UVM_ALL_ON)
+  `uvm_field_int(in_valid, UVM_ALL_ON)
   `uvm_field_int(in1, UVM_ALL_ON)
   `uvm_field_int(in2, UVM_ALL_ON)
   `uvm_field_int(out_valid, UVM_ALL_ON)

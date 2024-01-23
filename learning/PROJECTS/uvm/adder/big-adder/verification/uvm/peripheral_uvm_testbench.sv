@@ -14,45 +14,16 @@ module peripheral_uvm_testbench;
   parameter CYCLE = 10;
 
   bit clk;
-  bit rst;
-  bit in_valid;
 
   // Clock Generation
+  always #(CYCLE / 2) clk = ~clk;
+
   initial begin
     clk = 0;
-
-    forever #(CYCLE / 2) begin
-      clk = ~clk;
-    end
-  end
-
-  // Reset Generation
-  // Change may required while generating reset for synchronous/Asynchronous or Active low/Active high
-  initial begin
-    rst = 1;
-    #(CYCLE * 2.5);
-    rst = 0;
-  end
-
-  // Start generation
-  initial begin
-    in_valid = 0;
-    #(CYCLE * 2.5);
-    
-    forever begin
-      in_valid = 1;
-      #CYCLE;
-      in_valid = 0;
-      #(CYCLE * 250);
-    end
   end
 
   // Creatinng instance of interface, in order to connect DUT and testcase
-  peripheral_uvm_interface peripheral_uvm_intf (
-    clk,
-    rst,
-    in_valid
-  );
+  peripheral_uvm_interface peripheral_uvm_intf (clk);
 
   // Peripheral_adder DUT Instantation
   peripheral_adder dut_instantiation (
