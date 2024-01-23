@@ -42,7 +42,7 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../../../../rtl/verilog/pkg/axi4-3d/peripheral_axi4_pkg.sv
-sv work ../../../../../../rtl/verilog/main/axi4-3d/peripheral_bfm_slave_generic_axi4.sv
+sv work ../../../../../../rtl/verilog/pkg/axi4-1d/peripheral_axi4_pkg.sv
+sv work ../../../../../../rtl/verilog/main/axi4-1d/peripheral_bfm_slave_generic_axi4.sv
 
-sv work ../../../../../../library/verilog/uvm/axi4-3d/peripheral_uvm_testbench.sv
+sv work ../../../../../../library/verilog/classes/axi4-1d/peripheral_testbench.sv
