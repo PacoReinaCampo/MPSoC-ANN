@@ -54,6 +54,19 @@ module starter_tb_top;
   starter_if vif_in ();
   starter_if vif_out ();
 
+  initial begin
+    rst <= 1'b1;
+    #51;
+
+    rst = 1'b0;
+  end
+
+  always #5 clk = ~clk;
+
+  initial begin
+    clk <= 1'b1;
+  end
+
   starter_dut dut (
     // Inputs
     .clk(clk),
@@ -68,22 +81,21 @@ module starter_tb_top;
   );
 
   initial begin
+    // Passing the interface handle to lower heirarchy using set method
     automatic uvm_coreservice_t cs_ = uvm_coreservice_t::get();
     uvm_config_db#(virtual starter_if)::set(cs_.get_root(), "*env_in*", "vif", vif_in);
     uvm_config_db#(virtual starter_if)::set(cs_.get_root(), "*env_out*", "vif", vif_out);
     factory = cs_.get_factory();
+
+    // Enable wave dump
+    $dumpfile("dump.vcd");
+    $dumpvars(0);
+  end
+
+  // Calling TestCase
+  initial begin
     run_test();
   end
-
-  initial begin
-    rst <= 1'b1;
-    clk <= 1'b1;
-
-    #51;
-    rst = 1'b0;
-  end
-
-  always #5 clk = ~clk;
 
   assign vif_in.clk  = clk;
   assign vif_in.rst  = rst;
