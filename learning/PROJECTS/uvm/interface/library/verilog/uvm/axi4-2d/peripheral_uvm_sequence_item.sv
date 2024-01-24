@@ -37,8 +37,6 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import peripheral_axi4_pkg::*;
-
 class peripheral_uvm_sequence_item extends uvm_sequence_item;
   // Global Signals
   bit             aresetn;  // Active LOW

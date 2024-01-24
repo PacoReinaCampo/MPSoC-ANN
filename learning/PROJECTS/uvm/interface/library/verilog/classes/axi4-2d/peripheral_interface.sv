@@ -37,8 +37,6 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import peripheral_axi4_pkg::*;
-
 interface add_if (
   input logic aclk
 );

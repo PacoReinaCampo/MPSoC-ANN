@@ -37,8 +37,6 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import peripheral_axi4_pkg::*;
-
 class peripheral_uvm_monitor extends uvm_monitor;
   // Virtual Interface
   virtual peripheral_design_if vif;

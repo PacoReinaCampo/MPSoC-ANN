@@ -37,8 +37,6 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import peripheral_axi4_pkg::*;
-
 class peripheral_transaction;
   // Global Signals
   bit             aresetn;  // Active LOW
