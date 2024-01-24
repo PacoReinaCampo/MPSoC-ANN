@@ -63,7 +63,8 @@ module peripheral_testbench;
 
     // Write Address Channel
     .awid   (vif.awid),
-    .awadr  (vif.awadr),
+    .awadr_i(vif.awadr_i),
+    .awadr_j(vif.awadr_j),
     .awlen  (vif.awlen),
     .awsize (vif.awsize),
     .awburst(vif.awburst),
@@ -88,15 +89,16 @@ module peripheral_testbench;
     .bready(vif.bready),
 
     // Read Address Channel
-    .arid   (vif.arid),
-    .araddr (vif.araddr),
-    .arlen  (vif.arlen),
-    .arsize (vif.arsize),
-    .arlock (vif.arlock),
-    .arcache(vif.arcache),
-    .arprot (vif.arprot),
-    .arvalid(vif.arvalid),
-    .arready(vif.arready),
+    .arid    (vif.arid),
+    .araddr_i(vif.araddr_i),
+    .araddr_j(vif.araddr_j),
+    .arlen   (vif.arlen),
+    .arsize  (vif.arsize),
+    .arlock  (vif.arlock),
+    .arcache (vif.arcache),
+    .arprot  (vif.arprot),
+    .arvalid (vif.arvalid),
+    .arready (vif.arready),
 
     // Read Data Channel
     .rid   (vif.rid),

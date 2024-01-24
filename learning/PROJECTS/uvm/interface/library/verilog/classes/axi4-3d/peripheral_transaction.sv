@@ -45,7 +45,9 @@ class peripheral_transaction;
 
   // Write Address Channel
   bit      [ 3:0] awid;     // Address Write ID
-  rand bit [31:0] awadr;    // Write Address
+  rand bit [31:0] awadr_i;  // Write Address I
+  rand bit [31:0] awadr_j;  // Write Address J
+  rand bit [31:0] awadr_k;  // Write Address K
   bit      [ 3:0] awlen;    // Burst Length
   bit      [ 2:0] awsize;   // Burst Size
   bit      [ 1:0] awburst;  // Burst Type
@@ -70,15 +72,17 @@ class peripheral_transaction;
   bit             bready;  // Response Ready
 
   // Read Address Channel
-  bit      [ 3:0] arid;     // Read Address ID
-  rand bit [31:0] araddr;   // Read Address
-  bit      [ 3:0] arlen;    // Burst Length
-  bit      [ 2:0] arsize;   // Burst Size
-  bit      [ 1:0] arlock;   // Lock Type
-  bit      [ 3:0] arcache;  // Cache Type
-  bit      [ 2:0] arprot;   // Protection Type
-  bit             arvalid;  // Read Address Valid
-  bit             arready;  // Read Address Ready
+  bit      [ 3:0] arid;      // Read Address ID
+  rand bit [31:0] araddr_i;  // Read Address I
+  rand bit [31:0] araddr_j;  // Read Address J
+  rand bit [31:0] araddr_k;  // Read Address K
+  bit      [ 3:0] arlen;     // Burst Length
+  bit      [ 2:0] arsize;    // Burst Size
+  bit      [ 1:0] arlock;    // Lock Type
+  bit      [ 3:0] arcache;   // Cache Type
+  bit      [ 2:0] arprot;    // Protection Type
+  bit             arvalid;   // Read Address Valid
+  bit             arready;   // Read Address Ready
 
   // Read Data Channel
   bit      [ 3:0] rid;     // Read ID
@@ -89,7 +93,11 @@ class peripheral_transaction;
   bit             rready;  // Read Ready
 
   // Constraints
-  constraint awadr_c {awadr inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint awadr_i_c {awadr_i inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint awadr_j_c {awadr_i inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint awadr_k_c {awadr_i inside {[32'h00000000 : 32'hFFFFFFFF]};}
   constraint wrdata_c {wrdata inside {[32'h00000000 : 32'hFFFFFFFF]};}
-  constraint araddr_c {araddr inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint araddr_i_c {araddr_i inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint araddr_j_c {araddr_j inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint araddr_k_c {araddr_k inside {[32'h00000000 : 32'hFFFFFFFF]};}
 endclass

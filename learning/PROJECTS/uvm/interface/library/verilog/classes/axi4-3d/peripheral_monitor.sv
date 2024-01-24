@@ -58,77 +58,70 @@ class peripheral_monitor;
       // Create transaction method
       monitor_transaction = new();
 
-      write_single();
-      read_single();
-
-      monitor_to_scoreboard.put(monitor_transaction);
-    end
-  endtask
-
-  // Task: Single Write Transaction
-  task write_single;
-    begin
       // Operate in a synchronous manner
       @(posedge vif.aclk);
 
       // Address Phase
-      monitor_transaction.awid    <= vif.awid;
-      monitor_transaction.awadr   <= vif.awadr;
-      monitor_transaction.awvalid <= vif.awvalid;
-      monitor_transaction.awlen   <= vif.awlen;
-      monitor_transaction.awsize  <= vif.awsize;
-      monitor_transaction.awburst <= vif.awburst;
-      monitor_transaction.awlock  <= vif.awlock;
-      monitor_transaction.awcache <= vif.awcache;
-      monitor_transaction.awprot  <= vif.awprot;
+      monitor_transaction.awid    = vif.awid;
+      monitor_transaction.awadr_i = vif.awadr_i;
+      monitor_transaction.awadr_j = vif.awadr_j;
+      monitor_transaction.awadr_k = vif.awadr_k;
+      monitor_transaction.awvalid = vif.awvalid;
+      monitor_transaction.awlen   = vif.awlen;
+      monitor_transaction.awsize  = vif.awsize;
+      monitor_transaction.awburst = vif.awburst;
+      monitor_transaction.awlock  = vif.awlock;
+      monitor_transaction.awcache = vif.awcache;
+      monitor_transaction.awprot  = vif.awprot;
       @(posedge vif.awready);
 
       // Data Phase
-      monitor_transaction.awvalid <= vif.awvalid;
-      monitor_transaction.awadr   <= vif.awadr;
-      monitor_transaction.wid     <= vif.wid;
-      monitor_transaction.wvalid  <= vif.wvalid;
-      monitor_transaction.wrdata  <= vif.wrdata;
-      monitor_transaction.wstrb   <= vif.wstrb;
-      monitor_transaction.wlast   <= vif.wlast;
+      monitor_transaction.awvalid = vif.awvalid;
+      monitor_transaction.awadr_i = vif.awadr_i;
+      monitor_transaction.awadr_j = vif.awadr_j;
+      monitor_transaction.awadr_k = vif.awadr_k;
+      monitor_transaction.wid     = vif.wid;
+      monitor_transaction.wvalid  = vif.wvalid;
+      monitor_transaction.wrdata  = vif.wrdata;
+      monitor_transaction.wstrb   = vif.wstrb;
+      monitor_transaction.wlast   = vif.wlast;
       @(posedge vif.wready);
 
       // Response Phase
-      monitor_transaction.wid    <= vif.wid;
-      monitor_transaction.wvalid <= vif.wvalid;
-      monitor_transaction.wrdata <= vif.wrdata;
-      monitor_transaction.wstrb  <= vif.wstrb;
-      monitor_transaction.wlast  <= vif.wlast;
-    end
-  endtask
-
-  // Task: Single Read Transaction
-  task read_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
+      monitor_transaction.wid    = vif.wid;
+      monitor_transaction.wvalid = vif.wvalid;
+      monitor_transaction.wrdata = vif.wrdata;
+      monitor_transaction.wstrb  = vif.wstrb;
+      monitor_transaction.wlast  = vif.wlast;
 
       // Address Phase
-      monitor_transaction.arid    <= vif.arid;
-      monitor_transaction.araddr  <= vif.awadr;
-      monitor_transaction.arvalid <= vif.arvalid;
-      monitor_transaction.arlen   <= vif.arlen;
-      monitor_transaction.arsize  <= vif.arsize;
-      monitor_transaction.arlock  <= vif.arlock;
-      monitor_transaction.arcache <= vif.arcache;
-      monitor_transaction.arprot  <= vif.arprot;
-      monitor_transaction.rready  <= vif.rready;
+      monitor_transaction.arid     = vif.arid;
+      monitor_transaction.araddr_i = vif.awadr_i;
+      monitor_transaction.araddr_j = vif.awadr_j;
+      monitor_transaction.araddr_k = vif.awadr_k;
+      monitor_transaction.arvalid  = vif.arvalid;
+      monitor_transaction.arlen    = vif.arlen;
+      monitor_transaction.arsize   = vif.arsize;
+      monitor_transaction.arlock   = vif.arlock;
+      monitor_transaction.arcache  = vif.arcache;
+      monitor_transaction.arprot   = vif.arprot;
+      monitor_transaction.rready   = vif.rready;
       @(posedge vif.arready);
 
       // Data Phase
-      monitor_transaction.arvalid <= vif.arvalid;
-      monitor_transaction.rready  <= vif.rready;
+      monitor_transaction.arvalid = vif.arvalid;
+      monitor_transaction.rready  = vif.rready;
       @(posedge vif.rvalid);
 
-      monitor_transaction.rready <= vif.rready;
+      monitor_transaction.rready = vif.rready;
+      monitor_transaction.rdata  = vif.rdata;
       @(negedge vif.rvalid);
 
-      monitor_transaction.araddr <= vif.araddr;
+      monitor_transaction.araddr_i = vif.araddr_i;
+      monitor_transaction.araddr_j = vif.araddr_j;
+      monitor_transaction.araddr_k = vif.araddr_k;
+
+      monitor_to_scoreboard.put(monitor_transaction);
     end
   endtask
 endclass

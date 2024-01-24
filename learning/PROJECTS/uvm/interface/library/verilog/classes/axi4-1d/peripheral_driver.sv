@@ -58,26 +58,12 @@ class peripheral_driver;
       // Driver to the DUT      
       generator_to_driver.get(transaction);
 
-      // Single Write Transaction
-      write_address_phase_single();
-      write_data_phase_single();
-      write_response_phase_single();
-
-      // Single Read Transaction
-      read_address_phase_single();
-      read_data_phase_single();
-    end
-  endtask
-
-  // Task: Single Write Transaction
-  task write_address_phase_single;
-    begin
       // Operate in a synchronous manner
       @(posedge vif.aclk);
 
       // Address Phase
       vif.awid    <= 0;
-      vif.awadr   <= transaction.awadr;
+      vif.awadr   <= AXI_ADDRESS_TEST;
       vif.awvalid <= 1;
       vif.awlen   <= AXI_BURST_LENGTH_1;
       vif.awsize  <= AXI_BURST_SIZE_WORD;
@@ -85,13 +71,7 @@ class peripheral_driver;
       vif.awlock  <= AXI_LOCK_NORMAL;
       vif.awcache <= 0;
       vif.awprot  <= AXI_PROTECTION_NORMAL;
-    end
-  endtask
-
-  task write_data_phase_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
+      @(posedge vif.awready);
 
       // Data Phase
       vif.awvalid <= 0;
@@ -101,13 +81,7 @@ class peripheral_driver;
       vif.wrdata  <= transaction.wrdata;
       vif.wstrb   <= 4'hF;
       vif.wlast   <= 1;
-    end
-  endtask
-
-  task write_response_phase_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
+      @(posedge vif.wready);
 
       // Response Phase
       vif.wid    <= 0;
@@ -115,18 +89,10 @@ class peripheral_driver;
       vif.wrdata <= 'bX;
       vif.wstrb  <= 0;
       vif.wlast  <= 0;
-    end
-  endtask
-
-  // Task: Single Read Transaction
-  task read_address_phase_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
 
       // Address Phase
       vif.arid    <= 0;
-      vif.araddr  <= transaction.araddr;
+      vif.araddr  <= AXI_ADDRESS_TEST;
       vif.arvalid <= 1;
       vif.arlen   <= AXI_BURST_LENGTH_1;
       vif.arsize  <= AXI_BURST_SIZE_WORD;
@@ -134,13 +100,7 @@ class peripheral_driver;
       vif.arcache <= 0;
       vif.arprot  <= AXI_PROTECTION_NORMAL;
       vif.rready  <= 0;
-    end
-  endtask
-
-  task read_data_phase_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
+      @(posedge vif.arready);
 
       // Data Phase
       vif.arvalid <= 0;

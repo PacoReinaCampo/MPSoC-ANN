@@ -48,7 +48,9 @@ interface add_if (
 
   // Write Address Channel
   logic [ 3:0] awid;     // Address Write ID
-  logic [31:0] awadr;    // Write Address
+  logic [31:0] awadr_i;  // Write Address I
+  logic [31:0] awadr_j;  // Write Address J
+  logic [31:0] awadr_k;  // Write Address K
   logic [ 3:0] awlen;    // Burst Length
   logic [ 2:0] awsize;   // Burst Size
   logic [ 1:0] awburst;  // Burst Type
@@ -73,15 +75,17 @@ interface add_if (
   logic       bready;  // Response Ready
 
   // Read Address Channel
-  logic [ 3:0] arid;     // Read Address ID
-  logic [31:0] araddr;   // Read Address
-  logic [ 3:0] arlen;    // Burst Length
-  logic [ 2:0] arsize;   // Burst Size
-  logic [ 1:0] arlock;   // Lock Type
-  logic [ 3:0] arcache;  // Cache Type
-  logic [ 2:0] arprot;   // Protection Type
-  logic        arvalid;  // Read Address Valid
-  logic        arready;  // Read Address Ready
+  logic [ 3:0] arid;      // Read Address ID
+  logic [31:0] araddr_i;  // Read Address I
+  logic [31:0] araddr_j;  // Read Address J
+  logic [31:0] araddr_k;  // Read Address K
+  logic [ 3:0] arlen;     // Burst Length
+  logic [ 2:0] arsize;    // Burst Size
+  logic [ 1:0] arlock;    // Lock Type
+  logic [ 3:0] arcache;   // Cache Type
+  logic [ 2:0] arprot;    // Protection Type
+  logic        arvalid;   // Read Address Valid
+  logic        arready;   // Read Address Ready
 
   // Read Data Channel
   logic [ 3:0] rid;     // Read ID

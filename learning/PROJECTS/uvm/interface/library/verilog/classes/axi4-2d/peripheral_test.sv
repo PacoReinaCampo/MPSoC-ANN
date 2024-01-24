@@ -70,7 +70,8 @@ program peripheral_test (
 
     // Write Address Channel
     vif.awid <= 0;     // Address Write ID
-    vif.awadr <= 0;    // Write Address
+    vif.awadr_i <= 0;  // Write Address I
+    vif.awadr_j <= 0;  // Write Address J
     vif.awlen <= 0;    // Burst Length
     vif.awsize <= 0;   // Burst Size
     vif.awburst <= 0;  // Burst Type
@@ -90,14 +91,15 @@ program peripheral_test (
     vif.bready <= 0;  // Response Ready
 
     // Read Address Channel
-    vif.arid <= 0;     // Read Address ID
-    vif.araddr <= 0;   // Read Address
-    vif.arlen <= 0;    // Burst Length
-    vif.arsize <= 0;   // Burst Size
-    vif.arlock <= 0;   // Lock Type
-    vif.arcache <= 0;  // Cache Type
-    vif.arprot <= 0;   // Protection Type
-    vif.arvalid <= 0;  // Read Address Valid
+    vif.arid <= 0;      // Read Address ID
+    vif.araddr_i <= 0;  // Read Address I
+    vif.araddr_j <= 0;  // Read Address J
+    vif.arlen <= 0;     // Burst Length
+    vif.arsize <= 0;    // Burst Size
+    vif.arlock <= 0;    // Lock Type
+    vif.arcache <= 0;   // Cache Type
+    vif.arprot <= 0;    // Protection Type
+    vif.arvalid <= 0;   // Read Address Valid
 
     // Read Data Channel
     vif.rready <= 0;  // Read Ready
