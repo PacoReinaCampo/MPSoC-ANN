@@ -71,17 +71,17 @@ class peripheral_uvm_monitor extends uvm_monitor;
   task run_phase(uvm_phase phase);
     forever begin
       // Single Write Transaction
-      write_single();
+      write_phase_single();
 
       // Single Read Transaction
-      read_single();
+      read_phase_single();
 
       item_collect_port.write(monitor_item);
     end
   endtask
 
   // Task: Single Write Transaction
-  task write_single;
+  task write_phase_single;
     begin
       // Operate in a synchronous manner
       @(posedge vif.aclk);
@@ -118,11 +118,8 @@ class peripheral_uvm_monitor extends uvm_monitor;
   endtask
 
   // Task: Single Read Transaction
-  task read_single;
+  task read_phase_single;
     begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
-
       // Address Phase
       monitor_item.arid    <= vif.arid;
       monitor_item.araddr  <= vif.awadr;
@@ -141,6 +138,7 @@ class peripheral_uvm_monitor extends uvm_monitor;
       @(posedge vif.rvalid);
 
       monitor_item.rready <= vif.rready;
+      monitor_item.rdata <= vif.rdata;
       @(negedge vif.rvalid);
 
       monitor_item.araddr <= vif.araddr;

@@ -66,20 +66,17 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
       seq_item_port.get_next_item(req);
 
       // Single Write Transaction
-      write_address_phase_single();
-      write_data_phase_single();
-      write_response_phase_single();
+      write_phase_single();
 
       // Single Read Transaction
-      read_address_phase_single();
-      read_data_phase_single();
+      read_phase_single();
 
       seq_item_port.item_done();
     end
   endtask
 
   // Task: Single Write Transaction
-  task write_address_phase_single;
+  task write_phase_single;
     begin
       // Operate in a synchronous manner
       @(posedge vif.aclk);
@@ -94,13 +91,7 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
       vif.awlock  <= AXI_LOCK_NORMAL;
       vif.awcache <= 0;
       vif.awprot  <= AXI_PROTECTION_NORMAL;
-    end
-  endtask
-
-  task write_data_phase_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
+      @(posedge vif.awready);
 
       // Data Phase
       vif.awvalid <= 0;
@@ -110,13 +101,7 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
       vif.wrdata  <= req.wrdata;
       vif.wstrb   <= 4'hF;
       vif.wlast   <= 1;
-    end
-  endtask
-
-  task write_response_phase_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
+      @(posedge vif.wready);
 
       // Response Phase
       vif.wid    <= 0;
@@ -128,11 +113,8 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
   endtask
 
   // Task: Single Read Transaction
-  task read_address_phase_single;
+  task read_phase_single;
     begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
-
       // Address Phase
       vif.arid    <= 0;
       vif.araddr  <= req.araddr;
@@ -143,13 +125,7 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
       vif.arcache <= 0;
       vif.arprot  <= AXI_PROTECTION_NORMAL;
       vif.rready  <= 0;
-    end
-  endtask
-
-  task read_data_phase_single;
-    begin
-      // Operate in a synchronous manner
-      @(posedge vif.aclk);
+      @(posedge vif.arready);
 
       // Data Phase
       vif.arvalid <= 0;
