@@ -85,7 +85,8 @@ class peripheral_uvm_test extends uvm_test;
     apply_reset();
 
     repeat (5) begin
-      #10;
+      repeat (10) @(posedge vif.aclk);
+
       base_sequence.start(environment.agent.sequencer);
     end
 

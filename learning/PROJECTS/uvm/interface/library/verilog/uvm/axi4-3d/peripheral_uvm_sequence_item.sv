@@ -118,7 +118,9 @@ class peripheral_uvm_sequence_item extends uvm_sequence_item;
   `uvm_field_int(wvalid, UVM_ALL_ON)  // Write Valid
 
   // Write Response CHannel
-  `uvm_field_int(bready, UVM_ALL_ON)  // Response Ready
+  `uvm_field_int(bid, UVM_ALL_ON)     // Response ID
+  `uvm_field_int(bresp, UVM_ALL_ON)   // Write Response
+  `uvm_field_int(bvalid, UVM_ALL_ON)  // Write Response Valid
 
   // Read Address Channel
   `uvm_field_int(arid, UVM_ALL_ON)     // Read Address ID
