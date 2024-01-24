@@ -1,5 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/user/GitHub/code/Repository/QueenFieldShop/learning/PROJECTS/uvm/interface/rtl/verilog/pkg/axi4-1d/peripheral_axi4_pkg.sv" into library work
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/user/GitHub/code/Repository/QueenFieldShop/learning/PROJECTS/uvm/interface/rtl/verilog/main/axi4-1d/peripheral_bfm_slave_generic_axi4.sv" into library work
-INFO: [VRFC 10-311] analyzing module peripheral_bfm_slave_generic_axi4
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/user/GitHub/code/Repository/QueenFieldShop/learning/PROJECTS/uvm/interface/library/verilog/uvm/axi4-1d/peripheral_uvm_testbench.sv" into library work
-INFO: [VRFC 10-311] analyzing module peripheral_uvm_testbench
