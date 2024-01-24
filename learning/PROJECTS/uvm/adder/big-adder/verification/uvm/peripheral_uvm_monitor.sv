@@ -41,12 +41,16 @@ class peripheral_uvm_monitor extends uvm_monitor;
   // Description : run task for collecting peripheral_adder transactions
   task collect_trans();
     wait (!vif.rst);
-    wait (vif.in_valid);
+    wait (vif.rc_cb.in_valid);
+    act_transaction.in_valid = vif.rc_cb.in_valid;
     act_transaction.in1 = vif.rc_cb.in1;
     act_transaction.in2 = vif.rc_cb.in2;
+
     wait (!vif.rst);
     wait (vif.out_valid);
+    act_transaction.out_valid = vif.rc_cb.out_valid;
     act_transaction.data_out = vif.rc_cb.data_out;
+
     `uvm_info(get_full_name(), $sformatf("TRANSACTION FROM MONITOR"), UVM_LOW);
     act_transaction.print();
   endtask

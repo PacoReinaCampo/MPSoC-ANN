@@ -54,6 +54,7 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_transaction);
     vif.dr_cb.in1 <= req.in1;
     vif.dr_cb.in2 <= req.in2;
     @(vif.dr_cb);
+
     vif.dr_cb.in_valid <= 0;
     repeat (1000) @(vif.dr_cb);
   endtask
@@ -65,7 +66,8 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_transaction);
     vif.dr_cb.in_valid <= 0;
     vif.dr_cb.in1 <= 0;
     vif.dr_cb.in2 <= 0;
-    repeat (4) @(vif.dr_cb);
+
+    repeat (100) @(vif.dr_cb);
     vif.dr_cb.rst <= 0;
   endtask
 endclass : peripheral_uvm_driver

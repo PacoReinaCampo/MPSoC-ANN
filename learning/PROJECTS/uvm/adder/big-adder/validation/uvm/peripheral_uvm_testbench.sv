@@ -18,12 +18,10 @@ module peripheral_uvm_testbench;
   bit in_valid;
 
   // Clock Generation
+  always #(CYCLE / 2) clk = ~clk;
+
   initial begin
     clk = 0;
-
-    forever #(CYCLE / 2) begin
-      clk = ~clk;
-    end
   end
 
   // Reset Generation
