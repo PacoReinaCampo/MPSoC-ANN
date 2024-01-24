@@ -8,7 +8,9 @@ module peripheral_bfm_slave_generic_axi4 (
 
   // Write Address Channel
   input  wire [ 3:0] awid,     // Address Write ID
-  input  wire [31:0] awadr,    // Write Address
+  input  wire [31:0] awadr_i,  // Write Address I
+  input  wire [31:0] awadr_j,  // Write Address J
+  input  wire [31:0] awadr_k,  // Write Address K
   input  wire [ 3:0] awlen,    // Burst Length
   input  wire [ 2:0] awsize,   // Burst Size
   input  wire [ 1:0] awburst,  // Burst Type
@@ -33,15 +35,17 @@ module peripheral_bfm_slave_generic_axi4 (
   input  wire       bready,  // Response Ready
 
   // Read Address Channel
-  input  wire [ 3:0] arid,     // Read Address ID
-  input  wire [31:0] araddr,   // Read Address
-  input  wire [ 3:0] arlen,    // Burst Length
-  input  wire [ 2:0] arsize,   // Burst Size
-  input  wire [ 1:0] arlock,   // Lock Type
-  input  wire [ 3:0] arcache,  // Cache Type
-  input  wire [ 2:0] arprot,   // Protection Type
-  input  wire        arvalid,  // Read Address Valid
-  output reg         arready,  // Read Address Ready
+  input  wire [ 3:0] arid,      // Read Address ID
+  input  wire [31:0] araddr_i,  // Read Address I
+  input  wire [31:0] araddr_j,  // Read Address J
+  input  wire [31:0] araddr_k,  // Read Address K
+  input  wire [ 3:0] arlen,     // Burst Length
+  input  wire [ 2:0] arsize,    // Burst Size
+  input  wire [ 1:0] arlock,    // Lock Type
+  input  wire [ 3:0] arcache,   // Cache Type
+  input  wire [ 2:0] arprot,    // Protection Type
+  input  wire        arvalid,   // Read Address Valid
+  output reg         arready,   // Read Address Ready
 
   // Read Data Channel
   output reg  [ 3:0] rid,     // Read ID
@@ -53,22 +57,28 @@ module peripheral_bfm_slave_generic_axi4 (
 );
 
   // Internal Signals
-  reg     [31:0] memory        [0:128];
-  integer        i;
+  reg     [31:0][31:0][31:0] memory          [0:128];
+  integer                    i;
 
   // Write Address Channel
-  reg     [31:0] write_address;
-  reg     [ 2:0] write_size;
+  reg     [31:0]             write_address_i;
+  reg     [31:0]             write_address_j;
+  reg     [31:0]             write_address_k;
+  reg     [ 2:0]             write_size;
 
   always @(posedge aclk)
     if (~aresetn) begin
-      write_address <= 0;
-      awready       <= 1;
-      write_size    <= 0;
+      write_address_i <= 0;
+      write_address_j <= 0;
+      write_address_k <= 0;
+      awready         <= 1;
+      write_size      <= 0;
     end else begin
       if (awvalid) begin
-        write_address <= {2'b00, awadr[31:2]};
-        awready       <= 1;
+        write_address_i <= {2'b00, awadr_i[31:2]};
+        write_address_j <= {2'b00, awadr_j[31:2]};
+        write_address_k <= {2'b00, awadr_k[31:2]};
+        awready         <= 1;
       end else begin
         awready <= 0;
       end
@@ -117,15 +127,21 @@ module peripheral_bfm_slave_generic_axi4 (
     end
 
   // Read Address Channel
-  reg [31:0] read_address;
+  reg [31:0] read_address_i;
+  reg [31:0] read_address_j;
+  reg [31:0] read_address_k;
   always @(posedge aclk)
     if (~aresetn) begin
-      read_address <= 0;
-      arready      <= 0;
+      read_address_i <= 0;
+      read_address_j <= 0;
+      read_address_k <= 0;
+      arready        <= 0;
     end else begin
       if (arvalid) begin
-        read_address <= {2'b00, araddr[31:2]};
-        arready      <= 1;
+        read_address_i <= {2'b00, araddr_i[31:2]};
+        read_address_j <= {2'b00, araddr_j[31:2]};
+        read_address_k <= {2'b00, araddr_k[31:2]};
+        arready        <= 1;
       end else begin
         arready <= 0;
       end
@@ -140,7 +156,7 @@ module peripheral_bfm_slave_generic_axi4 (
       rlast  <= 0;
     end else begin
       if (rready) begin
-        rdata  <= memory[read_address];
+        rdata  <= memory[read_address_i][read_address_j][read_address_k];
         rvalid <= 1;
       end else begin
         rdata  <= 0;
@@ -154,13 +170,13 @@ module peripheral_bfm_slave_generic_axi4 (
   always @(posedge aclk) begin
     if (wready) begin
       case (write_strobe)
-        4'b0001: memory[write_address] <= {memory[write_address][31:8], write_data[7:0]};
-        4'b0010: memory[write_address] <= {memory[write_address][31:16], write_data[15:8], memory[write_address][7:0]};
-        4'b0100: memory[write_address] <= {memory[write_address][31:24], write_data[23:16], memory[write_address][15:0]};
-        4'b1000: memory[write_address] <= {write_data[31:24], memory[write_address][23:0]};
-        4'b0011: memory[write_address] <= {write_data[31:16], memory[write_address][15:0]};
-        4'b1100: memory[write_address] <= {memory[write_address][31:16], write_data[15:0]};
-        4'b1111: memory[write_address] <= write_data[31:0];
+        4'b0001: memory[write_address_i][write_address_j][write_address_k] <= {memory[write_address_i][write_address_j][write_address_k][31:8], write_data[7:0]};
+        4'b0010: memory[write_address_i][write_address_j][write_address_k] <= {memory[write_address_i][write_address_j][write_address_k][31:16], write_data[15:8], memory[write_address_i][write_address_j][write_address_k][7:0]};
+        4'b0100: memory[write_address_i][write_address_j][write_address_k] <= {memory[write_address_i][write_address_j][write_address_k][31:24], write_data[23:16], memory[write_address_i][write_address_j][write_address_k][15:0]};
+        4'b1000: memory[write_address_i][write_address_j][write_address_k] <= {write_data[31:24], memory[write_address_i][write_address_j][write_address_k][23:0]};
+        4'b0011: memory[write_address_i][write_address_j][write_address_k] <= {write_data[31:16], memory[write_address_i][write_address_j][write_address_k][15:0]};
+        4'b1100: memory[write_address_i][write_address_j][write_address_k] <= {memory[write_address_i][write_address_j][write_address_k][31:16], write_data[15:0]};
+        4'b1111: memory[write_address_i][write_address_j][write_address_k] <= write_data[31:0];
       endcase
     end
   end

@@ -83,7 +83,8 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
 
       // Address Phase
       vif.awid    <= 0;
-      vif.awadr   <= req.awadr;
+      vif.awadr_i <= AXI_ADDRESS_I_TEST;
+      vif.awadr_j <= AXI_ADDRESS_J_TEST;
       vif.awvalid <= 1;
       vif.awlen   <= AXI_BURST_LENGTH_1;
       vif.awsize  <= AXI_BURST_SIZE_WORD;
@@ -95,7 +96,8 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
 
       // Data Phase
       vif.awvalid <= 0;
-      vif.awadr   <= 'bX;
+      vif.awadr_i <= 'bX;
+      vif.awadr_j <= 'bX;
       vif.wid     <= 0;
       vif.wvalid  <= 1;
       vif.wrdata  <= req.wrdata;
@@ -116,15 +118,16 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
   task read_phase_single;
     begin
       // Address Phase
-      vif.arid    <= 0;
-      vif.araddr  <= req.araddr;
-      vif.arvalid <= 1;
-      vif.arlen   <= AXI_BURST_LENGTH_1;
-      vif.arsize  <= AXI_BURST_SIZE_WORD;
-      vif.arlock  <= AXI_LOCK_NORMAL;
-      vif.arcache <= 0;
-      vif.arprot  <= AXI_PROTECTION_NORMAL;
-      vif.rready  <= 0;
+      vif.arid     <= 0;
+      vif.araddr_i <= AXI_ADDRESS_I_TEST;
+      vif.araddr_j <= AXI_ADDRESS_J_TEST;
+      vif.arvalid  <= 1;
+      vif.arlen    <= AXI_BURST_LENGTH_1;
+      vif.arsize   <= AXI_BURST_SIZE_WORD;
+      vif.arlock   <= AXI_LOCK_NORMAL;
+      vif.arcache  <= 0;
+      vif.arprot   <= AXI_PROTECTION_NORMAL;
+      vif.rready   <= 0;
       @(posedge vif.arready);
 
       // Data Phase
@@ -135,7 +138,8 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
       vif.rready <= 0;
       @(negedge vif.rvalid);
 
-      vif.araddr <= 'bx;
+      vif.araddr_i <= 'bx;
+      vif.araddr_j <= 'bx;
     end
   endtask
 endclass

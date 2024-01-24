@@ -88,7 +88,8 @@ class peripheral_uvm_monitor extends uvm_monitor;
 
       // Address Phase
       monitor_item.awid    <= vif.awid;
-      monitor_item.awadr   <= vif.awadr;
+      monitor_item.awadr_i <= vif.awadr_i;
+      monitor_item.awadr_j <= vif.awadr_j;
       monitor_item.awvalid <= vif.awvalid;
       monitor_item.awlen   <= vif.awlen;
       monitor_item.awsize  <= vif.awsize;
@@ -100,7 +101,8 @@ class peripheral_uvm_monitor extends uvm_monitor;
 
       // Data Phase
       monitor_item.awvalid <= vif.awvalid;
-      monitor_item.awadr   <= vif.awadr;
+      monitor_item.awadr_i <= vif.awadr_i;
+      monitor_item.awadr_j <= vif.awadr_j;
       monitor_item.wid     <= vif.wid;
       monitor_item.wvalid  <= vif.wvalid;
       monitor_item.wrdata  <= vif.wrdata;
@@ -121,15 +123,16 @@ class peripheral_uvm_monitor extends uvm_monitor;
   task read_phase_single;
     begin
       // Address Phase
-      monitor_item.arid    <= vif.arid;
-      monitor_item.araddr  <= vif.awadr;
-      monitor_item.arvalid <= vif.arvalid;
-      monitor_item.arlen   <= vif.arlen;
-      monitor_item.arsize  <= vif.arsize;
-      monitor_item.arlock  <= vif.arlock;
-      monitor_item.arcache <= vif.arcache;
-      monitor_item.arprot  <= vif.arprot;
-      monitor_item.rready  <= vif.rready;
+      monitor_item.arid     <= vif.arid;
+      monitor_item.araddr_i <= vif.awadr_i;
+      monitor_item.araddr_j <= vif.awadr_j;
+      monitor_item.arvalid  <= vif.arvalid;
+      monitor_item.arlen    <= vif.arlen;
+      monitor_item.arsize   <= vif.arsize;
+      monitor_item.arlock   <= vif.arlock;
+      monitor_item.arcache  <= vif.arcache;
+      monitor_item.arprot   <= vif.arprot;
+      monitor_item.rready   <= vif.rready;
       @(posedge vif.arready);
 
       // Data Phase
@@ -141,7 +144,8 @@ class peripheral_uvm_monitor extends uvm_monitor;
       monitor_item.rdata <= vif.rdata;
       @(negedge vif.rvalid);
 
-      monitor_item.araddr <= vif.araddr;
+      monitor_item.araddr_i <= vif.araddr_i;
+      monitor_item.araddr_j <= vif.araddr_j;
     end
   endtask
 endclass

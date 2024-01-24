@@ -57,4 +57,9 @@ package peripheral_axi4_pkg;
   localparam AXI_RESPONSE_SLAVE_ERROR = 2'b10;
   localparam AXI_RESPONSE_DECODE_ERROR = 2'b10;
 
+  // Address Test
+  localparam AXI_ADDRESS_I_TEST = 32'h0000000F;
+  localparam AXI_ADDRESS_J_TEST = 32'h0000000E;
+  localparam AXI_ADDRESS_K_TEST = 32'h0000000d;
+
 endpackage

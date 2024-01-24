@@ -45,7 +45,9 @@ class peripheral_uvm_sequence_item extends uvm_sequence_item;
 
   // Write Address Channel
   bit      [ 3:0] awid;     // Address Write ID
-  rand bit [31:0] awadr;    // Write Address
+  rand bit [31:0] awadr_i;  // Write Address I
+  rand bit [31:0] awadr_j;  // Write Address J
+  rand bit [31:0] awadr_k;  // Write Address K
   bit      [ 3:0] awlen;    // Burst Length
   bit      [ 2:0] awsize;   // Burst Size
   bit      [ 1:0] awburst;  // Burst Type
@@ -70,15 +72,17 @@ class peripheral_uvm_sequence_item extends uvm_sequence_item;
   bit             bready;  // Response Ready
 
   // Read Address Channel
-  bit      [ 3:0] arid;     // Read Address ID
-  rand bit [31:0] araddr;   // Read Address
-  bit      [ 3:0] arlen;    // Burst Length
-  bit      [ 2:0] arsize;   // Burst Size
-  bit      [ 1:0] arlock;   // Lock Type
-  bit      [ 3:0] arcache;  // Cache Type
-  bit      [ 2:0] arprot;   // Protection Type
-  bit             arvalid;  // Read Address Valid
-  bit             arready;  // Read Address Ready
+  bit      [ 3:0] arid;      // Read Address ID
+  rand bit [31:0] araddr_i;  // Read Address I
+  rand bit [31:0] araddr_j;  // Read Address J
+  rand bit [31:0] araddr_k;  // Read Address K
+  bit      [ 3:0] arlen;     // Burst Length
+  bit      [ 2:0] arsize;    // Burst Size
+  bit      [ 1:0] arlock;    // Lock Type
+  bit      [ 3:0] arcache;   // Cache Type
+  bit      [ 2:0] arprot;    // Protection Type
+  bit             arvalid;   // Read Address Valid
+  bit             arready;   // Read Address Ready
 
   // Read Data Channel
   bit      [ 3:0] rid;     // Read ID
@@ -101,7 +105,9 @@ class peripheral_uvm_sequence_item extends uvm_sequence_item;
 
   // Write Address Channel
   `uvm_field_int(awid, UVM_ALL_ON)     // Address Write ID
-  `uvm_field_int(awadr, UVM_ALL_ON)    // Write Address
+  `uvm_field_int(awadr_i, UVM_ALL_ON)  // Write Address I
+  `uvm_field_int(awadr_j, UVM_ALL_ON)  // Write Address J
+  `uvm_field_int(awadr_k, UVM_ALL_ON)  // Write Address K
   `uvm_field_int(awlen, UVM_ALL_ON)    // Burst Length
   `uvm_field_int(awsize, UVM_ALL_ON)   // Burst Size
   `uvm_field_int(awburst, UVM_ALL_ON)  // Burst Type
@@ -123,14 +129,16 @@ class peripheral_uvm_sequence_item extends uvm_sequence_item;
   `uvm_field_int(bvalid, UVM_ALL_ON)  // Write Response Valid
 
   // Read Address Channel
-  `uvm_field_int(arid, UVM_ALL_ON)     // Read Address ID
-  `uvm_field_int(araddr, UVM_ALL_ON)   // Read Address
-  `uvm_field_int(arlen, UVM_ALL_ON)    // Burst Length
-  `uvm_field_int(arsize, UVM_ALL_ON)   // Burst Size
-  `uvm_field_int(arlock, UVM_ALL_ON)   // Lock Type
-  `uvm_field_int(arcache, UVM_ALL_ON)  // Cache Type
-  `uvm_field_int(arprot, UVM_ALL_ON)   // Protection Type
-  `uvm_field_int(arvalid, UVM_ALL_ON)  // Read Address Valid
+  `uvm_field_int(arid, UVM_ALL_ON)      // Read Address ID
+  `uvm_field_int(araddr_i, UVM_ALL_ON)  // Read Address I
+  `uvm_field_int(araddr_j, UVM_ALL_ON)  // Read Address J
+  `uvm_field_int(araddr_k, UVM_ALL_ON)  // Read Address K
+  `uvm_field_int(arlen, UVM_ALL_ON)     // Burst Length
+  `uvm_field_int(arsize, UVM_ALL_ON)    // Burst Size
+  `uvm_field_int(arlock, UVM_ALL_ON)    // Lock Type
+  `uvm_field_int(arcache, UVM_ALL_ON)   // Cache Type
+  `uvm_field_int(arprot, UVM_ALL_ON)    // Protection Type
+  `uvm_field_int(arvalid, UVM_ALL_ON)   // Read Address Valid
 
   // Read Data Channel
   `uvm_field_int(rready, UVM_ALL_ON)  // Read Ready
@@ -138,7 +146,11 @@ class peripheral_uvm_sequence_item extends uvm_sequence_item;
   `uvm_object_utils_end
 
   // Constraints
-  constraint awadr_c {awadr inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint awadr_i_c {awadr_i inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint awadr_j_c {awadr_j inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint awadr_k_c {awadr_k inside {[32'h00000000 : 32'hFFFFFFFF]};}
   constraint wrdata_c {wrdata inside {[32'h00000000 : 32'hFFFFFFFF]};}
-  constraint araddr_c {araddr inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint araddr_i_c {araddr_i inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint araddr_j_c {araddr_j inside {[32'h00000000 : 32'hFFFFFFFF]};}
+  constraint araddr_k_c {araddr_k inside {[32'h00000000 : 32'hFFFFFFFF]};}
 endclass

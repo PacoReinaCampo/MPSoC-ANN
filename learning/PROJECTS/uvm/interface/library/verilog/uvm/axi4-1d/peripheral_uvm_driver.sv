@@ -83,7 +83,7 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
 
       // Address Phase
       vif.awid    <= 0;
-      vif.awadr   <= 4;
+      vif.awadr   <= AXI_ADDRESS_TEST;
       vif.awvalid <= 1;
       vif.awlen   <= AXI_BURST_LENGTH_1;
       vif.awsize  <= AXI_BURST_SIZE_WORD;
@@ -117,7 +117,7 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
     begin
       // Address Phase
       vif.arid    <= 0;
-      vif.araddr  <= 4;
+      vif.araddr  <= AXI_ADDRESS_TEST;
       vif.arvalid <= 1;
       vif.arlen   <= AXI_BURST_LENGTH_1;
       vif.arsize  <= AXI_BURST_SIZE_WORD;
