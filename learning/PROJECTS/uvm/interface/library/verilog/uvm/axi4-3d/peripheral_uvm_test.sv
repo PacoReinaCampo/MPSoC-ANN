@@ -116,7 +116,9 @@ class peripheral_uvm_test extends uvm_test;
     vif.wvalid <= 0;  // Write Valid
 
     // Write Response CHannel
-    vif.bready <= 0;  // Response Ready
+    vif.bid <= 0;     // Response ID
+    vif.bresp <= 0;   // Write Response
+    vif.bvalid <= 0;  // Write Response Valid
 
     // Read Address Channel
     vif.arid <= 0;     // Read Address ID
