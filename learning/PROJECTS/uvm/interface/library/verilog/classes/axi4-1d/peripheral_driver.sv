@@ -37,6 +37,8 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
+import peripheral_axi4_pkg::*;
+
 class peripheral_driver;
   // Interface instantiation
   virtual add_if vif;
