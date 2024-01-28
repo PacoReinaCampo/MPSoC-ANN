@@ -57,8 +57,7 @@ module peripheral_bfm_slave_generic_axi4 (
 );
 
   // Internal Signals
-  reg     [31:0][31:0][31:0] memory          [0:128];
-  integer                    i;
+  reg     [31:0][31:0][31:0] memory [0:127];
 
   // Write Address Channel
   reg     [31:0]             write_address_i;
