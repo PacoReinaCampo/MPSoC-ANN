@@ -37,21 +37,14 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import model_arithmetic_verilog_pkg::*;
-
 interface ntm_design_if (
-  input logic CLK,
-  input logic RST
+  input logic clk,
+  input logic rst
 );
 
-  // CONTROL
-  logic START;
-  logic READY;
+  // Declaration of signals
+  logic [7:0] ip1;
+  logic [7:0] ip2;
 
-  // DATA
-  logic [DATA_SIZE-1:0] DATA_A_IN;
-  logic [DATA_SIZE-1:0] DATA_B_IN;
-
-  logic [DATA_SIZE-1:0] DATA_OUT;
-  logic                 OVERFLOW_OUT;
+  logic [8:0] out;
 endinterface

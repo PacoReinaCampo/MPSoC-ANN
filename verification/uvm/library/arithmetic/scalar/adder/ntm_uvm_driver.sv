@@ -63,11 +63,11 @@ class ntm_uvm_driver extends uvm_driver #(ntm_uvm_sequence_item);
       // Driver to the DUT
       //@(posedge vif.clk);
       seq_item_port.get_next_item(req);
-      `uvm_info(get_type_name, $sformatf("DATA_A_IN = %0d, DATA_B_IN = %0d", req.DATA_A_IN, req.DATA_B_IN), UVM_LOW);
-      vif.DATA_A_IN <= req.DATA_A_IN;
-      vif.DATA_B_IN <= req.DATA_B_IN;
+      `uvm_info(get_type_name, $sformatf("ip1 = %0d, ip2 = %0d", req.ip1, req.ip2), UVM_LOW);
+      vif.ip1 <= req.ip1;
+      vif.ip2 <= req.ip2;
       //@(posedge vif.clk);
-      // req.DATA_OUT <= vif.DATA_OUT;
+      // req.out <= vif.out;
       seq_item_port.item_done();
     end
   endtask

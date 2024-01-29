@@ -43,63 +43,33 @@ import uvm_pkg::*;
 `include "ntm_uvm_interface.sv"
 `include "ntm_uvm_test.sv"
 
-import model_arithmetic_verilog_pkg::*;
-
 module ntm_uvm_testbench;
   // Clock and Reset declaration
-  bit CLK;
-  bit RST;
-
-  // Start declaration
-  bit START;
+  bit clk;
+  bit rst;
 
   // Clock Generation
-  always #2 CLK = ~CLK;
-
-  initial begin
-    CLK = 0;
-  end
+  always #2 clk = ~clk;
 
   // Reset Generation
   initial begin
-    RST = 1;
-    #4;
-    RST = 0;
-  end
-
-  // Start Generation
-  initial begin
-    START = 0;
-    #6;
-    START = 1;
-    #8;
-    START = 0;
+    rst = 1;
+    #5;
+    rst = 0;
   end
 
   // Virtual interface
-  ntm_design_if vif (CLK, RST);
+  ntm_design_if vif (clk, rst);
 
   // DUT instantiation
-  model_scalar_float_divider #(
-    // SYSTEM-SIZE
-    .DATA_SIZE   (DATA_SIZE),
-    .CONTROL_SIZE(CONTROL_SIZE)
-  )
-  dut (
-    // GLOBAL
-   .CLK(vif.CLK),
-   .RST(vif.RST),
+  ntm_design dut (
+    .clk(vif.clk),
+    .rst(vif.rst),
 
-   // CONTROL
-   .START(vif.START),
-   .READY(vif.READY),
+    .in1(vif.ip1),
+    .in2(vif.ip2),
 
-    // DATA
-   .DATA_A_IN(vif.DATA_A_IN),
-   .DATA_B_IN(vif.DATA_B_IN),
-
-   .DATA_OUT    (vif.DATA_OUT),
-   .OVERFLOW_OUT(vif.OVERFLOW_OUT)
+    .out(vif.out)
   );
 
   initial begin

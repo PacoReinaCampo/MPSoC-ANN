@@ -37,14 +37,12 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import model_arithmetic_verilog_pkg::*;
-
 class ntm_uvm_sequence_item extends uvm_sequence_item;
   // Data Signals
-  rand bit [DATA_SIZE-1:0] DATA_A_IN;
-  rand bit [DATA_SIZE-1:0] DATA_B_IN;
+  rand bit [7:0] ip1;
+  rand bit [7:0] ip2;
 
-  bit      [DATA_SIZE-1:0] DATA_OUT;
+  bit      [8:0] out;
 
   // Constructor
   function new(string name = "ntm_uvm_sequence_item");
@@ -53,13 +51,13 @@ class ntm_uvm_sequence_item extends uvm_sequence_item;
 
   // Utility and Field declarations
   `uvm_object_utils_begin(ntm_uvm_sequence_item)
-  `uvm_field_int(DATA_A_IN, UVM_ALL_ON)
-  `uvm_field_int(DATA_B_IN, UVM_ALL_ON)
+  `uvm_field_int(ip1, UVM_ALL_ON)
+  `uvm_field_int(ip2, UVM_ALL_ON)
   `uvm_object_utils_end
 
   // Constraints
   constraint ip_c {
-    DATA_A_IN < 100;
-    DATA_B_IN < 100;
+    ip1 < 100;
+    ip2 < 100;
   }
 endclass

@@ -37,26 +37,18 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-import model_arithmetic_verilog_pkg::*;
-
-interface subtractor_if (
-  input logic CLK,
-  input logic RST
+interface add_if (
+  input logic clk,
+  input logic rst
 );
 
-  // CONTROL
-  logic START;
-  logic READY;
+  logic [7:0] ip1;
+  logic [7:0] ip2;
 
-  // DATA
-  logic [DATA_SIZE-1:0] DATA_A_IN;
-  logic [DATA_SIZE-1:0] DATA_B_IN;
+  logic [8:0] out;
 
-  logic [DATA_SIZE-1:0] DATA_OUT;
-  logic       OVERFLOW_OUT;
-
-  // clocking driver_cb @(posedge CLK);
-  //   default input #1 output #1;
+  // clocking driver_cb @(posedge clk);
+  // default input #1 output #1;
   // endclocking
 
 endinterface

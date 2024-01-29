@@ -1,306 +1,43 @@
-///////////////////////////////////////////////////////////////////////////////////
-//                                            __ _      _     _                  //
-//                                           / _(_)    | |   | |                 //
-//                __ _ _   _  ___  ___ _ __ | |_ _  ___| | __| |                 //
-//               / _` | | | |/ _ \/ _ \ '_ \|  _| |/ _ \ |/ _` |                 //
-//              | (_| | |_| |  __/  __/ | | | | | |  __/ | (_| |                 //
-//               \__, |\__,_|\___|\___|_| |_|_| |_|\___|_|\__,_|                 //
-//                  | |                                                          //
-//                  |_|                                                          //
-//                                                                               //
-//                                                                               //
-//              Peripheral-NTM for MPSoC                                         //
-//              Neural Turing Machine for MPSoC                                  //
-//                                                                               //
-///////////////////////////////////////////////////////////////////////////////////
+#include "Vntm_design.h"
+#include "verilated.h"
+#include "verilated_vcd_c.h"
 
-///////////////////////////////////////////////////////////////////////////////////
-//                                                                               //
-// Copyright (c) 2020-2021 by the author(s)                                      //
-//                                                                               //
-// Permission is hereby granted, free of charge, to any person obtaining a copy  //
-// of this software and associated documentation files (the "Software"), to deal //
-// in the Software without restriction, including without limitation the rights  //
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     //
-// copies of the Software, and to permit persons to whom the Software is         //
-// furnished to do so, subject to the following conditions:                      //
-//                                                                               //
-// The above copyright notice and this permission notice shall be included in    //
-// all copies or substantial portions of the Software.                           //
-//                                                                               //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR    //
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,      //
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   //
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER        //
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, //
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN     //
-// THE SOFTWARE.                                                                 //
-//                                                                               //
-// ============================================================================= //
-// Author(s):                                                                    //
-//   Paco Reina Campo <pacoreinacampo@queenfield.tech>                           //
-//                                                                               //
-///////////////////////////////////////////////////////////////////////////////////
 
-#include <cstdlib>
-#include <deque>
-#include <iostream>
-#include <memory>
-#include <stdlib.h>
-#include <verilated.h>
-#include <verilated_vcd_c.h>
-#include "Vmodel_scalar_integer_adder.h"
-
-#define MAX_SIMULATION_TIME 300
-#define VERIFICATION_START_TIME 7
-
-vluint64_t simulation_time = 0;
-vluint64_t posedge_cnt = 0;
-
-// Scalar Divider input interface transaction item class
-class ScalarDividerInTx {
-  public:
-    uint32_t a;
-    uint32_t b;
-
-    enum ControlOperation {
-      add = 0,
-      sub = 1,
-      nop = 2,
-    } control_operation;
-};
-
-// Scalar Divider output interface transaction item class
-class ScalarDividerOutTx {
-  public:
-    uint32_t out;
-};
-
-// Scalar Divider ScoreBoard
-class ScalarDividerScb {
-  private:
-    std::deque<ScalarDividerInTx*> in_q;
-    
-  public:
-    // Input interface monitor port
-    void writeIn(ScalarDividerInTx *tx){
-      // Push the received transaction item into a queue for later
-      in_q.push_back(tx);
-    }
-
-    // Output interface monitor port
-    void writeOut(ScalarDividerOutTx* tx){
-      // We should never get any data from the output interface
-      // before an input gets driven to the input interface
-      if(in_q.empty()){
-        std::cout <<"Fatal Error in ScalarDividerScb: empty ScalarDividerInTx queue" << std::endl;
-        exit(1);
-      }
-
-      // Grab the transaction item from the front of the input item queue
-      ScalarDividerInTx* in;
-      in = in_q.front();
-      in_q.pop_front();
-
-      switch(in->control_operation){
-        // A valid signal should not be created at the output when there is no operation,
-        // so we should never get a transaction item where the operation is NOP
-        case ScalarDividerInTx::nop :
-          std::cout << "Fatal error in ScalarDividerScb, received NOP on input" << std::endl;
-          exit(1);
-          break;
-
-        // Received transaction is add
-        case ScalarDividerInTx::add :
-          if (in->a + in->b != tx->out) {
-            std::cout << std::endl;
-            std::cout << "ScalarDividerScb: add mismatch" << std::endl;
-            std::cout << "  Expected: " << in->a + in->b << "  Actual: " << tx->out << std::endl;
-            std::cout << "  Simtime: " << simulation_time << std::endl;
-          }
-          break;
-
-        // Received transaction is sub
-        case ScalarDividerInTx::sub :
-          if (in->a - in->b != tx->out) {
-            std::cout << std::endl;
-            std::cout << "ScalarDividerScb: sub mismatch" << std::endl;
-            std::cout << "  Expected: " << in->a - in->b << "  Actual: " << tx->out << std::endl;
-            std::cout << "  Simtime: " << simulation_time << std::endl;
-          }
-          break;
-      }
-      // As the transaction items were allocated on the heap, it's important
-      // to free the memory after they have been used
-      delete in;
-      delete tx;
-    }
-};
-
-// ALU input interface driver
-class ScalarDividerInDrv {
-  private:
-    Vmodel_scalar_integer_adder *dut;
-  public:
-    ScalarDividerInDrv(Vmodel_scalar_integer_adder *dut){
-      this->dut = dut;
-    }
-
-    void drive(ScalarDividerInTx *tx){
-      // we always start with START set to 0, and set it to
-      // 1 later only if necessary
-      dut->START = 0;
-
-      // Don't drive anything if a transaction item doesn't exist
-      if(tx != NULL){
-        if (tx->control_operation != ScalarDividerInTx::nop) {
-          // If the operation is not a NOP, we drive it onto the
-          // input interface pins
-          dut->START = 1;
-          dut->OPERATION = tx->control_operation;
-          dut->DATA_A_IN = tx->a;
-          dut->DATA_B_IN = tx->b;
-        }
-        // Release the memory by deleting the tx item
-        // after it has been consumed
-        delete tx;
-      }
-    }
-};
-
-// ALU input interface monitor
-class ScalarDividerInMon {
-  private:
-    Vmodel_scalar_integer_adder *dut;
-    ScalarDividerScb *scb;
-  public:
-    ScalarDividerInMon(Vmodel_scalar_integer_adder *dut, ScalarDividerScb *scb){
-      this->dut = dut;
-      this->scb = scb;
-    }
-
-    void monitor(){
-      if (dut->START == 1) {
-        // If there is valid data at the input interface,
-        // create a new ScalarDividerInTx transaction item and populate
-        // it with data observed at the interface pins
-        ScalarDividerInTx *tx = new ScalarDividerInTx();
-        tx->control_operation = ScalarDividerInTx::ControlOperation(dut->OPERATION);
-        tx->a = dut->DATA_A_IN;
-        tx->b = dut->DATA_B_IN;
-
-        // then pass the transaction item to the scoreboard
-        scb->writeIn(tx);
-      }
-    }
-};
-
-// ALU output interface monitor
-class ScalarDividerOutMon {
-  private:
-    Vmodel_scalar_integer_adder *dut;
-    ScalarDividerScb *scb;
-  public:
-    ScalarDividerOutMon(Vmodel_scalar_integer_adder *dut, ScalarDividerScb *scb){
-      this->dut = dut;
-      this->scb = scb;
-    }
-
-    void monitor(){
-      if (dut->READY == 1) {
-        // If there is valid data at the output interface,
-        // create a new ScalarDividerOutTx transaction item and populate
-        // it with result observed at the interface pins
-        ScalarDividerOutTx *tx = new ScalarDividerOutTx();
-        tx->out = dut->DATA_OUT;
-
-        // then pass the transaction item to the scoreboard
-        scb->writeOut(tx);
-      }
-    }
-};
-
-// ALU random transaction generator
-// This will allocate memory for an ScalarDividerInTx
-// transaction item, randomise the data, and
-// return a pointer to the transaction item object
-ScalarDividerInTx* rndScalarDividerInTx(){
-  //20% chance of generating a transaction
-  if(rand()%5 == 0){
-    ScalarDividerInTx *tx = new ScalarDividerInTx();
-    tx->control_operation = ScalarDividerInTx::ControlOperation(rand() % 3);  // Our ENUM only has entries with values 0, 1, 2
-    tx->a = rand() % 11 + 10;  // generate a in range 10-20
-    tx->b = rand() % 6;  // generate b in range 0-5
-    return tx;
-  } else {
-    return NULL;
-  }
-}
-
-void dut_reset (Vmodel_scalar_integer_adder *dut, vluint64_t &simulation_time){
-  dut->RST = 0;
-  if(simulation_time >= 3 && simulation_time < 6){
-    dut->RST = 1;
-    dut->DATA_A_IN = 0;
-    dut->DATA_B_IN = 0;
-    dut->OPERATION = 0;
-    dut->START = 0;
-  }
-}
-
-int main(int argc, char** argv, char** env) {
-  srand (time(NULL));
+int main(int argc, char **argv, char **env) {
+  int i;
+  int clk;
   Verilated::commandArgs(argc, argv);
-  Vmodel_scalar_integer_adder *dut = new Vmodel_scalar_integer_adder;
 
+  // init top verilog instance
+  Vntm_design* top = new Vntm_design;
+
+  // init trace dump
   Verilated::traceEverOn(true);
-  VerilatedVcdC *m_trace = new VerilatedVcdC;
-  dut->trace(m_trace, 5);
-  m_trace->open("waveform.vcd");
+  VerilatedVcdC* tfp = new VerilatedVcdC;
+  top->trace (tfp, 99);
+  tfp->open ("ntm_design.vcd");
 
-  ScalarDividerInTx *tx;
+  // initialize simulation inputs
+  top->clk = 1;
+  top->rst = 1;
 
-  // Here we create the driver, scoreboard, input and output monitor blocks
-  ScalarDividerInDrv *drv = new ScalarDividerInDrv(dut);
-  ScalarDividerScb *scb = new ScalarDividerScb();
-  ScalarDividerInMon *inMon = new ScalarDividerInMon(dut, scb);
-  ScalarDividerOutMon *outMon = new ScalarDividerOutMon(dut, scb);
+  top->in1 = 0x55;
+  top->in2 = 0x22;
 
-  while (simulation_time < MAX_SIMULATION_TIME) {
-    dut_reset(dut, simulation_time);
-    dut->CLK ^= 1;
-    dut->eval();
+  // run simulation for 100 clock periods
+  for (i=0; i<20; i++) {
+    top->rst = (i < 2);
 
-    // Do all the driving/monitoring on a positive edge
-    if (dut->CLK == 1){
-
-      if (simulation_time >= VERIFICATION_START_TIME) {
-        // Generate a randomised transaction item of type ScalarDividerInTx
-        tx = rndScalarDividerInTx();
-
-        // Pass the transaction item to the ALU input interface driver,
-        // which drives the input interface based on the info in the
-        // transaction item
-        drv->drive(tx);
-
-        // Monitor the input interface
-        inMon->monitor();
-
-        // Monitor the output interface
-        outMon->monitor();
-      }
+    // dump variables into VCD file and toggle clock
+    for (clk=0; clk<2; clk++) {
+      tfp->dump (2*i+clk);
+      top->clk = !top->clk;
+      top->eval ();
     }
-    // end of positive edge processing
 
-    m_trace->dump(simulation_time);
-    simulation_time++;
+    if (Verilated::gotFinish()) exit(0);
   }
 
-  m_trace->close();
-  delete dut;
-  delete outMon;
-  delete inMon;
-  delete scb;
-  delete drv;
-  exit(EXIT_SUCCESS);
+  tfp->close();
+  exit(0);
 }

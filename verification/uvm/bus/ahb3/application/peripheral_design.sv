@@ -24,7 +24,7 @@ module peripheral_design (
     if (ubus_reset) begin
       ubus_start <= 1'b0;
       st         <= 3'h0;
-    end else begin
+    end else
       case (st)
         0: begin  // Begin out of Reset
           ubus_start <= 1'b1;
@@ -56,7 +56,6 @@ module peripheral_design (
           end
         end
       endcase
-    end
   end
 
   always @(negedge ubus_clock or posedge ubus_reset) begin
