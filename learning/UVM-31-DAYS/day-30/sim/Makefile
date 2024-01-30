@@ -47,5 +47,6 @@ build:
 simulate:
 	xelab peripheral_uvm_testbench -relax -s top -timescale 1ns/1ps
 	xsim top -testplusarg UVM_TESTNAME=peripheral_uvm_test -testplusarg UVM_VERBOSITY=UVM_LOW -runall
+
 clean:
 	rm -rf xsim.* *.dir *.jou *.log *.pb *.vcd *.wdb

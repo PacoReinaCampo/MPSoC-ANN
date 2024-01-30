@@ -47,5 +47,6 @@ build:
 simulate:
 	xelab testbench -relax -s top -timescale 1ns/1ps
 	xsim top -testplusarg UVM_TESTNAME=test -testplusarg UVM_VERBOSITY=UVM_LOW -runall
+
 clean:
 	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb

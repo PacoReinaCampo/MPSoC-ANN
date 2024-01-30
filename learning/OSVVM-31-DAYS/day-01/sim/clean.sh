@@ -1,19 +1,22 @@
 ###################################################################################
-##               _____                   ____     _   _______ _____              ##
-##              / ____|  /\        /\   |  _ \   | | |__   __|  __ \             ##
-##             | (___   /  \      /  \  | |_) |  | |    | |  | |  | |            ##
-##              \___ \ / /\ \    / /\ \ |  _ <   | |    | |  | |  | |            ##
-##              ____) / ____ \  / ____ \| |_) |  | |____| |  | |__| |            ##
-##             |_____/_/    \_\/_/    \_\____/   |______|_|  |_____/             ##
+##                                            __ _      _     _                  ##
+##                                           / _(_)    | |   | |                 ##
+##                __ _ _   _  ___  ___ _ __ | |_ _  ___| | __| |                 ##
+##               / _` | | | |/ _ \/ _ \ '_ \|  _| |/ _ \ |/ _` |                 ##
+##              | (_| | |_| |  __/  __/ | | | | | |  __/ | (_| |                 ##
+##               \__, |\__,_|\___|\___|_| |_|_| |_|\___|_|\__,_|                 ##
+##                  | |                                                          ##
+##                  |_|                                                          ##
 ##                                                                               ##
-##              SAAB LTD                                                         ##
+##                                                                               ##
+##              Peripheral for MPSoC                                             ##
 ##              Multi-Processor System on Chip                                   ##
 ##                                                                               ##
 ###################################################################################
 
 ###################################################################################
 ##                                                                               ##
-## Copyright (c) 2023-2024 by the author(s)                                      ##
+## Copyright (c) 2024-2025 by the author(s)                                      ##
 ##                                                                               ##
 ## Permission is hereby granted, free of charge, to any person obtaining a copy  ##
 ## of this software and associated documentation files (the "Software"), to deal ##
@@ -35,18 +38,8 @@
 ##                                                                               ##
 ## ============================================================================= ##
 ## Author(s):                                                                    ##
-##   Francisco Javier Reina Campo <francisco.reinacampo@saab.ae>                 ##
+##   Paco Reina Campo <pacoreinacampo@queenfield.tech>                           ##
 ##                                                                               ##
 ###################################################################################
 
-all: build simulate
-
-build:
-	xvlog -sv -prj system.prj -L uvm
-
-simulate:
-	xelab testbench -relax -s top -timescale 1ns/1ps
-	xsim top -testplusarg UVM_TESTNAME=base_test -testplusarg UVM_VERBOSITY=UVM_LOW -runall
-
-clean:
-	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb
+make clean
