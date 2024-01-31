@@ -323,7 +323,9 @@ class peripheral_uvm_bus_monitor extends uvm_monitor;
 
   // check_transfer_data_size
   function void check_transfer_data_size();
-    if (trans_collected.size != trans_collected.data.size()) `uvm_error(get_type_name(), "Transfer size field / data size mismatch.")
+    if (trans_collected.size != trans_collected.data.size()) begin
+      `uvm_error(get_type_name(), "Transfer size field / data size mismatch.")
+    end
   endfunction : check_transfer_data_size
 
   // perform_transfer_coverage
