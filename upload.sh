@@ -45,4 +45,4 @@
 git submodule update --init --recursive --remote
 git add *
 git commit -m "Working in MPSoC-Transformer 🦀"
-git push origin main
+git push origin master
