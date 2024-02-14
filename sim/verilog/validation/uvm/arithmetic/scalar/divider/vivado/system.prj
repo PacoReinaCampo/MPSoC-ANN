@@ -42,7 +42,6 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../../../../../../model/verilog/code/pkg/model_arithmetic_verilog_pkg.sv
-sv work ../../../../../../../../model/verilog/code/arithmetic/float/scalar/model_scalar_float_divider.sv
+sv work ../../../../../../../../validation/uvm/application/arithmetic/scalar/divider/ntm_design.sv
 
 sv work ../../../../../../../../validation/uvm/library/arithmetic/scalar/divider/ntm_uvm_testbench.sv

@@ -177,12 +177,12 @@ class peripheral_uvm_bus_monitor extends uvm_monitor;
   task observe_reset();
     fork
       forever begin
-        @(posedge vif.aresetn);
+        @(posedge vif.sig_reset);
         status.bus_state = RST_START;
         state_port.write(status);
       end
       forever begin
-        @(negedge vif.aresetn);
+        @(negedge vif.sig_reset);
         status.bus_state = RST_STOP;
         state_port.write(status);
       end
@@ -209,21 +209,24 @@ class peripheral_uvm_bus_monitor extends uvm_monitor;
   // collect_arbitration_phase
   task collect_arbitration_phase();
     string tmpStr;
-    @(posedge vif.aclk);
+    @(posedge vif.sig_clock iff (vif.sig_grant != 0));
     status.bus_state = ARBI;
     state_port.write(status);
     void'(this.begin_tr(trans_collected));
     // Check which grant is asserted to determine which master is performing
     // the transfer on the bus.
     for (int j = 0; j <= 15; j++) begin
-      $sformat(tmpStr, "masters[%0d]", j);
-      trans_collected.master = tmpStr;
+      if (vif.sig_grant[j] === 1) begin
+        $sformat(tmpStr, "masters[%0d]", j);
+        trans_collected.master = tmpStr;
+        break;
+      end
     end
   endtask : collect_arbitration_phase
 
   // collect_address_phase
   task collect_address_phase();
-    @(posedge vif.aclk);
+    @(posedge vif.sig_clock);
     trans_collected.addr = vif.sig_addr;
     case (vif.sig_size)
       2'b00: trans_collected.size = 1;
@@ -266,8 +269,8 @@ class peripheral_uvm_bus_monitor extends uvm_monitor;
       for (i = 0; i < trans_collected.size; i++) begin
         status.bus_state = DATA_PH;
         state_port.write(status);
-        @(posedge vif.aclk iff vif.sig_wait === 0);
-        trans_collected.data[i] = vif.wrdata;
+        @(posedge vif.sig_clock iff vif.sig_wait === 0);
+        trans_collected.data[i] = vif.sig_data;
       end
       num_transactions++;
       this.end_tr(trans_collected);

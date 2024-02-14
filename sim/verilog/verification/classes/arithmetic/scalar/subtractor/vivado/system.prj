@@ -42,7 +42,6 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../../../../../../model/verilog/code/pkg/model_arithmetic_verilog_pkg.sv
 sv work ../../../../../../../../verification/classes/application/arithmetic/scalar/subtractor/ntm_design.sv
 
 sv work ../../../../../../../../verification/classes/library/arithmetic/scalar/subtractor/ntm_testbench.sv

@@ -37,6 +37,8 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
+import model_arithmetic_verilog_pkg::*;
+
 module model_scalar_integer_divider #(
   parameter DATA_SIZE    = 64,
   parameter CONTROL_SIZE = 4
@@ -68,14 +70,16 @@ module model_scalar_integer_divider #(
   // Constants
   //////////////////////////////////////////////////////////////////////////////
 
-  parameter ZERO_DATA = 0;
-
   //////////////////////////////////////////////////////////////////////////////
   // Signals
   //////////////////////////////////////////////////////////////////////////////
 
   // Finite State Machine
   reg  divider_ctrl_fsm_int;
+
+  // Data Internal
+  integer data_a_int;
+  integer data_b_int;
 
   //////////////////////////////////////////////////////////////////////////////
   // Body
@@ -92,6 +96,10 @@ module model_scalar_integer_divider #(
       // Control Outputs
       READY                <= 1'b0;
 
+      // Data Internal
+      data_a_int           <= 0;
+      data_b_int           <= 0;
+
       // FSM Control
       divider_ctrl_fsm_int <= STARTER_STATE;
 
@@ -102,6 +110,10 @@ module model_scalar_integer_divider #(
           READY <= 1'b0;
 
           if (START == 1'b1) begin
+            // Data Internal
+            data_a_int           <= DATA_A_IN;
+            data_b_int           <= DATA_B_IN;
+
             // FSM Control
             divider_ctrl_fsm_int <= ENDER_STATE;
           end
@@ -109,9 +121,9 @@ module model_scalar_integer_divider #(
         ENDER_STATE: begin  // STEP 1
 
           // Data Outputs
-          DATA_OUT             <= DATA_A_IN / DATA_B_IN;
+          DATA_OUT             <= data_a_int / data_b_int;
 
-          REMAINDER_OUT        <= DATA_A_IN % DATA_B_IN;
+          REMAINDER_OUT        <= data_a_int % data_b_int;
 
           // Control Outputs
           READY                <= 1'b1;

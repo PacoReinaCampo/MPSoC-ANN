@@ -96,7 +96,7 @@ class peripheral_uvm_master_monitor extends uvm_monitor;
   // collect_transactions
   virtual protected task collect_transactions();
     forever begin
-      @(posedge vif.mclk);
+      @(posedge vif.sig_clock);
       if (m_parent != null) begin
         trans_collected.master = m_parent.get_name();
       end
@@ -116,17 +116,24 @@ class peripheral_uvm_master_monitor extends uvm_monitor;
 
   // collect_arbitration_phase
   virtual protected task collect_arbitration_phase();
-    @(posedge vif.mclk);
+    @(posedge vif.sig_request[master_id]);
+    @(posedge vif.sig_clock iff vif.sig_grant[master_id] === 1);
     void'(this.begin_tr(trans_collected));
   endtask : collect_arbitration_phase
 
   // collect_address_phase
   virtual protected task collect_address_phase();
-    @(posedge vif.mclk);
-    trans_collected.addr = vif.addr;
+    @(posedge vif.sig_clock);
+    trans_collected.addr = vif.sig_addr;
+    case (vif.sig_size)
+      2'b00: trans_collected.size = 1;
+      2'b01: trans_collected.size = 2;
+      2'b10: trans_collected.size = 4;
+      2'b11: trans_collected.size = 8;
+    endcase
     trans_collected.data = new[trans_collected.size];
     case ({
-      vif.wen
+      vif.sig_read, vif.sig_write
     })
       2'b00: trans_collected.read_write = NOP;
       2'b10: trans_collected.read_write = READ;
@@ -139,8 +146,8 @@ class peripheral_uvm_master_monitor extends uvm_monitor;
     int i;
     if (trans_collected.read_write != NOP) begin
       for (i = 0; i < trans_collected.size; i++) begin
-        @(posedge vif.mclk);
-        trans_collected.data[i] = vif.din;
+        @(posedge vif.sig_clock iff vif.sig_wait === 0);
+        trans_collected.data[i] = vif.sig_data;
       end
     end
     this.end_tr(trans_collected);

@@ -1,1 +1,0 @@
-gtkwave basic.vcd

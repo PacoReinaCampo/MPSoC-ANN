@@ -12,6 +12,10 @@ module peripheral_uvm_testbench;
   peripheral_uvm_if vif ();
 
   peripheral_design dut (
+    vif.sig_request[0],
+    vif.sig_grant[0],
+    vif.sig_request[1],
+    vif.sig_grant[1],
     vif.sig_clock,
     vif.sig_reset,
     vif.sig_addr,
@@ -20,8 +24,7 @@ module peripheral_uvm_testbench;
     vif.sig_write,
     vif.sig_start,
     vif.sig_bip,
-    vif.sig_data_in,
-    vif.sig_data_out,
+    vif.sig_data,
     vif.sig_wait,
     vif.sig_error
   );
@@ -43,7 +46,7 @@ module peripheral_uvm_testbench;
   // Generate Reset
   initial begin
     vif.sig_reset <= 1'b1;
-    #50;
+    #51;
     vif.sig_reset <= 1'b0;
   end
 

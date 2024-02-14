@@ -1,6 +1,6 @@
-# MPSoC
+# MPSoC-Transformer
 ## QueenField
 
-![QueenField](../master/icon.jpg)
+![QueenField](../main/icon.jpg)
 
-**QueenField Shop**
+**Transformer Neural Network for a Multi-Processor System on Chip verified with UVM/OSVVM/FV**

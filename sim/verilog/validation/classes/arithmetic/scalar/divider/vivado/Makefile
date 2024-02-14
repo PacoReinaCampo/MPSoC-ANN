@@ -51,8 +51,5 @@ simulate:
 	xelab ntm_testbench
 	xsim -R ntm_testbench
 
-test:
-	gtkwave system.vcd
-
 clean:
 	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb .Xil

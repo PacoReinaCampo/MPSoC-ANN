@@ -1,1 +1,0 @@
-del *.vvp *.vcd

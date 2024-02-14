@@ -42,7 +42,6 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../../../../../../model/verilog/code/pkg/model_arithmetic_verilog_pkg.sv
 sv work ../../../../../../../../verification/uvm/application/arithmetic/scalar/multiplier/ntm_design.sv
 
 sv work ../../../../../../../../verification/uvm/library/arithmetic/scalar/multiplier/ntm_uvm_testbench.sv

@@ -16,7 +16,7 @@
 
 ###################################################################################
 ##                                                                               ##
-## Copyright (c) 2022-2025 by the author(s)                                      ##
+## Copyright (c) 2019-2020 by the author(s)                                      ##
 ##                                                                               ##
 ## Permission is hereby granted, free of charge, to any person obtaining a copy  ##
 ## of this software and associated documentation files (the "Software"), to deal ##
@@ -42,6 +42,7 @@
 ##                                                                               ##
 ###################################################################################
 
+git submodule update --init --recursive --remote
 git add *
-git commit -m "Working in QueenField Shop"
-git push origin master
+git commit -m "Working in MPSoC-Transformer 🦀"
+git push origin main
