@@ -1,4 +1,4 @@
-# MPSoC-Transformer
+# MPSoC-TNN
 ## QueenField
 
 ![QueenField](../master/icon.jpg)

@@ -1,0 +1,35 @@
+library
+├── bfm
+│   ├── ahb3
+│   │   ├── peripheral_design.adb
+│   │   └── peripheral_design.ads
+│   ├── apb4
+│   │   ├── peripheral_design.adb
+│   │   └── peripheral_design.ads
+│   ├── axi4
+│   │   ├── peripheral_design.adb
+│   │   └── peripheral_design.ads
+│   ├── bb
+│   │   ├── peripheral_design.adb
+│   │   └── peripheral_design.ads
+│   └── wb
+│       ├── peripheral_design.adb
+│       └── peripheral_design.ads
+└── core
+    ├── ahb3
+    │   ├── peripheral_design.adb
+    │   └── peripheral_design.ads
+    ├── apb4
+    │   ├── peripheral_design.adb
+    │   └── peripheral_design.ads
+    ├── axi4
+    │   ├── peripheral_design.adb
+    │   └── peripheral_design.ads
+    ├── bb
+    │   ├── peripheral_design.adb
+    │   └── peripheral_design.ads
+    └── wb
+        ├── peripheral_design.adb
+        └── peripheral_design.ads
+
+12 directories, 20 files
