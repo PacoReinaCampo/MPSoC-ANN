@@ -33,23 +33,6 @@ code
 │   │   │           ├── accelerator_standard_lstm_pkg.vhd
 │   │   │           ├── accelerator_standard_lstm_stimulus.vhd
 │   │   │           └── accelerator_standard_lstm_testbench.vhd
-│   │   ├── dnc
-│   │   │   ├── memory
-│   │   │   │   ├── accelerator_memory_pkg.vhd
-│   │   │   │   ├── accelerator_memory_stimulus.vhd
-│   │   │   │   └── accelerator_memory_testbench.vhd
-│   │   │   ├── read_heads
-│   │   │   │   ├── accelerator_read_heads_pkg.vhd
-│   │   │   │   ├── accelerator_read_heads_stimulus.vhd
-│   │   │   │   └── accelerator_read_heads_testbench.vhd
-│   │   │   ├── top
-│   │   │   │   ├── accelerator_top_pkg.vhd
-│   │   │   │   ├── accelerator_top_stimulus.vhd
-│   │   │   │   └── accelerator_top_testbench.vhd
-│   │   │   └── write_heads
-│   │   │       ├── accelerator_write_heads_pkg.vhd
-│   │   │       ├── accelerator_write_heads_stimulus.vhd
-│   │   │       └── accelerator_write_heads_testbench.vhd
 │   │   ├── math
 │   │   │   ├── algebra
 │   │   │   │   ├── accelerator_algebra_pkg.vhd
@@ -143,23 +126,6 @@ code
 │       │           ├── model_standard_lstm_pkg.vhd
 │       │           ├── model_standard_lstm_stimulus.vhd
 │       │           └── model_standard_lstm_testbench.vhd
-│       ├── dnc
-│       │   ├── memory
-│       │   │   ├── model_memory_pkg.vhd
-│       │   │   ├── model_memory_stimulus.vhd
-│       │   │   └── model_memory_testbench.vhd
-│       │   ├── read_heads
-│       │   │   ├── model_read_heads_pkg.vhd
-│       │   │   ├── model_read_heads_stimulus.vhd
-│       │   │   └── model_read_heads_testbench.vhd
-│       │   ├── top
-│       │   │   ├── model_top_pkg.vhd
-│       │   │   ├── model_top_stimulus.vhd
-│       │   │   └── model_top_testbench.vhd
-│       │   └── write_heads
-│       │       ├── model_write_heads_pkg.vhd
-│       │       ├── model_write_heads_stimulus.vhd
-│       │       └── model_write_heads_testbench.vhd
 │       ├── math
 │       │   ├── algebra
 │       │   │   ├── model_algebra_pkg.vhd
@@ -254,23 +220,6 @@ code
     │   │           ├── accelerator_standard_lstm_pkg.vhd
     │   │           ├── accelerator_standard_lstm_stimulus.vhd
     │   │           └── accelerator_standard_lstm_testbench.vhd
-    │   ├── dnc
-    │   │   ├── memory
-    │   │   │   ├── accelerator_memory_pkg.vhd
-    │   │   │   ├── accelerator_memory_stimulus.vhd
-    │   │   │   └── accelerator_memory_testbench.vhd
-    │   │   ├── read_heads
-    │   │   │   ├── accelerator_read_heads_pkg.vhd
-    │   │   │   ├── accelerator_read_heads_stimulus.vhd
-    │   │   │   └── accelerator_read_heads_testbench.vhd
-    │   │   ├── top
-    │   │   │   ├── accelerator_top_pkg.vhd
-    │   │   │   ├── accelerator_top_stimulus.vhd
-    │   │   │   └── accelerator_top_testbench.vhd
-    │   │   └── write_heads
-    │   │       ├── accelerator_write_heads_pkg.vhd
-    │   │       ├── accelerator_write_heads_stimulus.vhd
-    │   │       └── accelerator_write_heads_testbench.vhd
     │   ├── math
     │   │   ├── algebra
     │   │   │   ├── accelerator_algebra_pkg.vhd
@@ -364,23 +313,6 @@ code
         │           ├── model_standard_lstm_pkg.vhd
         │           ├── model_standard_lstm_stimulus.vhd
         │           └── model_standard_lstm_testbench.vhd
-        ├── dnc
-        │   ├── memory
-        │   │   ├── model_memory_pkg.vhd
-        │   │   ├── model_memory_stimulus.vhd
-        │   │   └── model_memory_testbench.vhd
-        │   ├── read_heads
-        │   │   ├── model_read_heads_pkg.vhd
-        │   │   ├── model_read_heads_stimulus.vhd
-        │   │   └── model_read_heads_testbench.vhd
-        │   ├── top
-        │   │   ├── model_top_pkg.vhd
-        │   │   ├── model_top_stimulus.vhd
-        │   │   └── model_top_testbench.vhd
-        │   └── write_heads
-        │       ├── model_write_heads_pkg.vhd
-        │       ├── model_write_heads_stimulus.vhd
-        │       └── model_write_heads_testbench.vhd
         ├── math
         │   ├── algebra
         │   │   ├── model_algebra_pkg.vhd
@@ -442,4 +374,4 @@ code
             ├── model_transformer_stimulus.vhd
             └── model_transformer_testbench.vhd
 
-142 directories, 300 files
+122 directories, 252 files

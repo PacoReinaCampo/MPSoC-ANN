@@ -33,23 +33,6 @@ code
 │   │   │           ├── accelerator_standard_lstm_pkg.sv
 │   │   │           ├── accelerator_standard_lstm_stimulus.sv
 │   │   │           └── accelerator_standard_lstm_testbench.sv
-│   │   ├── dnc
-│   │   │   ├── memory
-│   │   │   │   ├── accelerator_memory_pkg.sv
-│   │   │   │   ├── accelerator_memory_stimulus.sv
-│   │   │   │   └── accelerator_memory_testbench.sv
-│   │   │   ├── read_heads
-│   │   │   │   ├── accelerator_read_heads_pkg.sv
-│   │   │   │   ├── accelerator_read_heads_stimulus.sv
-│   │   │   │   └── accelerator_read_heads_testbench.sv
-│   │   │   ├── top
-│   │   │   │   ├── accelerator_top_pkg.sv
-│   │   │   │   ├── accelerator_top_stimulus.sv
-│   │   │   │   └── accelerator_top_testbench.sv
-│   │   │   └── write_heads
-│   │   │       ├── accelerator_write_heads_pkg.sv
-│   │   │       ├── accelerator_write_heads_stimulus.sv
-│   │   │       └── accelerator_write_heads_testbench.sv
 │   │   ├── math
 │   │   │   ├── algebra
 │   │   │   │   ├── accelerator_algebra_pkg.sv
@@ -143,23 +126,6 @@ code
 │       │           ├── model_standard_lstm_pkg.sv
 │       │           ├── model_standard_lstm_stimulus.sv
 │       │           └── model_standard_lstm_testbench.sv
-│       ├── dnc
-│       │   ├── memory
-│       │   │   ├── model_memory_pkg.sv
-│       │   │   ├── model_memory_stimulus.sv
-│       │   │   └── model_memory_testbench.sv
-│       │   ├── read_heads
-│       │   │   ├── model_read_heads_pkg.sv
-│       │   │   ├── model_read_heads_stimulus.sv
-│       │   │   └── model_read_heads_testbench.sv
-│       │   ├── top
-│       │   │   ├── model_top_pkg.sv
-│       │   │   ├── model_top_stimulus.sv
-│       │   │   └── model_top_testbench.sv
-│       │   └── write_heads
-│       │       ├── model_write_heads_pkg.sv
-│       │       ├── model_write_heads_stimulus.sv
-│       │       └── model_write_heads_testbench.sv
 │       ├── math
 │       │   ├── algebra
 │       │   │   ├── model_algebra_pkg.sv
@@ -254,23 +220,6 @@ code
     │   │           ├── accelerator_standard_lstm_pkg.sv
     │   │           ├── accelerator_standard_lstm_stimulus.sv
     │   │           └── accelerator_standard_lstm_testbench.sv
-    │   ├── dnc
-    │   │   ├── memory
-    │   │   │   ├── accelerator_memory_pkg.sv
-    │   │   │   ├── accelerator_memory_stimulus.sv
-    │   │   │   └── accelerator_memory_testbench.sv
-    │   │   ├── read_heads
-    │   │   │   ├── accelerator_read_heads_pkg.sv
-    │   │   │   ├── accelerator_read_heads_stimulus.sv
-    │   │   │   └── accelerator_read_heads_testbench.sv
-    │   │   ├── top
-    │   │   │   ├── accelerator_top_pkg.sv
-    │   │   │   ├── accelerator_top_stimulus.sv
-    │   │   │   └── accelerator_top_testbench.sv
-    │   │   └── write_heads
-    │   │       ├── accelerator_write_heads_pkg.sv
-    │   │       ├── accelerator_write_heads_stimulus.sv
-    │   │       └── accelerator_write_heads_testbench.sv
     │   ├── math
     │   │   ├── algebra
     │   │   │   ├── accelerator_algebra_pkg.sv
@@ -364,23 +313,6 @@ code
         │           ├── model_standard_lstm_pkg.sv
         │           ├── model_standard_lstm_stimulus.sv
         │           └── model_standard_lstm_testbench.sv
-        ├── dnc
-        │   ├── memory
-        │   │   ├── model_memory_pkg.sv
-        │   │   ├── model_memory_stimulus.sv
-        │   │   └── model_memory_testbench.sv
-        │   ├── read_heads
-        │   │   ├── model_read_heads_pkg.sv
-        │   │   ├── model_read_heads_stimulus.sv
-        │   │   └── model_read_heads_testbench.sv
-        │   ├── top
-        │   │   ├── model_top_pkg.sv
-        │   │   ├── model_top_stimulus.sv
-        │   │   └── model_top_testbench.sv
-        │   └── write_heads
-        │       ├── model_write_heads_pkg.sv
-        │       ├── model_write_heads_stimulus.sv
-        │       └── model_write_heads_testbench.sv
         ├── math
         │   ├── algebra
         │   │   ├── model_algebra_pkg.sv
@@ -442,4 +374,4 @@ code
             ├── model_transformer_stimulus.sv
             └── model_transformer_testbench.sv
 
-142 directories, 300 files
+122 directories, 252 files
