@@ -42,7 +42,7 @@ use ieee.numeric_std.all;
 
 use work.accelerator_arithmetic_vhdl_pkg.all;
 use work.accelerator_math_vhdl_pkg.all;
-use work.accelerator_linear_controller_vhdl_pkg.all;
+use work.accelerator_pnn_controller_vhdl_pkg.all;
 use work.accelerator_trainer_differentiation_pkg.all;
 
 entity accelerator_trainer_differentiation_testbench is

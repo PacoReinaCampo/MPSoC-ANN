@@ -9,7 +9,7 @@
 ##                  |_|                                                          ##
 ##                                                                               ##
 ##                                                                               ##
-##              Peripheral-NTM for MPSoC                                         ##
+##              Peripheral-ntm for MPSoC                                         ##
 ##              Neural Turing Machine for MPSoC                                  ##
 ##                                                                               ##
 ###################################################################################
