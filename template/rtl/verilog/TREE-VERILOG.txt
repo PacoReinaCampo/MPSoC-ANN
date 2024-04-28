@@ -50,24 +50,23 @@ code
 │   │   │   ├── true_gate.sv
 │   │   │   ├── xnor_gate.sv
 │   │   │   └── xor_gate.sv
-│   │   └── pushdown_automaton
-│   │       └── pushdown_automaton.sv
-│   ├── neural_network
-│   │   ├── feedforward_neural_network
-│   │   │   └── feedforward_neural_network.sv
-│   │   ├── long_short_term_memory_neural_network
-│   │   │   └── long_short_term_memory_neural_network.sv
-│   │   └── transformer_neural_network
-│   │       └── transformer_neural_network.sv
-│   └── turing_machine
-│       ├── differentiable_neural_computer
-│       │   ├── feedforward_differentiable_neural_computer.sv
-│       │   ├── lstm_differentiable_neural_computer.sv
-│       │   └── transformer_differentiable_neural_computer.sv
-│       └── neural_turing_machine
-│           ├── feedforward_neural_turing_machine.sv
-│           ├── lstm_neural_turing_machine.sv
-│           └── transformer_neural_turing_machine.sv
+│   │   ├── pushdown_automaton
+│   │   │   └── pushdown_automaton.sv
+│   │   └── turing_machine
+│   │       └── turing_machine.sv
+│   └── neural_network
+│       ├── attention_neural_network
+│       │   └── attention_neural_network.sv
+│       ├── differentiable_neural_computer_neural_network
+│       │   └── differentiable_neural_computer_neural_network.sv
+│       ├── feedforward_neural_network
+│       │   └── feedforward_neural_network.sv
+│       ├── long_short_term_memory_neural_network
+│       │   └── long_short_term_memory_neural_network.sv
+│       ├── neural_turing_machine_neural_network
+│       │   └── neural_turing_machine_neural_network.sv
+│       └── perceptron_neural_network
+│           └── perceptron_neural_network.sv
 └── pkg
     ├── classes
     │   ├── ntm_philosophers_pkg.sv
@@ -76,4 +75,4 @@ code
     └── computing
         └── state_pkg.sv
 
-28 directories, 48 files
+29 directories, 46 files
