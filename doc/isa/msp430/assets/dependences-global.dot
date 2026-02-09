@@ -32,9 +32,9 @@ digraph Project {
 
   // Accelerator Blocks
   subgraph "cluster AcceleratorBlocks" { label = "Accelerator Blocks";
-    MPSoC_DNC[label="MPSoC-DNC\nAccelerator\nmsp430-pvt-cnn"];
-    SoC_DNC[label="SoC-DNC\nAccelerator\nmsp430-pv-cnn"];
-    PU_DNC[label="PU-DNC\nAccelerator\nmsp430-p-cnn"];
+    MPSoC_DNC[label="MPSoC-DNC\nAccelerator\nmsp430-pvt-gcvwy"];
+    SoC_DNC[label="SoC-DNC\nAccelerator\nmsp430-pv-gcvwy"];
+    PU_DNC[label="PU-DNC\nAccelerator\nmsp430-p-gcvwy"];
   }
 
   // Target Blocks
